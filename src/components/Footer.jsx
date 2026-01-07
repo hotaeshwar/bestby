@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -110,12 +111,12 @@ const Footer = () => {
                 © 2025 Bestby Bites. All rights reserved.
               </p>
               <div className="hidden sm:block w-px h-4 bg-white/30"></div>
-              <a
-                href="/privacy-policy"
+              <Link
+                to="/privacy-policy"
                 className="text-white/90 text-sm sm:text-base md:text-lg hover:text-[#04c55c] transition-colors duration-300 underline underline-offset-4 decoration-white/30 hover:decoration-[#04c55c]"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
 
             {/* Social Icons */}
