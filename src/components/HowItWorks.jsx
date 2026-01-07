@@ -2,34 +2,28 @@ import { useState, useEffect, useRef } from 'react';
 
 const HowItWorks = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // Trigger animation on mount and refresh
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
-
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    // Handle scroll animations
     const handleScroll = () => {
       if (!sectionRef.current) return;
-      
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
-      // Check if section is in viewport
       if (rect.top < windowHeight * 0.75 && rect.bottom > 0) {
         setIsVisible(true);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on mount
-    
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -76,22 +70,32 @@ const HowItWorks = () => {
           {cards.map((card, index) => (
             <div
               key={card.id}
+              onMouseEnter={() => setHoveredCard(card.id)}
+              onMouseLeave={() => setHoveredCard(null)}
               className={`transition-all duration-1000 transform ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-20'
+              } ${
+                hoveredCard === null 
+                  ? 'scale-100' 
+                  : hoveredCard === card.id 
+                    ? 'scale-110 z-10' 
+                    : 'scale-95 opacity-70'
               }`}
               style={{ 
-                transitionDelay: `${index * 200}ms` 
+                transitionDelay: isVisible ? `${index * 200}ms` : '0ms'
               }}
             >
-              <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden h-full flex flex-col transform hover:scale-105 hover:-translate-y-2">
+              <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden h-full flex flex-col">
                 {/* Image Container */}
                 <div className="relative w-full pt-[75%] overflow-hidden">
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ${
+                      hoveredCard === card.id ? 'scale-110' : 'scale-100'
+                    }`}
                     onError={(e) => {
                       e.target.src = `https://placehold.co/600x450/e5e7eb/64748b?text=${encodeURIComponent(card.title)}`;
                     }}
