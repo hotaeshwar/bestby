@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HowItWorks from './HowItWorks';
 import Launchingsoon from './Launchingsoon';
 import WhyBestbyBites from './WhyBestbyBites';
@@ -9,124 +9,470 @@ import BusinessModelSection from './BusinessModelSection';
 import AppScreenshots from './AppScreenshots';
 
 function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsVisible(true), 100);
+    setIsLoaded(true);
   }, []);
 
   return (
     <>
-      {/* Hero Section with Dark Green Background */}
-      <div className="relative min-h-screen bg-[#013727] overflow-hidden">
-        {/* Main Content Container */}
-        <div className="relative z-10 flex items-center min-h-screen px-6 sm:px-8 lg:px-16 xl:px-24 pt-20 pb-16">
-          {/* Left Side Content */}
-          <div className="max-w-3xl">
-            {/* Logo - Aligned Left */}
-            <div
-              className={`transition-all duration-1000 mb-8 sm:mb-10 md:mb-12 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              <img
-                src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
-                alt="Bestby Bites Logo"
-                className="h-32 sm:h-36 md:h-40 lg:h-36 w-auto"
-              />
-            </div>
+      <div className="min-h-screen relative overflow-hidden bg-[#013727]">
+        
+        <style>{`
+          @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(4, 197, 92, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
+          }
 
-            {/* FOOD MARKETPLACE - Aligned Left */}
-            <div
-              className={`transition-all duration-1000 delay-200 mb-4 sm:mb-6 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              <p className="text-emerald-300 font-semibold tracking-[0.3em] text-base sm:text-lg md:text-xl lg:text-base">
-                FOOD MARKETPLACE
-              </p>
-            </div>
+          @keyframes fadeInUp {
+            from { 
+              opacity: 0; 
+              transform: translateY(30px); 
+            }
+            to { 
+              opacity: 1; 
+              transform: translateY(0); 
+            }
+          }
 
-            {/* Main Headlines - Aligned Left */}
-            <div
-              className={`transition-all duration-1000 delay-400 mb-6 sm:mb-8 lg:mb-6 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              <h1 className="text-white font-bold leading-tight">
-                <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl mb-2">
-                  Save Food.
-                </span>
-                <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl mb-2">
-                  Save Money.
-                </span>
-                <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl text-emerald-400">
-                  Eat Smarter.
-                </span>
-              </h1>
-            </div>
+          @keyframes fadeInScale {
+            from { 
+              opacity: 0; 
+              transform: scale(0.9); 
+            }
+            to { 
+              opacity: 1; 
+              transform: scale(1); 
+            }
+          }
 
-            {/* Description - Aligned Left */}
-            <div
-              className={`transition-all duration-1000 delay-600 mb-8 sm:mb-10 lg:mb-8 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              <p className="text-emerald-50 text-lg sm:text-xl md:text-2xl lg:text-xl leading-relaxed max-w-2xl">
-                Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafes, 
-                and grocery stores—at up to 80% off.
-              </p>
-            </div>
+          @keyframes rotateFloatTopRight {
+            0% { 
+              transform: rotate(0deg) translateY(0px) translateX(0px); 
+            }
+            25% { 
+              transform: rotate(5deg) translateY(-8px) translateX(-8px); 
+            }
+            50% { 
+              transform: rotate(0deg) translateY(-12px) translateX(-12px); 
+            }
+            75% { 
+              transform: rotate(-5deg) translateY(-8px) translateX(-8px); 
+            }
+            100% { 
+              transform: rotate(0deg) translateY(0px) translateX(0px); 
+            }
+          }
 
-            {/* CTA Button - Aligned Left */}
-            <div
-              className={`transition-all duration-1000 delay-800 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-              }`}
-            >
-              <button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 sm:py-5 lg:py-4 px-10 sm:px-12 lg:px-10 rounded-full text-xl sm:text-2xl lg:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                Exclusive Offer
-              </button>
+          @keyframes rotateFloatBottomLeft {
+            0% { 
+              transform: rotate(0deg) translateY(0px) translateX(0px); 
+            }
+            25% { 
+              transform: rotate(-5deg) translateY(8px) translateX(8px); 
+            }
+            50% { 
+              transform: rotate(0deg) translateY(12px) translateX(12px); 
+            }
+            75% { 
+              transform: rotate(5deg) translateY(8px) translateX(8px); 
+            }
+            100% { 
+              transform: rotate(0deg) translateY(0px) translateX(0px); 
+            }
+          }
+
+          @keyframes floatTopLeft {
+            0% { 
+              transform: translateY(0px) translateX(0px); 
+            }
+            25% { 
+              transform: translateY(-12px) translateX(8px); 
+            }
+            50% { 
+              transform: translateY(-18px) translateX(12px); 
+            }
+            75% { 
+              transform: translateY(-12px) translateX(8px); 
+            }
+            100% { 
+              transform: translateY(0px) translateX(0px); 
+            }
+          }
+
+          @keyframes floatBottomRight {
+            0% { 
+              transform: translateY(0px) translateX(0px); 
+            }
+            25% { 
+              transform: translateY(12px) translateX(-8px); 
+            }
+            50% { 
+              transform: translateY(18px) translateX(-12px); 
+            }
+            75% { 
+              transform: translateY(12px) translateX(-8px); 
+            }
+            100% { 
+              transform: translateY(0px) translateX(0px); 
+            }
+          }
+
+          .logo-animate {
+            animation: fadeInScale 0.8s ease-out forwards;
+          }
+
+          .heading-animate {
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+            opacity: 0;
+          }
+
+          .description-animate {
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+            opacity: 0;
+          }
+
+          .button-animate {
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+            opacity: 0;
+          }
+
+          .food-image-top-right {
+            animation: rotateFloatTopRight 6s ease-in-out infinite;
+          }
+
+          .food-image-bottom-left {
+            animation: rotateFloatBottomLeft 6s ease-in-out infinite;
+          }
+
+          .food-image-top-left {
+            animation: floatTopLeft 5s ease-in-out infinite;
+          }
+
+          .food-image-bottom-right {
+            animation: floatBottomRight 5s ease-in-out infinite;
+          }
+
+          /* iPhone SE and small mobile (< 376px) */
+          @media (max-width: 375px) {
+            .food-image-top-right,
+            .food-image-bottom-left,
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 110px !important;
+              height: 110px !important;
+            }
+            
+            .hero-logo {
+              height: 100px !important;
+            }
+            
+            .hero-heading {
+              font-size: 2.25rem !important;
+              line-height: 1.15 !important;
+              margin-bottom: 1.25rem !important;
+            }
+            
+            .hero-description {
+              font-size: 0.9rem !important;
+              line-height: 1.5 !important;
+              margin-bottom: 1.75rem !important;
+              padding-left: 0.75rem !important;
+              padding-right: 0.75rem !important;
+            }
+            
+            .hero-button {
+              font-size: 0.95rem !important;
+              padding: 0.9rem 1.8rem !important;
+            }
+            
+            .hero-content-wrapper {
+              max-width: 92% !important;
+            }
+            
+            .hero-logo-wrapper {
+              margin-bottom: 2.5rem !important;
+            }
+          }
+
+          /* Mobile (376px - 639px) */
+          @media (min-width: 376px) and (max-width: 639px) {
+            .food-image-top-right,
+            .food-image-bottom-left,
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 130px !important;
+              height: 130px !important;
+            }
+          }
+
+          /* Small (640px - 767px) */
+          @media (min-width: 640px) and (max-width: 767px) {
+            .food-image-top-right,
+            .food-image-bottom-left,
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 170px !important;
+              height: 170px !important;
+            }
+          }
+
+          /* iPad Mini (768px - 819px) */
+          @media (min-width: 768px) and (max-width: 819px) {
+            .food-image-top-right,
+            .food-image-bottom-left,
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 210px !important;
+              height: 210px !important;
+            }
+            
+            .hero-logo {
+              height: 165px !important;
+            }
+            
+            .hero-heading {
+              font-size: 3.5rem !important;
+              line-height: 1.1 !important;
+              margin-bottom: 1.75rem !important;
+            }
+            
+            .hero-description {
+              font-size: 1.2rem !important;
+              line-height: 1.6 !important;
+              margin-bottom: 2.25rem !important;
+            }
+            
+            .hero-button {
+              font-size: 1.2rem !important;
+              padding: 1.1rem 2.2rem !important;
+            }
+            
+            .hero-content-wrapper {
+              max-width: 82% !important;
+            }
+            
+            .hero-logo-wrapper {
+              margin-bottom: 3rem !important;
+            }
+          }
+
+          /* iPad Air (820px - 820px) */
+          @media (min-width: 820px) and (max-width: 820px) {
+            .food-image-top-right,
+            .food-image-bottom-left,
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 230px !important;
+              height: 230px !important;
+            }
+            
+            .hero-logo {
+              height: 185px !important;
+            }
+            
+            .hero-heading {
+              font-size: 3.95rem !important;
+              line-height: 1.1 !important;
+              margin-bottom: 1.9rem !important;
+            }
+            
+            .hero-description {
+              font-size: 1.35rem !important;
+              line-height: 1.65 !important;
+              margin-bottom: 2.4rem !important;
+            }
+            
+            .hero-button {
+              font-size: 1.35rem !important;
+              padding: 1.25rem 2.5rem !important;
+            }
+            
+            .hero-content-wrapper {
+              max-width: 80% !important;
+            }
+            
+            .hero-logo-wrapper {
+              margin-bottom: 3.3rem !important;
+            }
+          }
+
+          /* iPad Pro (821px - 1024px) */
+          @media (min-width: 821px) and (max-width: 1024px) {
+            .food-image-top-right,
+            .food-image-bottom-left,
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 260px !important;
+              height: 260px !important;
+            }
+            
+            .hero-logo {
+              height: 240px !important;
+            }
+            
+            .hero-heading {
+              font-size: 5.5rem !important;
+              line-height: 1.05 !important;
+              margin-bottom: 2.5rem !important;
+            }
+            
+            .hero-description {
+              font-size: 1.75rem !important;
+              line-height: 1.75 !important;
+              margin-bottom: 3rem !important;
+            }
+            
+            .hero-button {
+              font-size: 1.65rem !important;
+              padding: 1.5rem 3rem !important;
+            }
+            
+            .hero-content-wrapper {
+              max-width: 85% !important;
+            }
+            
+            .hero-logo-wrapper {
+              margin-bottom: 4rem !important;
+            }
+          }
+
+          /* Desktop (1025px - 1279px) */
+          @media (min-width: 1025px) and (max-width: 1279px) {
+            .food-image-top-right,
+            .food-image-bottom-left {
+              width: 280px !important;
+              height: 280px !important;
+            }
+            
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 280px !important;
+              height: 280px !important;
+            }
+            
+            .food-image-bottom-right {
+              bottom: 80px !important;
+            }
+          }
+
+          /* Large Desktop (1280px - 1535px) */
+          @media (min-width: 1280px) and (max-width: 1535px) {
+            .food-image-top-right,
+            .food-image-bottom-left {
+              width: 310px !important;
+              height: 310px !important;
+            }
+            
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 310px !important;
+              height: 310px !important;
+            }
+            
+            .food-image-bottom-right {
+              bottom: 100px !important;
+            }
+          }
+
+          /* XL Desktop (1536px+) */
+          @media (min-width: 1536px) {
+            .food-image-top-right,
+            .food-image-bottom-left {
+              width: 350px !important;
+              height: 350px !important;
+            }
+            
+            .food-image-top-left,
+            .food-image-bottom-right {
+              width: 350px !important;
+              height: 350px !important;
+            }
+            
+            .food-image-bottom-right {
+              bottom: 120px !important;
+            }
+          }
+        `}</style>
+
+        {/* Top Right Corner - Wings (ROTATE IN CORNER) */}
+        <div className="absolute top-0 right-0 food-image-top-right w-36 h-36 sm:w-48 sm:h-48" style={{ zIndex: 1 }}>
+          <img 
+            src="/images/WINGS.png" 
+            alt="Chicken Wings"
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Bottom Left Corner - Pizza (ROTATE IN CORNER) */}
+        <div className="absolute bottom-0 left-0 food-image-bottom-left w-36 h-36 sm:w-48 sm:h-48" style={{ zIndex: 1 }}>
+          <img 
+            src="/images/pizza.png" 
+            alt="Pizza"
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Top Left Corner - Vegetables (FLOAT WITH SPACE) */}
+        <div className="absolute top-0 left-0 food-image-top-left w-36 h-36 sm:w-48 sm:h-48" style={{ zIndex: 1 }}>
+          <img 
+            src="/images/assortment-different-fresh-vegetables-Photoroom.png" 
+            alt="Fresh Vegetables"
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Bottom Right Corner - Grocery (FLOAT WITH SPACE) */}
+        <div className="absolute bottom-0 right-0 food-image-bottom-right w-36 h-36 sm:w-48 sm:h-48" style={{ zIndex: 1 }}>
+          <img 
+            src="/images/grocery.png" 
+            alt="Grocery Items"
+            className="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Main Content */}
+        <div className="relative min-h-screen flex items-center justify-center z-20">
+          <div className="w-full text-center px-6 py-12 sm:px-8">
+            <div className="hero-content-wrapper max-w-[95%] sm:max-w-[85%] xl:max-w-[65%] 2xl:max-w-[60%] mx-auto">
+              
+                {/* Logo */}
+                <div className="flex justify-center items-center hero-logo-wrapper mb-10 sm:mb-12 xl:mb-16 logo-animate">
+                  <img 
+                    src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png" 
+                    alt="Bestby Bites Logo" 
+                    className="hero-logo w-auto transition-transform duration-300 hover:scale-105 h-32 sm:h-36 xl:h-48 2xl:h-52"
+                  />
+                </div>
+
+                {/* Heading */}
+                <h1 className="hero-heading text-white font-extrabold heading-animate mb-6 sm:mb-7 xl:mb-10 text-5xl sm:text-5xl xl:text-[4.25rem] 2xl:text-[4.5rem] leading-tight">
+                  <span className="block">Save Food.</span>
+                  <span className="block">Save Money.</span>
+                  <span className="block">Eat Smarter.</span>
+                </h1>
+
+                {/* Description */}
+                <p className="hero-description text-white/95 mx-auto max-w-3xl description-animate mb-8 sm:mb-9 xl:mb-12 text-lg sm:text-lg xl:text-[1.1875rem] 2xl:text-xl leading-relaxed px-4">
+                  Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
+                </p>
+
+                {/* CTA Button */}
+                <div className="button-animate">
+                  <a 
+                    href="#waitlist"
+                    className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 text-lg sm:text-lg xl:text-[1.125rem] 2xl:text-xl px-8 py-4 sm:px-8 sm:py-4 xl:px-10 xl:py-[1.125rem] 2xl:px-11 2xl:py-5"
+                    style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
+                  >
+                    Join now
+                  </a>
+                </div>
             </div>
           </div>
         </div>
-
-        {/* Right Side Food Images */}
-        {/* Wings Image - Top Right */}
-        <div
-          className={`absolute top-20 right-10 sm:right-16 lg:right-24 transition-all duration-1000 delay-400 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}
-        >
-          <img
-            src="/images/WINGS.png"
-            alt="Wings"
-            className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain drop-shadow-2xl"
-          />
-        </div>
-
-        {/* Pizza Image - Bottom Right */}
-        <div
-          className={`absolute bottom-20 right-10 sm:right-16 lg:right-24 transition-all duration-1000 delay-600 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}
-        >
-          <img
-            src="/images/pizza.png"
-            alt="Pizza"
-            className="w-48 sm:w-56 md:w-64 lg:w-72 xl:w-80 h-auto object-contain drop-shadow-2xl"
-          />
-        </div>
-
-        {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-emerald-400 rounded-full opacity-10 blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-emerald-500 rounded-full opacity-10 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-emerald-300 rounded-full opacity-5 blur-2xl"></div>
-          <div className="absolute top-1/3 right-1/4 w-28 h-28 bg-emerald-400 rounded-full opacity-5 blur-2xl"></div>
-        </div>
       </div>
-
+      
       {/* All other sections */}
       <HowItWorks />
       <Launchingsoon />
