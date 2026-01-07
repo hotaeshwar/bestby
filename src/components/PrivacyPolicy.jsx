@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
               { term: 'Website', def: 'refers to bestbybites.com.' },
               { term: 'User or You', def: 'means an individual or legal entity accessing or using the Service.' }
             ].map((item, idx) => (
-              <div key={idx} className="border-l-2 border-emerald-500 pl-3 sm:pl-4">
+              <div key={idx} className="border-l-2 border-[#013727] pl-3 sm:pl-4">
                 <span className="block text-xs sm:text-sm lg:text-base font-semibold text-gray-800">{item.term}</span>
                 <span className="block text-xs sm:text-sm lg:text-base text-gray-600 mt-1">{item.def}</span>
               </div>
@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
               {['Full name', 'Email address', 'Phone number', 'Delivery or pickup address', 'Account login credentials', 'Payment-related identifiers', 'Vendor business information'].map((item, idx) => (
                 <span key={idx} className="flex items-center text-xs sm:text-sm lg:text-base text-gray-700">
-                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>
+                  <span className="w-1.5 h-1.5 bg-[#013727] rounded-full mr-2"></span>
                   {item}
                 </span>
               ))}
@@ -176,7 +176,7 @@ export default function PrivacyPolicy() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               {['Access your Personal Data', 'Correct inaccurate information', 'Request deletion of your data', 'Restrict or object to certain processing', 'Withdraw consent where applicable'].map((item, idx) => (
                 <div key={idx} className="flex items-start">
-                  <span className="text-emerald-500 mr-2 text-sm sm:text-base">✓</span>
+                  <span className="text-[#013727] mr-2 text-sm sm:text-base">✓</span>
                   <span className="text-xs sm:text-sm lg:text-base text-gray-700">{item}</span>
                 </div>
               ))}
@@ -194,9 +194,9 @@ export default function PrivacyPolicy() {
       title: '11. Data Security',
       content: (
         <div className="space-y-4">
-          <div className="bg-emerald-50 p-4 sm:p-5 rounded-lg border border-emerald-200">
-            <span className="block text-sm sm:text-base lg:text-lg font-semibold text-emerald-900 mb-2">11.1 Security Measures</span>
-            <span className="block text-xs sm:text-sm lg:text-base text-emerald-800">We employ commercially reasonable administrative, technical, and organizational safeguards to protect Personal Data.</span>
+          <div className="bg-green-50 p-4 sm:p-5 rounded-lg border border-green-200">
+            <span className="block text-sm sm:text-base lg:text-lg font-semibold text-green-900 mb-2">11.1 Security Measures</span>
+            <span className="block text-xs sm:text-sm lg:text-base text-green-800">We employ commercially reasonable administrative, technical, and organizational safeguards to protect Personal Data.</span>
           </div>
           <div className="bg-orange-50 p-4 sm:p-5 rounded-lg border border-orange-200">
             <span className="block text-sm sm:text-base lg:text-lg font-semibold text-orange-900 mb-2">11.2 Security Limitation</span>
@@ -219,18 +219,22 @@ export default function PrivacyPolicy() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <div className="bg-white shadow-md sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex items-center justify-between flex-wrap gap-3">
-            <div>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-600">Bestby Bites</span>
-              <span className="block text-xs sm:text-sm lg:text-base text-gray-500 mt-1">Privacy Policy</span>
-            </div>
-            <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-              <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600" />
-              <span>Last Updated: January 06, 2026</span>
+      <div className="bg-gradient-to-r from-[#013727] to-[#015d3a] shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <div className="flex flex-col items-center">
+            <img 
+              src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png" 
+              alt="Bestby Bites Logo" 
+              className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mb-4 sm:mb-5"
+            />
+            <div className="text-center">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Privacy Policy</span>
+              <div className="flex items-center justify-center gap-2 mt-2 sm:mt-3 text-xs sm:text-sm text-green-100">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Last Updated: January 06, 2026</span>
+              </div>
             </div>
           </div>
         </div>
@@ -239,9 +243,9 @@ export default function PrivacyPolicy() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
         {/* Introduction Banner */}
-        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8 lg:mb-10 shadow-lg">
+        <div className="bg-gradient-to-r from-[#013727] to-[#015d3a] rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-10 mb-6 sm:mb-8 lg:mb-10 shadow-lg">
           <span className="block text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">Your Privacy Matters</span>
-          <span className="block text-sm sm:text-base lg:text-lg text-emerald-50 leading-relaxed">
+          <span className="block text-sm sm:text-base lg:text-lg text-green-50 leading-relaxed">
             This policy explains how we collect, use, and protect your personal information when you use our surplus food marketplace. We are committed to transparency and safeguarding your data.
           </span>
         </div>
@@ -256,7 +260,7 @@ export default function PrivacyPolicy() {
               >
                 <span className="text-left text-base sm:text-lg lg:text-xl font-semibold text-gray-800">{section.title}</span>
                 {expandedSection === section.id ? (
-                  <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 flex-shrink-0" />
+                  <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-[#013727] flex-shrink-0" />
                 ) : (
                   <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 flex-shrink-0" />
                 )}
@@ -277,25 +281,25 @@ export default function PrivacyPolicy() {
             If you have questions or requests regarding this Privacy Policy, please contact:
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <div className="flex items-start gap-3 p-4 bg-emerald-50 rounded-lg">
-              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-4 bg-green-50 rounded-lg border border-green-100">
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-[#013727] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1">Email</span>
-                <span className="block text-xs sm:text-sm lg:text-base text-emerald-600 break-all">support@bestbybites.com</span>
+                <span className="block text-xs sm:text-sm lg:text-base text-[#013727] break-all">support@bestbybites.com</span>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-teal-50 rounded-lg">
-              <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-teal-600 flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-4 bg-teal-50 rounded-lg border border-teal-100">
+              <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-[#013727] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1">Website</span>
-                <span className="block text-xs sm:text-sm lg:text-base text-teal-600 break-all">bestbybites.com</span>
+                <span className="block text-xs sm:text-sm lg:text-base text-[#013727] break-all">bestbybites.com</span>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-4 bg-purple-50 rounded-lg sm:col-span-2 lg:col-span-1">
-              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600 flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-4 bg-purple-50 rounded-lg border border-purple-100 sm:col-span-2 lg:col-span-1">
+              <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-[#013727] flex-shrink-0 mt-0.5" />
               <div>
                 <span className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1">Company</span>
-                <span className="block text-xs sm:text-sm lg:text-base text-purple-600">Bestby Bites</span>
+                <span className="block text-xs sm:text-sm lg:text-base text-[#013727]">Bestby Bites</span>
               </div>
             </div>
           </div>
