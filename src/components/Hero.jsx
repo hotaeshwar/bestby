@@ -25,80 +25,48 @@ function Hero() {
 
   return (
     <>
-      <div className="min-h-screen relative overflow-hidden bg-[#013727]">
-        
+      {/* Mobile & Tablet Layout (with Background Image) */}
+      <div 
+        className="block lg:hidden relative overflow-hidden bg-[#013727]"
+        style={{
+          backgroundImage: "url('/images/m.png')",
+          backgroundPosition: 'right center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '60vh'
+        }}
+      >
         <style>{`
           @keyframes pulse-glow {
             0%, 100% { box-shadow: 0 0 20px rgba(4, 197, 92, 0.5); }
             50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
-          @keyframes fadeInUp {
-            from { 
-              opacity: 0; 
-              transform: translateY(30px); 
-            }
-            to { 
-              opacity: 1; 
-              transform: translateY(0); 
-            }
-          }
-
-          @keyframes fadeInScale {
-            from { 
-              opacity: 0; 
-              transform: scale(0.9); 
-            }
-            to { 
-              opacity: 1; 
-              transform: scale(1); 
-            }
-          }
-
-          @keyframes rotateFloatWings {
-            0% { 
-              transform: rotate(0deg) translateY(0px); 
-            }
-            25% { 
-              transform: rotate(-8deg) translateY(-12px); 
-            }
-            50% { 
-              transform: rotate(0deg) translateY(-18px); 
-            }
-            75% { 
-              transform: rotate(8deg) translateY(-12px); 
-            }
-            100% { 
-              transform: rotate(0deg) translateY(0px); 
-            }
-          }
-
-          .logo-animate {
-            animation: fadeInScale 0.8s ease-out forwards;
-          }
-
-          .heading-animate {
-            animation: fadeInUp 0.8s ease-out 0.2s forwards;
-            opacity: 0;
-          }
-
-          .description-animate {
-            animation: fadeInUp 0.8s ease-out 0.4s forwards;
-            opacity: 0;
-          }
-
-          .button-animate {
-            animation: fadeInUp 0.8s ease-out 0.6s forwards;
-            opacity: 0;
-          }
-
-          .food-bunch-animate {
-            animation: fadeInScale 0.8s ease-out 0.3s forwards, rotateFloatWings 12s ease-in-out 0.8s infinite;
-            opacity: 0;
-          }
-
           /* iPhone SE and small mobile (< 376px) */
           @media (max-width: 375px) {
+            .hero-logo {
+              height: 70px !important;
+            }
+            
+            .hero-heading {
+              font-size: 1.8rem !important;
+              line-height: 1.2 !important;
+              margin-bottom: 0.8rem !important;
+            }
+            
+            .hero-description {
+              font-size: 0.85rem !important;
+              line-height: 1.5 !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            .hero-button {
+              font-size: 0.9rem !important;
+              padding: 0.75rem 1.5rem !important;
+            }
+          }
+
+          /* Mobile (376px - 639px) */
+          @media (min-width: 376px) and (max-width: 639px) {
             .hero-logo {
               height: 80px !important;
             }
@@ -111,31 +79,20 @@ function Hero() {
             
             .hero-description {
               font-size: 0.9rem !important;
-              line-height: 1.5 !important;
-              margin-bottom: 1.25rem !important;
+              line-height: 1.55 !important;
+              margin-bottom: 1.2rem !important;
             }
             
             .hero-button {
               font-size: 0.95rem !important;
               padding: 0.8rem 1.6rem !important;
             }
-
-            .food-bunch-image-mobile {
-              width: 240px !important;
-              height: auto !important;
-              max-width: 90% !important;
-            }
-
-            .mobile-image-wrapper {
-              margin-top: 1.5rem !important;
-              padding-bottom: 1rem !important;
-            }
           }
 
-          /* Mobile (376px - 639px) */
-          @media (min-width: 376px) and (max-width: 639px) {
+          /* Small Tablet (640px - 767px) */
+          @media (min-width: 640px) and (max-width: 767px) {
             .hero-logo {
-              height: 95px !important;
+              height: 90px !important;
             }
             
             .hero-heading {
@@ -145,8 +102,8 @@ function Hero() {
             }
             
             .hero-description {
-              font-size: 0.98rem !important;
-              line-height: 1.55 !important;
+              font-size: 1rem !important;
+              line-height: 1.6 !important;
               margin-bottom: 1.5rem !important;
             }
             
@@ -154,33 +111,22 @@ function Hero() {
               font-size: 1rem !important;
               padding: 0.85rem 1.75rem !important;
             }
-
-            .food-bunch-image-mobile {
-              width: 280px !important;
-              height: auto !important;
-              max-width: 85% !important;
-            }
-
-            .mobile-image-wrapper {
-              margin-top: 2rem !important;
-              padding-bottom: 1.5rem !important;
-            }
           }
 
-          /* Small (640px - 767px) */
-          @media (min-width: 640px) and (max-width: 767px) {
+          /* iPad Mini & Air (768px - 1023px) */
+          @media (min-width: 768px) and (max-width: 1023px) {
             .hero-logo {
-              height: 110px !important;
+              height: 100px !important;
             }
             
             .hero-heading {
-              font-size: 2.6rem !important;
-              line-height: 1.2 !important;
-              margin-bottom: 1.5rem !important;
+              font-size: 2.8rem !important;
+              line-height: 1.15 !important;
+              margin-bottom: 1.3rem !important;
             }
             
             .hero-description {
-              font-size: 1.05rem !important;
+              font-size: 1.1rem !important;
               line-height: 1.6 !important;
               margin-bottom: 1.75rem !important;
             }
@@ -189,143 +135,84 @@ function Hero() {
               font-size: 1.1rem !important;
               padding: 0.95rem 1.9rem !important;
             }
+          }
+        `}</style>
 
-            .food-bunch-image-mobile {
-              width: 320px !important;
-              height: auto !important;
-            }
+        {/* Content Section */}
+        <div className="relative flex items-center justify-start z-20 px-5 py-8 sm:px-8 md:px-12" style={{ minHeight: '60vh' }}>
+          <div className="flex flex-col items-start max-w-2xl" style={{ paddingBottom: '150px' }}>
+            {/* Logo */}
+            <div className="flex justify-start items-center mb-4 sm:mb-6">
+              <img 
+                src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png" 
+                alt="Bestby Bites Logo" 
+                className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
+              />
+            </div>
 
-            .mobile-image-wrapper {
-              margin-top: 2.5rem !important;
-              padding-bottom: 2rem !important;
-            }
+            {/* Heading */}
+            <h1 className="hero-heading text-white font-extrabold text-left">
+              <span className="block">Save Food.</span>
+              <span className="block">Save Money.</span>
+              <span className="block">Eat Smarter.</span>
+            </h1>
+
+            {/* Description */}
+            <p className="hero-description text-white/95 text-left">
+              Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
+            </p>
+
+            {/* CTA Button */}
+            <div className="flex justify-start">
+              <button 
+                onClick={scrollToLaunchingSoon}
+                className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
+                style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
+              >
+                Join now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout (Side by Side) - UNCHANGED */}
+      <div 
+        className="hidden lg:block min-h-screen relative overflow-hidden bg-[#013727]"
+        style={{
+          backgroundImage: "url('/images/NEW-BANNER-BB.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'right center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <style>{`
+          @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(4, 197, 92, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
-          /* iPad Mini (768px - 819px) */
-          @media (min-width: 768px) and (max-width: 819px) {
-            .hero-logo {
-              height: 120px !important;
-            }
-            
-            .hero-heading {
-              font-size: 3rem !important;
-              line-height: 1.15 !important;
-              margin-bottom: 1.5rem !important;
-            }
-            
-            .hero-description {
-              font-size: 1.15rem !important;
-              line-height: 1.6 !important;
-              margin-bottom: 1.85rem !important;
-            }
-            
-            .hero-button {
-              font-size: 1.15rem !important;
-              padding: 1rem 2rem !important;
-            }
-
-            .food-bunch-image-mobile {
-              width: 340px !important;
-              height: auto !important;
-              max-width: 80% !important;
-            }
-
-            .mobile-image-wrapper {
-              margin-top: 2.5rem !important;
-              padding-bottom: 2rem !important;
-            }
-          }
-
-          /* iPad Air (820px - 820px) */
-          @media (min-width: 820px) and (max-width: 820px) {
-            .hero-logo {
-              height: 125px !important;
-            }
-            
-            .hero-heading {
-              font-size: 3.2rem !important;
-              line-height: 1.15 !important;
-              margin-bottom: 1.5rem !important;
-            }
-            
-            .hero-description {
-              font-size: 1.2rem !important;
-              line-height: 1.6 !important;
-              margin-bottom: 1.9rem !important;
-            }
-            
-            .hero-button {
-              font-size: 1.2rem !important;
-              padding: 1.05rem 2.1rem !important;
-            }
-
-            .food-bunch-image-mobile {
-              width: 360px !important;
-              height: auto !important;
-              max-width: 78% !important;
-            }
-
-            .mobile-image-wrapper {
-              margin-top: 2.5rem !important;
-              padding-bottom: 2rem !important;
-            }
-          }
-
-          /* iPad Pro (821px - 1024px) */
-          @media (min-width: 821px) and (max-width: 1024px) {
-            .hero-logo {
-              height: 140px !important;
-            }
-            
-            .hero-heading {
-              font-size: 3.5rem !important;
-              line-height: 1.1 !important;
-              margin-bottom: 1.6rem !important;
-            }
-            
-            .hero-description {
-              font-size: 1.3rem !important;
-              line-height: 1.65 !important;
-              margin-bottom: 2rem !important;
-            }
-            
-            .hero-button {
-              font-size: 1.3rem !important;
-              padding: 1.1rem 2.2rem !important;
-            }
-
-            .food-bunch-image {
-              width: 380px !important;
-              height: auto !important;
-            }
-          }
-
-          /* Desktop (1025px - 1279px) */
-          @media (min-width: 1025px) and (max-width: 1279px) {
+          /* Desktop (1024px - 1279px) */
+          @media (min-width: 1024px) and (max-width: 1279px) {
             .hero-logo {
               height: 100px !important;
             }
             
             .hero-heading {
-              font-size: 3.75rem !important;
+              font-size: 3.5rem !important;
               line-height: 1.15 !important;
-              margin-bottom: 1.75rem !important;
+              margin-bottom: 1.5rem !important;
             }
             
             .hero-description {
-              font-size: 1.25rem !important;
+              font-size: 1.2rem !important;
               line-height: 1.65 !important;
-              margin-bottom: 2.25rem !important;
+              margin-bottom: 2rem !important;
             }
             
             .hero-button {
-              font-size: 1.25rem !important;
-              padding: 1.15rem 2.3rem !important;
-            }
-
-            .food-bunch-image {
-              width: 480px !important;
-              height: auto !important;
+              font-size: 1.2rem !important;
+              padding: 1.1rem 2.2rem !important;
             }
           }
 
@@ -351,11 +238,6 @@ function Hero() {
               font-size: 1.3rem !important;
               padding: 1.2rem 2.4rem !important;
             }
-
-            .food-bunch-image {
-              width: 540px !important;
-              height: auto !important;
-            }
           }
 
           /* XL Desktop (1536px+) */
@@ -380,23 +262,18 @@ function Hero() {
               font-size: 1.35rem !important;
               padding: 1.25rem 2.5rem !important;
             }
-
-            .food-bunch-image {
-              width: 600px !important;
-              height: auto !important;
-            }
           }
         `}</style>
 
         {/* Main Content */}
-        <div className="relative min-h-screen flex items-center justify-center z-20">
-          <div className="w-full px-5 py-8 sm:px-8 lg:px-16 xl:px-24">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 xl:gap-16">
+        <div className="relative min-h-screen flex items-center justify-start z-20">
+          <div className="w-full px-16 xl:px-24">
+            <div className="flex flex-col items-start justify-start">
               
               {/* Left Content */}
               <div className="flex-1 max-w-3xl w-full">
                 {/* Logo */}
-                <div className="flex justify-start items-center mb-6 sm:mb-8 lg:mb-10 logo-animate">
+                <div className="flex justify-start items-center mb-10">
                   <img 
                     src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png" 
                     alt="Bestby Bites Logo" 
@@ -405,19 +282,19 @@ function Hero() {
                 </div>
 
                 {/* Heading */}
-                <h1 className="hero-heading text-white font-extrabold heading-animate text-left">
+                <h1 className="hero-heading text-white font-extrabold text-left">
                   <span className="block">Save Food.</span>
                   <span className="block">Save Money.</span>
                   <span className="block">Eat Smarter.</span>
                 </h1>
 
                 {/* Description */}
-                <p className="hero-description text-white/95 description-animate text-left">
+                <p className="hero-description text-white/95 text-left">
                   Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
                 </p>
 
                 {/* CTA Button */}
-                <div className="button-animate flex justify-start">
+                <div className="flex justify-start">
                   <button 
                     onClick={scrollToLaunchingSoon}
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
@@ -426,24 +303,6 @@ function Hero() {
                     Join now
                   </button>
                 </div>
-
-                {/* Mobile/Tablet Food Bunch Image - Below Button */}
-                <div className="flex lg:hidden justify-center w-full food-bunch-animate mobile-image-wrapper">
-                  <img 
-                    src="/images/FOOD-BUNCH.png" 
-                    alt="Food Bunch"
-                    className="food-bunch-image-mobile object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Desktop Food Bunch Image - Right Side */}
-              <div className="flex-shrink-0 food-bunch-animate hidden lg:flex">
-                <img 
-                  src="/images/FOOD-BUNCH.png" 
-                  alt="Food Bunch"
-                  className="food-bunch-image w-full h-auto object-contain"
-                />
               </div>
             </div>
           </div>

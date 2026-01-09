@@ -186,10 +186,14 @@ const LaunchingSoon = () => {
             >
               
               <div className="mb-6 md:mb-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3" style={{ color: '#013727' }}>
-                  Join the Bestby Bites
-                </h2>
-                <div className="w-16 md:w-20 h-1 md:h-1.5 rounded-full" style={{ backgroundColor: '#013727' }}></div>
+                <div className="mb-6 md:mb-8">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white">
+                    Get special offers, meals, and news when you subscribe to our newsletter.
+                  </h3>
+                  <p className="text-sm sm:text-base md:text-lg font-medium text-white" style={{ opacity: 0.9 }}>
+                    If your are business owner join the platform at 0% joining fees
+                  </p>
+                </div>
               </div>
 
               {/* Status Message */}

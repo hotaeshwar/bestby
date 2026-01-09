@@ -9,38 +9,28 @@ const WhyBestbyBites = () => {
   const [hasStarted, setHasStarted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [showControls, setShowControls] = useState(false);
+  const [showControls, setShowControls] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   const videoRef = useRef(null);
-  const containerRef = useRef(null);
   const controlsTimeoutRef = useRef(null);
 
   useEffect(() => {
-    // Detect mobile/tablet devices
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
     
     checkMobile();
     window.addEventListener('resize', checkMobile);
-
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleTimeUpdate = () => {
-      setCurrentTime(video.currentTime);
-    };
-
-    const handleLoadedMetadata = () => {
-      setDuration(video.duration);
-    };
+    const handleTimeUpdate = () => setCurrentTime(video.currentTime);
+    const handleLoadedMetadata = () => setDuration(video.duration);
 
     video.addEventListener('timeupdate', handleTimeUpdate);
     video.addEventListener('loadedmetadata', handleLoadedMetadata);
@@ -52,57 +42,56 @@ const WhyBestbyBites = () => {
   }, []);
 
   const handleVideoInteraction = () => {
+    if (!isPlaying) return; // Keep controls visible when paused
+    
     setShowControls(true);
     
-    // Clear existing timeout
     if (controlsTimeoutRef.current) {
       clearTimeout(controlsTimeoutRef.current);
     }
     
-    // Hide controls after 3 seconds of inactivity
     controlsTimeoutRef.current = setTimeout(() => {
-      setShowControls(false);
+      if (isPlaying) {
+        setShowControls(false);
+      }
     }, 3000);
-  };
-
-  const handleMouseEnter = () => {
-    setShowControls(true);
-    if (controlsTimeoutRef.current) {
-      clearTimeout(controlsTimeoutRef.current);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (controlsTimeoutRef.current) {
-      clearTimeout(controlsTimeoutRef.current);
-    }
-    setShowControls(false);
   };
 
   const handleMouseMove = () => {
     handleVideoInteraction();
   };
 
-  const togglePlayPause = () => {
+  const togglePlayPause = (e) => {
+    e.stopPropagation();
     if (!videoRef.current) return;
 
     if (isPlaying) {
       videoRef.current.pause();
       setIsPlaying(false);
+      setShowControls(true);
+      if (controlsTimeoutRef.current) {
+        clearTimeout(controlsTimeoutRef.current);
+      }
     } else {
       videoRef.current.play();
       setIsPlaying(true);
       setHasStarted(true);
+      handleVideoInteraction();
     }
-    handleVideoInteraction();
   };
 
-  const toggleMute = () => {
+  const handleContainerClick = (e) => {
+    if (e.target.tagName === 'VIDEO' || e.target.closest('.video-overlay')) {
+      togglePlayPause(e);
+    }
+  };
+
+  const toggleMute = (e) => {
+    e.stopPropagation();
     if (!videoRef.current) return;
     const mute = !isMuted;
     videoRef.current.muted = mute;
     setIsMuted(mute);
-    handleVideoInteraction();
   };
 
   const handleVolumeChange = (e) => {
@@ -114,12 +103,11 @@ const WhyBestbyBites = () => {
   };
 
   const handleProgressBarClick = (e) => {
+    e.stopPropagation();
     if (!videoRef.current) return;
-    const progressBar = e.currentTarget;
-    const rect = progressBar.getBoundingClientRect();
+    const rect = e.currentTarget.getBoundingClientRect();
     const pos = (e.clientX - rect.left) / rect.width;
     videoRef.current.currentTime = pos * duration;
-    handleVideoInteraction();
   };
 
   const formatTime = (time) => {
@@ -132,24 +120,19 @@ const WhyBestbyBites = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="w-full bg-gradient-to-b from-white to-gray-50 py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-8 sm:mb-10 md:mb-12">
+    <div className="w-full bg-gradient-to-b from-white to-gray-50 py-6 sm:py-8 md:py-12 lg:py-16">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10">
           <span className="bg-gradient-to-r from-[#04c55c] to-[#013727] bg-clip-text text-transparent">
             WHY BESTBY BITES?
           </span>
         </h2>
 
-        {/* Video Container */}
         <div 
-          ref={containerRef}
-          className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl cursor-pointer"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl cursor-pointer bg-black"
           onMouseMove={handleMouseMove}
           onTouchStart={handleVideoInteraction}
-          onClick={handleVideoInteraction}
+          onClick={handleContainerClick}
         >
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             <video
@@ -166,45 +149,61 @@ const WhyBestbyBites = () => {
 
             {/* Thumbnail overlay before video starts */}
             {!hasStarted && (
-              <img
-                src="/images/THUMBNAIL-VIDEO-2.jpg"
-                alt="Video Thumbnail"
-                className="absolute inset-0 w-full h-full object-cover z-10"
-              />
+              <div className="absolute inset-0 z-10 bg-black">
+                <img
+                  src="/images/THUMBNAIL-VIDEO-2.jpg"
+                  alt="Video Thumbnail"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             )}
 
-            {/* Bottom Controls - Show on hover/touch for all devices */}
+            {/* Center Play/Pause Button */}
             <div 
-              className={`absolute bottom-0 left-0 right-0 z-20 p-3 sm:p-4 md:p-5 bg-gradient-to-t from-black/80 via-black/60 to-transparent transition-all duration-300 ${
-                showControls ? 'opacity-100' : 'opacity-0'
+              className={`video-overlay absolute inset-0 z-20 flex items-center justify-center transition-opacity duration-300 ${
+                !isPlaying || showControls ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <div className="flex items-center gap-2 sm:gap-3">
-                {/* Play/Pause Button */}
-                <button
-                  onClick={togglePlayPause}
-                  className="p-2.5 sm:p-3 md:p-3.5 rounded-full bg-gradient-to-r from-[#04c55c] to-[#013727] text-white shadow-lg hover:scale-110 active:scale-95 transition-all flex-shrink-0"
-                  aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                >
-                  {isPlaying ? (
-                    <Pause className="w-4 h-4 sm:w-5 sm:h-5" />
-                  ) : (
-                    <Play className="w-4 h-4 sm:w-5 sm:h-5" />
-                  )}
-                </button>
+              <button
+                onClick={togglePlayPause}
+                className="group"
+                aria-label={isPlaying ? 'Pause video' : 'Play video'}
+              >
+                <div className="relative">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#04c55c] to-[#013727] rounded-full blur-xl md:blur-2xl opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                  
+                  {/* Button */}
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-r from-[#04c55c] to-[#013727] flex items-center justify-center shadow-xl md:shadow-2xl transform group-hover:scale-110 group-active:scale-95 transition-all duration-200">
+                    {isPlaying ? (
+                      <Pause className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" strokeWidth={2.5} />
+                    ) : (
+                      <Play className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white ml-0.5 sm:ml-1" strokeWidth={2.5} fill="white" />
+                    )}
+                  </div>
+                </div>
+              </button>
+            </div>
 
+            {/* Bottom Controls */}
+            <div 
+              className={`absolute bottom-0 left-0 right-0 z-30 p-2 sm:p-3 md:p-4 bg-gradient-to-t from-black/90 via-black/70 to-transparent transition-all duration-300 ${
+                showControls || !isPlaying ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
                 {/* Volume Button */}
                 <button
                   onClick={toggleMute}
                   onMouseEnter={() => !isMobile && setShowVolumeSlider(true)}
                   onMouseLeave={() => !isMobile && setShowVolumeSlider(false)}
-                  className="p-2.5 sm:p-3 md:p-3.5 rounded-full bg-gradient-to-r from-[#04c55c] to-[#013727] text-white shadow-lg hover:scale-110 active:scale-95 transition-all flex-shrink-0"
+                  className="p-1.5 sm:p-2 md:p-2.5 rounded-full bg-white/20 hover:bg-white/30 text-white shadow-md hover:scale-110 active:scale-95 transition-all flex-shrink-0 backdrop-blur-sm"
                   aria-label={isMuted ? 'Unmute video' : 'Mute video'}
                 >
                   {isMuted ? (
-                    <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                   ) : (
-                    <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                   )}
                 </button>
 
@@ -214,6 +213,7 @@ const WhyBestbyBites = () => {
                     onMouseEnter={() => setShowVolumeSlider(true)}
                     onMouseLeave={() => setShowVolumeSlider(false)}
                     className="flex items-center flex-shrink-0"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <input
                       type="range"
@@ -222,7 +222,7 @@ const WhyBestbyBites = () => {
                       step="0.1"
                       value={volume}
                       onChange={handleVolumeChange}
-                      className="w-16 sm:w-20"
+                      className="w-16 md:w-20"
                       aria-label="Volume control"
                     />
                   </div>
@@ -230,20 +230,20 @@ const WhyBestbyBites = () => {
 
                 {/* Progress Bar */}
                 <div 
-                  className="flex-1 h-1 sm:h-1.5 bg-white/30 rounded-full cursor-pointer group mx-2 sm:mx-3"
+                  className="flex-1 h-0.5 sm:h-1 md:h-1.5 bg-white/20 rounded-full cursor-pointer group mx-1 sm:mx-2 backdrop-blur-sm"
                   onClick={handleProgressBarClick}
                 >
                   <div 
                     className="h-full bg-gradient-to-r from-[#04c55c] to-[#013727] rounded-full transition-all duration-200 relative"
                     style={{ width: `${progress}%` }}
                   >
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>
                 </div>
 
                 {/* Time Display */}
-                <div className="flex items-center gap-1 sm:gap-2 bg-black/50 px-2 sm:px-3 py-1 sm:py-1.5 md:py-2 rounded-full flex-shrink-0">
-                  <span className="text-white text-xs sm:text-sm font-medium whitespace-nowrap">
+                <div className="bg-black/60 px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded flex-shrink-0 backdrop-blur-sm">
+                  <span className="text-white text-[10px] sm:text-xs md:text-sm font-medium whitespace-nowrap">
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </span>
                 </div>
@@ -280,11 +280,12 @@ const WhyBestbyBites = () => {
           -webkit-appearance: none;
           appearance: none;
           background: white;
-          height: 12px;
-          width: 12px;
+          height: 14px;
+          width: 14px;
           border-radius: 50%;
           cursor: pointer;
-          margin-top: -4px;
+          margin-top: -5px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         input[type="range"]::-moz-range-track {
@@ -295,11 +296,21 @@ const WhyBestbyBites = () => {
 
         input[type="range"]::-moz-range-thumb {
           background: white;
-          height: 12px;
-          width: 12px;
+          height: 14px;
+          width: 14px;
           border-radius: 50%;
           cursor: pointer;
           border: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Prevent text selection on double tap */
+        .video-overlay {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: transparent;
         }
       `}</style>
     </div>
