@@ -42,19 +42,26 @@ const WhoCanJoin = () => {
         .who-image-container {
           position: relative;
           width: 100%;
-          height: 300px;
+          height: auto;
           overflow: hidden;
         }
 
-        @media (min-width: 640px) {
-          .who-image-container {
-            height: 400px;
-          }
+        .who-image {
+          width: 100%;
+          height: auto;
+          display: block;
         }
 
         @media (min-width: 768px) {
           .who-image-container {
             height: 500px;
+          }
+          
+          .who-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
           }
         }
 
@@ -68,13 +75,6 @@ const WhoCanJoin = () => {
           .who-image-container {
             height: 100vh;
           }
-        }
-
-        .who-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
         }
       `}</style>
 
