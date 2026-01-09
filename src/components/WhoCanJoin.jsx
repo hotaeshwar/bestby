@@ -35,22 +35,68 @@ const WhoCanJoin = () => {
   return (
     <section 
       ref={sectionRef}
-      className={`relative w-full transition-opacity duration-1000 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`}
+      className="w-full overflow-hidden"
+      style={{ backgroundColor: '#013727' }}
     >
-      {/* Container with responsive height */}
-      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]">
+      <style>{`
+        .who-image-container {
+          position: relative;
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+        }
+
+        @media (min-width: 640px) {
+          .who-image-container {
+            height: 400px;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .who-image-container {
+            height: 500px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .who-image-container {
+            height: 600px;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .who-image-container {
+            height: 100vh;
+          }
+        }
+
+        .who-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      `}</style>
+
+      <div className="w-full">
         {/* Full Screen Image */}
-        <div className="w-full h-full overflow-hidden">
-          <img
-            src="https://i.imghippo.com/files/GQP9948vno.jpg"
-            alt="Who Can Join Bestby Bites"
-            className="w-full h-full object-cover object-center"
-            onError={(e) => {
-              e.target.src = 'https://placehold.co/1920x1080/013727/04c55c?text=Who+Can+Join+Bestby+Bites';
-            }}
-          />
+        <div
+          className={`transition-all duration-1000 transform ${
+            isVisible 
+              ? 'opacity-100 scale-100' 
+              : 'opacity-0 scale-95'
+          }`}
+        >
+          <div className="who-image-container">
+            <img
+              src="/images/NEW-BLOCK.jpg"
+              alt="Who can join Bestby Bites - Grocery stores, restaurants, vendors, farmers, producers, bakers, food trucks and more"
+              className="who-image"
+              onError={(e) => {
+                e.target.src = 'https://placehold.co/1920x1080/013727/04c55c?text=Who+Can+Join+Bestby+Bites';
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
