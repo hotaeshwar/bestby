@@ -7,7 +7,7 @@ const BusinessModelSection = () => {
 
   useEffect(() => {
     setIsVisible(true);
-    
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -18,12 +18,36 @@ const BusinessModelSection = () => {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const scrollToNewsletter = () => {
+    const newsletterSection = document.getElementById('newsletter-signup');
+    if (newsletterSection) {
+      const offset = 80;
+      const elementPosition = newsletterSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      setTimeout(() => {
+        newsletterSection.style.transition = 'transform 0.3s ease';
+        newsletterSection.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          newsletterSection.style.transform = 'scale(1)';
+        }, 300);
+      }, 800);
+    } else {
+      console.warn('Newsletter section not found. Make sure the element with id="newsletter-signup" exists.');
+    }
+  };
 
   const fadeInStyle = (delay = 0) => ({
     opacity: isVisible ? 1 : 0,
@@ -31,16 +55,12 @@ const BusinessModelSection = () => {
     transition: `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`
   });
 
-  // Check if device is iPad Mini or Air (768-834px width)
   const isIPad = windowWidth >= 768 && windowWidth <= 834;
-
-  // Image paths based on device
   const customerImage = isIPad ? '/images/IMAGE-1.jpg' : '/images/Homepage-Slider_Nyssa-Corner-Sto.jpg';
   const businessImage = '/images/IMAGE-2.jpg';
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-white">
       <section className="py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div style={fadeInStyle(0)} className="text-center mb-8 md:mb-12">
@@ -55,16 +75,14 @@ const BusinessModelSection = () => {
         </div>
       </section>
 
-      {/* For Customers Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8" style={{backgroundColor: '#013727'}}>
+      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8" style={{ backgroundColor: '#013727' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
             <div style={fadeInStyle(0.2)} className="order-2 lg:order-1">
               <div className="relative max-w-xl mx-auto lg:mx-0">
-                {/* Green border background - responsive offset */}
-                <div 
+                <div
                   className="absolute inset-0 rounded-2xl md:rounded-3xl"
-                  style={{ 
+                  style={{
                     backgroundColor: '#04c55c',
                     top: '-8px',
                     left: '-8px',
@@ -73,8 +91,7 @@ const BusinessModelSection = () => {
                     zIndex: 0
                   }}
                 ></div>
-                {/* Image container */}
-                <div 
+                <div
                   className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500"
                   style={{ zIndex: 1 }}
                 >
@@ -92,12 +109,12 @@ const BusinessModelSection = () => {
                 </div>
               </div>
             </div>
-            
+
             <div style={fadeInStyle(0.4)} className="order-1 lg:order-2 text-white">
               <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8 lg:mb-10">
                 For Customers
               </h2>
-              <div className="space-y-4 md:space-y-5 lg:space-y-6">
+              <div className="space-y-4 md:space-y-5 lg:space-y-6 mb-8 md:mb-10">
                 <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
                   <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
                   <p className="text-base md:text-lg lg:text-xl">High-quality food at unbeatable prices</p>
@@ -111,13 +128,24 @@ const BusinessModelSection = () => {
                   <p className="text-base md:text-lg lg:text-xl">Real impact with zero lifestyle change</p>
                 </div>
               </div>
+
+              <div className="flex justify-center lg:justify-start">
+                <button
+                  onClick={scrollToNewsletter}
+                  className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-3.5 md:py-4 rounded-full text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg"
+                  style={{ backgroundColor: '#04c55c' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#03a84d'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#04c55c'}
+                >
+                  Sign up
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* For Businesses Section */}
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8" style={{backgroundColor: '#013727'}}>
+      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8" style={{ backgroundColor: '#013727' }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
             <div style={fadeInStyle(0.2)} className="text-white">
@@ -141,11 +169,35 @@ const BusinessModelSection = () => {
             </div>
 
             <div style={fadeInStyle(0.4)} className="relative">
-              <div className="relative max-w-xl mx-auto lg:mx-0">
-                {/* Green border background - responsive offset */}
-                <div 
+              <div className="relative max-w-xl mx-auto lg:mx-0 pt-20 md:pt-24 lg:pt-28">
+                {/* Merchant screen image - positioned to intersect at top */}
+                <div className="absolute -top-8 md:-top-12 lg:-top-16 left-1/2 transform -translate-x-1/2 w-48 md:w-56 lg:w-64 xl:w-72 z-20">
+                  <div className="relative">
+                    <div
+                      className="absolute inset-0 rounded-xl md:rounded-2xl"
+                      style={{
+                        backgroundColor: '#04c55c',
+                        top: '-4px',
+                        left: '-4px',
+                        right: '4px',
+                        bottom: '4px'
+                      }}
+                    ></div>
+                    <img
+                      src="/images/screen-1-merchant.jpg"
+                      alt="Merchant interface"
+                      className="relative rounded-xl md:rounded-2xl shadow-2xl w-full h-auto object-cover"
+                      onError={(e) => {
+                        e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"><rect fill="%23f0f0f0" width="400" height="600"/><text x="50%" y="50%" text-anchor="middle" fill="%23999" font-size="18" font-family="Arial">Merchant Screen</text></svg>';
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Chef image - main image */}
+                <div
                   className="absolute inset-0 rounded-2xl md:rounded-3xl"
-                  style={{ 
+                  style={{
                     backgroundColor: '#04c55c',
                     top: '-8px',
                     right: '-8px',
@@ -154,8 +206,7 @@ const BusinessModelSection = () => {
                     zIndex: 0
                   }}
                 ></div>
-                {/* Image container */}
-                <div 
+                <div
                   className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500"
                   style={{ zIndex: 1 }}
                 >
@@ -176,9 +227,6 @@ const BusinessModelSection = () => {
           </div>
         </div>
       </section>
-
-      {/* Bottom Spacer */}
-      <section className="py-8 md:py-12" style={{backgroundColor: '#013727'}}></section>
     </div>
   );
 };

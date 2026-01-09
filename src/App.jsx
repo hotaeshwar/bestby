@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Terms from './components/term';
+import NewsletterSignup from './components/newsletter';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <NewsletterSignup />
               <Footer />
             </>
           } />

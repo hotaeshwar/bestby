@@ -4,8 +4,8 @@ import Launchingsoon from './Launchingsoon';
 import WhyBestbyBites from './WhyBestbyBites';
 import ForCustomersAndMerchants from './ForCustomersAndMerchants';
 import FoodWasteIsCostingEveryone from './FoodWasteIsCostingEveryone';
+import JoinMovement from './JoinMovement';
 import WhoCanJoin from './WhoCanJoin';
-import BusinessModelSection from './BusinessModelSection';
 import AppScreenshots from './AppScreenshots';
 
 function Hero() {
@@ -15,18 +15,17 @@ function Hero() {
     setIsLoaded(true);
   }, []);
 
-  const scrollToLaunchingSoon = (e) => {
-    e.preventDefault();
-    const launchingSoonSection = document.getElementById('launching-soon');
-    if (launchingSoonSection) {
-      launchingSoonSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const scrollToNewsletter = () => {
+    const newsletter = document.getElementById('newsletter-signup');
+    if (newsletter) {
+      newsletter.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
   return (
     <>
       {/* Mobile & Tablet Layout (with Background Image) */}
-      <div 
+      <div
         className="block lg:hidden relative overflow-hidden bg-[#013727]"
         style={{
           backgroundImage: "url('/images/m.png')",
@@ -58,6 +57,12 @@ function Hero() {
               line-height: 1.5 !important;
               margin-bottom: 1rem !important;
             }
+
+            .hero-newsletter {
+              font-size: 0.75rem !important;
+              line-height: 1.4 !important;
+              margin-bottom: 0.875rem !important;
+            }
             
             .hero-button {
               font-size: 0.9rem !important;
@@ -81,6 +86,12 @@ function Hero() {
               font-size: 0.9rem !important;
               line-height: 1.55 !important;
               margin-bottom: 1.2rem !important;
+            }
+
+            .hero-newsletter {
+              font-size: 0.8125rem !important;
+              line-height: 1.5 !important;
+              margin-bottom: 1rem !important;
             }
             
             .hero-button {
@@ -106,6 +117,12 @@ function Hero() {
               line-height: 1.6 !important;
               margin-bottom: 1.5rem !important;
             }
+
+            .hero-newsletter {
+              font-size: 0.875rem !important;
+              line-height: 1.55 !important;
+              margin-bottom: 1.125rem !important;
+            }
             
             .hero-button {
               font-size: 1rem !important;
@@ -130,6 +147,12 @@ function Hero() {
               line-height: 1.6 !important;
               margin-bottom: 1.75rem !important;
             }
+
+            .hero-newsletter {
+              font-size: 0.9375rem !important;
+              line-height: 1.6 !important;
+              margin-bottom: 1.25rem !important;
+            }
             
             .hero-button {
               font-size: 1.1rem !important;
@@ -141,43 +164,48 @@ function Hero() {
         {/* Content Section */}
         <div className="relative flex items-center justify-start z-20 px-5 py-8 sm:px-8 md:px-12" style={{ minHeight: '60vh' }}>
           <div className="flex flex-col items-start max-w-2xl" style={{ paddingBottom: '150px' }}>
-            {/* Logo */}
-            <div className="flex justify-start items-center mb-4 sm:mb-6">
-              <img 
-                src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png" 
-                alt="Bestby Bites Logo" 
+            {/* Logo - Centered on mobile ONLY */}
+            <div className="flex justify-center lg:justify-start items-center mb-4 sm:mb-6 w-full">
+              <img
+                src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
+                alt="Bestby Bites Logo"
                 className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
               />
             </div>
 
-            {/* Heading */}
+            {/* Heading - Left aligned */}
             <h1 className="hero-heading text-white font-extrabold text-left">
               <span className="block">Save Food.</span>
               <span className="block">Save Money.</span>
               <span className="block">Eat Smarter.</span>
             </h1>
 
-            {/* Description */}
+            {/* Description - Left aligned */}
             <p className="hero-description text-white/95 text-left">
               Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
             </p>
 
-            {/* CTA Button */}
+            {/* Newsletter Text - Left aligned */}
+            <p className="hero-newsletter text-white/90 text-left">
+              Get special offers, meals, and news when you subscribe to our newsletter.
+            </p>
+
+            {/* CTA Button - Left aligned */}
             <div className="flex justify-start">
-              <button 
-                onClick={scrollToLaunchingSoon}
+              <button
+                onClick={scrollToNewsletter}
                 className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                 style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
               >
-                Join now
+                Learn More
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Desktop Layout (Side by Side) - UNCHANGED */}
-      <div 
+      {/* Desktop Layout (Side by Side) */}
+      <div
         className="hidden lg:block min-h-screen relative overflow-hidden bg-[#013727]"
         style={{
           backgroundImage: "url('/images/NEW-BANNER-BB.png')",
@@ -209,6 +237,12 @@ function Hero() {
               line-height: 1.65 !important;
               margin-bottom: 2rem !important;
             }
+
+            .hero-newsletter {
+              font-size: 1rem !important;
+              line-height: 1.65 !important;
+              margin-bottom: 1.5rem !important;
+            }
             
             .hero-button {
               font-size: 1.2rem !important;
@@ -232,6 +266,12 @@ function Hero() {
               font-size: 1.3rem !important;
               line-height: 1.65 !important;
               margin-bottom: 2.25rem !important;
+            }
+
+            .hero-newsletter {
+              font-size: 1.125rem !important;
+              line-height: 1.7 !important;
+              margin-bottom: 1.75rem !important;
             }
             
             .hero-button {
@@ -257,6 +297,12 @@ function Hero() {
               line-height: 1.7 !important;
               margin-bottom: 2.35rem !important;
             }
+
+            .hero-newsletter {
+              font-size: 1.2rem !important;
+              line-height: 1.75 !important;
+              margin-bottom: 2rem !important;
+            }
             
             .hero-button {
               font-size: 1.35rem !important;
@@ -269,14 +315,14 @@ function Hero() {
         <div className="relative min-h-screen flex items-center justify-start z-20">
           <div className="w-full px-16 xl:px-24">
             <div className="flex flex-col items-start justify-start">
-              
+
               {/* Left Content */}
               <div className="flex-1 max-w-3xl w-full">
                 {/* Logo */}
                 <div className="flex justify-start items-center mb-10">
-                  <img 
-                    src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png" 
-                    alt="Bestby Bites Logo" 
+                  <img
+                    src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
+                    alt="Bestby Bites Logo"
                     className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
                   />
                 </div>
@@ -293,14 +339,18 @@ function Hero() {
                   Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
                 </p>
 
-                {/* CTA Button */}
+                {/* Newsletter Text */}
+                <p className="hero-newsletter text-white/90 text-left">
+                  Get special offers, meals, and news when you subscribe to our newsletter.
+                </p>
+
                 <div className="flex justify-start">
-                  <button 
-                    onClick={scrollToLaunchingSoon}
+                  <button
+                    onClick={scrollToNewsletter}
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Join now
+                    Sign up
                   </button>
                 </div>
               </div>
@@ -317,8 +367,8 @@ function Hero() {
       <WhyBestbyBites />
       <ForCustomersAndMerchants />
       <FoodWasteIsCostingEveryone />
+      <JoinMovement />
       <WhoCanJoin />
-      <BusinessModelSection />
       <AppScreenshots />
     </>
   );
