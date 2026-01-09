@@ -24,14 +24,14 @@ function Hero() {
 
   return (
     <>
-      {/* Mobile & Tablet Layout (with Background Image) */}
+      {/* Mobile Layout (< 768px) */}
       <div
-        className="block lg:hidden relative overflow-hidden bg-[#013727]"
+        className="block md:hidden relative overflow-hidden bg-[#013727]"
         style={{
-          backgroundImage: "url('/images/m.png')",
+          backgroundImage: "url('/images/NEWIMAGEBANNER1.png')",
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
-          minHeight: '60vh'
+          backgroundSize: 'contain',
         }}
       >
         <style>{`
@@ -42,104 +42,212 @@ function Hero() {
 
           /* iPhone SE and small mobile (< 376px) */
           @media (max-width: 375px) {
+            .mobile-hero-container .flex-col {
+              padding-bottom: 55px !important;
+            }
+
             .hero-logo {
-              height: 70px !important;
+              height: 100px !important;
+              margin-bottom: 2rem !important;
             }
             
             .hero-heading {
               font-size: 1.8rem !important;
               line-height: 1.2 !important;
               margin-bottom: 0.8rem !important;
+              margin-top: 1.5rem !important;
+              text-align: center !important;
+              width: 100%;
             }
             
             .hero-description {
               font-size: 0.85rem !important;
               line-height: 1.5 !important;
+              margin: 20px !important;
               margin-bottom: 1rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
             }
 
             .hero-newsletter {
               font-size: 0.75rem !important;
               line-height: 1.4 !important;
+              margin: 20px !important;
               margin-bottom: 0.875rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
             }
             
             .hero-button {
               font-size: 0.9rem !important;
               padding: 0.75rem 1.5rem !important;
+              margin: 20px !important;
             }
           }
 
           /* Mobile (376px - 639px) */
           @media (min-width: 376px) and (max-width: 639px) {
+            .mobile-hero-container .flex-col {
+              padding-bottom: 123px !important;
+            }
+
             .hero-logo {
-              height: 80px !important;
+              height: 110px !important;
+              margin-bottom: 2.25rem !important;
             }
             
             .hero-heading {
               font-size: 2rem !important;
               line-height: 1.2 !important;
               margin-bottom: 1rem !important;
+              margin-top: 1.75rem !important;
+              text-align: center !important;
+              width: 100%;
             }
             
             .hero-description {
               font-size: 0.9rem !important;
               line-height: 1.55 !important;
+              margin: 20px !important;
               margin-bottom: 1.2rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
             }
 
             .hero-newsletter {
               font-size: 0.8125rem !important;
               line-height: 1.5 !important;
+              margin: 20px !important;
               margin-bottom: 1rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
             }
             
             .hero-button {
               font-size: 0.95rem !important;
               padding: 0.8rem 1.6rem !important;
+              margin: 20px !important;
             }
           }
 
           /* Small Tablet (640px - 767px) */
           @media (min-width: 640px) and (max-width: 767px) {
+            .mobile-hero-container .flex-col {
+              padding-bottom: 171px !important;
+            }
+
             .hero-logo {
-              height: 90px !important;
+              height: 120px !important;
+              margin-bottom: 2.5rem !important;
             }
             
             .hero-heading {
               font-size: 2.3rem !important;
               line-height: 1.2 !important;
               margin-bottom: 1.2rem !important;
+              margin-top: 2rem !important;
+              text-align: center !important;
+              width: 100%;
             }
             
             .hero-description {
               font-size: 1rem !important;
               line-height: 1.6 !important;
+              margin: 20px !important;
               margin-bottom: 1.5rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
             }
 
             .hero-newsletter {
               font-size: 0.875rem !important;
               line-height: 1.55 !important;
+              margin: 20px !important;
               margin-bottom: 1.125rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
             }
             
             .hero-button {
               font-size: 1rem !important;
               padding: 0.85rem 1.75rem !important;
+              margin: 20px !important;
             }
+          }
+        `}</style>
+
+        {/* Content Section */}
+        <div className="mobile-hero-container relative flex items-center justify-center z-20 px-5 py-8 sm:px-8">
+          <div className="flex flex-col items-center max-w-2xl">
+            {/* Logo - Centered on mobile */}
+            <div className="flex justify-center items-center w-full">
+              <img
+                src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
+                alt="Bestby Bites Logo"
+                className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+
+            {/* Heading - Centered */}
+            <h1 className="hero-heading text-white font-extrabold text-center">
+              <span className="block">Save Food.</span>
+              <span className="block">Save Money.</span>
+              <span className="block">Eat Smarter.</span>
+            </h1>
+
+            {/* Description - Centered with margins */}
+            <p className="hero-description text-white/95 text-center mx-5">
+              Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
+            </p>
+
+            {/* Newsletter Text - Centered with margins */}
+            <p className="hero-newsletter text-white/90 text-center mx-5">
+              Get special offers, meals, and news when you subscribe to our newsletter.
+            </p>
+
+            {/* CTA Button - Centered with margins */}
+            <div className="flex justify-center w-full mt-5">
+              <button
+                onClick={scrollToNewsletter}
+                className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer mx-5"
+                style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
+              >
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Tablet Layout (768px - 1023px) - UPDATED TO SCREENFORTAB2.png */}
+      <div
+        className="hidden md:block lg:hidden relative overflow-hidden bg-[#013727]"
+        style={{
+          backgroundImage: "url('/images/SCREENFORTAB2.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '57vh'
+        }}
+      >
+        <style>{`
+          @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(4, 197, 92, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
           /* iPad Mini & Air (768px - 1023px) */
           @media (min-width: 768px) and (max-width: 1023px) {
             .hero-logo {
-              height: 100px !important;
+              height: 130px !important;
+              min-height:67px;
             }
             
             .hero-heading {
               font-size: 2.8rem !important;
               line-height: 1.15 !important;
               margin-bottom: 1.3rem !important;
+              margin-top: 2.25rem !important;
             }
             
             .hero-description {
@@ -161,50 +269,55 @@ function Hero() {
           }
         `}</style>
 
-        {/* Content Section */}
-        <div className="relative flex items-center justify-start z-20 px-5 py-8 sm:px-8 md:px-12" style={{ minHeight: '60vh' }}>
-          <div className="flex flex-col items-start max-w-2xl" style={{ paddingBottom: '150px' }}>
-            {/* Logo - Centered on mobile ONLY */}
-            <div className="flex justify-center lg:justify-start items-center mb-4 sm:mb-6 w-full">
-              <img
-                src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
-                alt="Bestby Bites Logo"
-                className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
-              />
-            </div>
+        {/* Main Content - Tablet */}
+        <div className="relative min-h-screen flex items-center justify-start z-20">
+          <div className="w-full px-16">
+            <div className="flex flex-col items-start justify-start">
 
-            {/* Heading - Left aligned */}
-            <h1 className="hero-heading text-white font-extrabold text-left">
-              <span className="block">Save Food.</span>
-              <span className="block">Save Money.</span>
-              <span className="block">Eat Smarter.</span>
-            </h1>
+              {/* Left Content */}
+              <div className="flex-1 max-w-2xl w-full">
+                {/* Logo */}
+                <div className="flex justify-start items-center mb-10">
+                  <img
+                    src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
+                    alt="Bestby Bites Logo"
+                    className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
 
-            {/* Description - Left aligned */}
-            <p className="hero-description text-white/95 text-left">
-              Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
-            </p>
+                {/* Heading */}
+                <h1 className="hero-heading text-white font-extrabold text-left">
+                  <span className="block">Save Food.</span>
+                  <span className="block">Save Money.</span>
+                  <span className="block">Eat Smarter.</span>
+                </h1>
 
-            {/* Newsletter Text - Left aligned */}
-            <p className="hero-newsletter text-white/90 text-left">
-              Get special offers, meals, and news when you subscribe to our newsletter.
-            </p>
+                {/* Description */}
+                <p className="hero-description text-white/95 text-left">
+                  Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
+                </p>
 
-            {/* CTA Button - Left aligned */}
-            <div className="flex justify-start">
-              <button
-                onClick={scrollToNewsletter}
-                className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
-                style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
-              >
-                Learn More
-              </button>
+                {/* Newsletter Text */}
+                <p className="hero-newsletter text-white/90 text-left">
+                  Get special offers, meals, and news when you subscribe to our newsletter.
+                </p>
+
+                <div className="flex justify-start">
+                  <button
+                    onClick={scrollToNewsletter}
+                    className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
+                    style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
+                  >
+                    Sign up
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Desktop Layout (Side by Side) */}
+      {/* Desktop Layout (1024px+) - Original Desktop Image */}
       <div
         className="hidden lg:block min-h-screen relative overflow-hidden bg-[#013727]"
         style={{
@@ -311,7 +424,7 @@ function Hero() {
           }
         `}</style>
 
-        {/* Main Content */}
+        {/* Main Content - Desktop */}
         <div className="relative min-h-screen flex items-center justify-start z-20">
           <div className="w-full px-16 xl:px-24">
             <div className="flex flex-col items-start justify-start">
