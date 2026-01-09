@@ -257,7 +257,7 @@ const NewsletterSignup = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="karanxo18@gmail.com"
+                placeholder="bestbybites@gmail.com"
                 required
                 className="newsletter-input w-full border-2 border-teal-700 rounded-l-lg sm:rounded-r-none rounded-r-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-blue-50/30"
               />
