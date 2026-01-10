@@ -146,7 +146,7 @@ const WhyBestbyBites = () => {
               poster="/images/THUMBNAIL-VIDEO-2.jpg"
               loop
             >
-              <source src="/images/WEBSITE VIDEO 2.mp4" type="video/mp4" />
+              <source src="/images/BESTBYBITESVIDEO21.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 

@@ -285,12 +285,12 @@ function Hero() {
         </div>
       </div>
 
-      {/* Tablet Layout (768px - 1023px) - UPDATED TO SCREENFORTAB2.png */}
+      {/* Tablet Layout (768px - 1023px) - UPDATED LOGO SIZE TO 95px */}
       <div
         id="hero-tablet-section"
         className="hidden md:block lg:hidden relative overflow-hidden bg-[#013727]"
         style={{
-          backgroundImage: "url('/images/SCREENFORTAB2.png')",
+          backgroundImage: "url('/images/NEW-BANNER-BB.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat'
@@ -305,7 +305,7 @@ function Hero() {
           /* iPad Mini & Air (768px - 1023px) - Scoped to tablet section only */
           @media (min-width: 768px) and (max-width: 1023px) {
             #hero-tablet-section .hero-logo {
-              height: 130px !important;
+              height: 95px !important;
               min-height: 67px;
             }
             
@@ -317,13 +317,13 @@ function Hero() {
             }
             
             #hero-tablet-section .hero-description {
-              font-size: 1.1rem !important;
+              font-size: 21px !important;
               line-height: 1.6 !important;
               margin-bottom: 1.75rem !important;
             }
 
             #hero-tablet-section .hero-newsletter {
-              font-size: 0.9375rem !important;
+              font-size: 14px !important;
               line-height: 1.6 !important;
               margin-bottom: 1.25rem !important;
             }

@@ -58,6 +58,38 @@ const ForCustomersAndMerchants = () => {
             box-shadow: 0 0 30px rgba(4, 197, 92, 0.6);
           }
         }
+
+        /* iPad Mini specific styles (768px - 819px) */
+        @media (min-width: 768px) and (max-width: 819px) {
+          .merchant-overlay-screen {
+            width: 120px !important;
+            top: -8px !important;
+            right: -16px !important;
+          }
+          
+          .merchant-tag {
+            font-size: 0.625rem !important;
+            padding: 0.25rem 0.5rem !important;
+            bottom: -0.375rem !important;
+            right: -0.25rem !important;
+          }
+        }
+
+        /* iPad Air and larger tablets (820px - 1023px) */
+        @media (min-width: 820px) and (max-width: 1023px) {
+          .merchant-overlay-screen {
+            width: 145px !important;
+            top: -12px !important;
+            right: -20px !important;
+          }
+          
+          .merchant-tag {
+            font-size: 0.7rem !important;
+            padding: 0.375rem 0.625rem !important;
+            bottom: -0.5rem !important;
+            right: -0.375rem !important;
+          }
+        }
       `}</style>
       
       <div className="w-full bg-[#013727]">
@@ -69,7 +101,7 @@ const ForCustomersAndMerchants = () => {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
               
-              {/* Image - Left Side */}
+              {/* Image - Left Side - SQUARE */}
               <div
                 className={`order-2 lg:order-1 transition-all duration-1000 transform ${
                   isCustomersVisible 
@@ -77,19 +109,19 @@ const ForCustomersAndMerchants = () => {
                     : 'opacity-0 -translate-x-20'
                 }`}
               >
-                <div className="relative max-w-xl mx-auto lg:mx-0 lg:ml-auto">
+                <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
                   {/* Green border background */}
                   <div className="absolute inset-0 bg-[#04c55c] rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -left-1.5 right-1.5 bottom-1.5 sm:-top-2 sm:-left-2 sm:right-2 sm:bottom-2 z-0"></div>
                   
-                  {/* Image container */}
+                  {/* Image container - SQUARE ASPECT RATIO */}
                   <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-xl md:shadow-2xl hover:scale-105 transition-transform duration-500 z-10">
-                    <div className="aspect-[3/4] sm:aspect-[4/5] w-full">
+                    <div className="aspect-square w-full">
                       <img
                         src="/images/FOR-CUSTOMER.jpg"
                         alt="Customer receiving food delivery"
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.target.src = 'https://placehold.co/800x1000/013727/04c55c?text=For+Customers';
+                          e.target.src = 'https://placehold.co/800x800/013727/04c55c?text=For+Customers';
                         }}
                       />
                     </div>
@@ -245,7 +277,7 @@ const ForCustomersAndMerchants = () => {
                 </div>
               </div>
 
-              {/* Image - Right Side */}
+              {/* Image with overlay - Right Side - SQUARE */}
               <div
                 className={`transition-all duration-1000 transform ${
                   isMerchantsVisible 
@@ -254,19 +286,42 @@ const ForCustomersAndMerchants = () => {
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                <div className="relative max-w-xl mx-auto lg:mx-0 lg:mr-auto">
-                  {/* Green border background */}
+                <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:mr-auto">
+                  
+                  {/* Merchant screen overlay with "Join as a Supplier" tag */}
+                  <div className="merchant-overlay-screen absolute top-0 right-0 sm:top-2 sm:right-2 md:top-4 md:right-4 lg:-top-8 lg:-right-8 xl:-top-12 xl:-right-12 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 z-20">
+                    <div className="relative">
+                      {/* Green border for merchant screen */}
+                      <div className="absolute inset-0 bg-[#04c55c] rounded-lg sm:rounded-xl md:rounded-2xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 sm:-top-1 sm:-left-1 sm:right-1 sm:bottom-1"></div>
+                      <div className="relative">
+                        <img
+                          src="/images/screen-1-merchant.jpg"
+                          alt="Merchant interface"
+                          className="relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-2xl w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            e.target.src = 'https://placehold.co/400x600/013727/04c55c?text=Merchant+Screen';
+                          }}
+                        />
+                        {/* "Join as a Supplier" tag */}
+                        <div className="merchant-tag absolute -bottom-2 -right-1 sm:-bottom-3 sm:-right-2 md:-bottom-5 md:-right-3 bg-[#9ACD32] text-[#013727] px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2.5 rounded-full shadow-lg font-bold text-[10px] sm:text-xs md:text-base whitespace-nowrap hover:scale-105 transition-transform duration-300">
+                          Join as a Supplier
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Green border background for main image */}
                   <div className="absolute inset-0 bg-[#04c55c] rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -right-1.5 left-1.5 bottom-1.5 sm:-top-2 sm:-right-2 sm:left-2 sm:bottom-2 z-0"></div>
                   
-                  {/* Image container */}
+                  {/* Main merchant image container - SQUARE ASPECT RATIO */}
                   <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-xl md:shadow-2xl hover:scale-105 transition-transform duration-500 z-10">
-                    <div className="aspect-[3/4] sm:aspect-[4/5] w-full">
+                    <div className="aspect-square w-full">
                       <img
                         src="/images/FOR-MERCHANT.jpg"
                         alt="Merchant with fresh pastries"
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.target.src = 'https://placehold.co/800x1000/013727/04c55c?text=For+Merchants';
+                          e.target.src = 'https://placehold.co/800x800/013727/04c55c?text=For+Merchants';
                         }}
                       />
                     </div>
