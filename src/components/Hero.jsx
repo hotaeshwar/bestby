@@ -26,6 +26,7 @@ function Hero() {
     <>
       {/* Mobile Layout (< 768px) */}
       <div
+        id="hero-mobile-section"
         className="block md:hidden relative overflow-hidden bg-[#013727]"
         style={{
           backgroundImage: "url('/images/NEWIMAGEBANNER1.png')",
@@ -40,144 +41,159 @@ function Hero() {
             50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
-          /* iPhone SE and small mobile (< 376px) */
+          /* iPhone SE and small mobile (< 376px) - Scoped to mobile section only */
           @media (max-width: 375px) {
-            .mobile-hero-container .flex-col {
-              padding-bottom: 55px !important;
+            #hero-mobile-section .mobile-hero-container {
+              padding-top: 28px !important;
+              padding-bottom: 112px !important;
             }
 
-            .hero-logo {
-              height: 100px !important;
-              margin-bottom: 2rem !important;
+            #hero-mobile-section .mobile-hero-container .flex-col {
+              padding-bottom: 8px !important;
+            }
+
+            #hero-mobile-section .hero-logo {
+              height: 80px !important;
+              margin-bottom: 1rem !important;
             }
             
-            .hero-heading {
-              font-size: 1.8rem !important;
-              line-height: 1.2 !important;
-              margin-bottom: 0.8rem !important;
-              margin-top: 1.5rem !important;
+            #hero-mobile-section .hero-heading {
+              font-size: 1.6rem !important;
+              line-height: 1.15 !important;
+              margin-bottom: 0.6rem !important;
+              margin-top: 0.8rem !important;
               text-align: center !important;
               width: 100%;
             }
             
-            .hero-description {
+            #hero-mobile-section .hero-description {
               font-size: 0.85rem !important;
-              line-height: 1.5 !important;
-              margin: 20px !important;
-              margin-bottom: 1rem !important;
+              line-height: 1.35 !important;
+              margin: 16px !important;
+              margin-bottom: 0.8rem !important;
               text-align: center !important;
-              width: calc(100% - 40px) !important;
+              width: calc(100% - 32px) !important;
             }
 
-            .hero-newsletter {
-              font-size: 0.75rem !important;
-              line-height: 1.4 !important;
-              margin: 20px !important;
-              margin-bottom: 0.875rem !important;
+            #hero-mobile-section .hero-newsletter {
+              font-size: 0.8rem !important;
+              line-height: 1.35 !important;
+              margin: 16px !important;
+              margin-bottom: 0.7rem !important;
               text-align: center !important;
-              width: calc(100% - 40px) !important;
+              width: calc(100% - 32px) !important;
             }
             
-            .hero-button {
-              font-size: 0.9rem !important;
-              padding: 0.75rem 1.5rem !important;
-              margin: 20px !important;
+            #hero-mobile-section .hero-button {
+              font-size: 0.95rem !important;
+              padding: 0.7rem 1.5rem !important;
+              margin: 16px !important;
             }
           }
 
-          /* Mobile (376px - 639px) */
+          /* Mobile (376px - 639px) - Scoped to mobile section only */
           @media (min-width: 376px) and (max-width: 639px) {
-            .mobile-hero-container .flex-col {
-              padding-bottom: 123px !important;
+            #hero-mobile-section .mobile-hero-container {
+              padding-top: 0 !important;
+              padding-bottom: 0 !important;
             }
 
-            .hero-logo {
-              height: 110px !important;
-              margin-bottom: 2.25rem !important;
+            #hero-mobile-section .mobile-hero-container .flex-col {
+              padding-bottom: 114px !important;
+            }
+
+            #hero-mobile-section .hero-logo {
+              height: 90px !important;
+              margin-bottom: 1.25rem !important;
             }
             
-            .hero-heading {
-              font-size: 2rem !important;
-              line-height: 1.2 !important;
-              margin-bottom: 1rem !important;
-              margin-top: 1.75rem !important;
+            #hero-mobile-section .hero-heading {
+              font-size: 1.85rem !important;
+              line-height: 1.15 !important;
+              margin-bottom: 0.8rem !important;
+              margin-top: 1rem !important;
               text-align: center !important;
               width: 100%;
             }
             
-            .hero-description {
-              font-size: 0.9rem !important;
-              line-height: 1.55 !important;
-              margin: 20px !important;
-              margin-bottom: 1.2rem !important;
+            #hero-mobile-section .hero-description {
+              font-size: 0.95rem !important;
+              line-height: 1.4 !important;
+              margin: 18px !important;
+              margin-bottom: 0.9rem !important;
               text-align: center !important;
-              width: calc(100% - 40px) !important;
+              width: calc(100% - 36px) !important;
             }
 
-            .hero-newsletter {
-              font-size: 0.8125rem !important;
-              line-height: 1.5 !important;
-              margin: 20px !important;
-              margin-bottom: 1rem !important;
+            #hero-mobile-section .hero-newsletter {
+              font-size: 0.875rem !important;
+              line-height: 1.4 !important;
+              margin: 18px !important;
+              margin-bottom: 0.8rem !important;
               text-align: center !important;
-              width: calc(100% - 40px) !important;
+              width: calc(100% - 36px) !important;
             }
             
-            .hero-button {
-              font-size: 0.95rem !important;
-              padding: 0.8rem 1.6rem !important;
-              margin: 20px !important;
+            #hero-mobile-section .hero-button {
+              font-size: 1rem !important;
+              padding: 0.75rem 1.6rem !important;
+              margin: 18px !important;
             }
           }
 
-          /* Small Tablet (640px - 767px) */
+          /* Small Tablet (640px - 767px) - Scoped to mobile section only */
           @media (min-width: 640px) and (max-width: 767px) {
-            .mobile-hero-container .flex-col {
-              padding-bottom: 171px !important;
+            #hero-mobile-section .mobile-hero-container {
+              padding-top: 0 !important;
+              padding-bottom: 0 !important;
             }
 
-            .hero-logo {
-              height: 120px !important;
+            #hero-mobile-section .mobile-hero-container .flex-col {
+              padding-bottom: 14px !important;
+            }
+
+            #hero-mobile-section .hero-logo {
+              height: 130px !important;
               margin-bottom: 2.5rem !important;
             }
             
-            .hero-heading {
-              font-size: 2.3rem !important;
+            #hero-mobile-section .hero-heading {
+              font-size: 2.75rem !important;
               line-height: 1.2 !important;
-              margin-bottom: 1.2rem !important;
+              margin-bottom: 1.4rem !important;
               margin-top: 2rem !important;
               text-align: center !important;
               width: 100%;
             }
             
-            .hero-description {
-              font-size: 1rem !important;
+            #hero-mobile-section .hero-description {
+              font-size: 1.2rem !important;
               line-height: 1.6 !important;
               margin: 20px !important;
-              margin-bottom: 1.5rem !important;
+              margin-bottom: 1.6rem !important;
               text-align: center !important;
               width: calc(100% - 40px) !important;
             }
 
-            .hero-newsletter {
-              font-size: 0.875rem !important;
-              line-height: 1.55 !important;
+            #hero-mobile-section .hero-newsletter {
+              font-size: 1.05rem !important;
+              line-height: 1.6 !important;
               margin: 20px !important;
-              margin-bottom: 1.125rem !important;
+              margin-bottom: 1.3rem !important;
               text-align: center !important;
               width: calc(100% - 40px) !important;
             }
             
-            .hero-button {
-              font-size: 1rem !important;
-              padding: 0.85rem 1.75rem !important;
+            #hero-mobile-section .hero-button {
+              font-size: 1.2rem !important;
+              padding: 0.95rem 2rem !important;
               margin: 20px !important;
             }
           }
         `}</style>
 
         {/* Content Section */}
-        <div className="mobile-hero-container relative flex items-center justify-center z-20 px-5 py-8 sm:px-8">
+        <div className="mobile-hero-container relative flex items-center justify-center z-20 px-5 py-0 sm:px-8">
           <div className="flex flex-col items-center max-w-2xl">
             {/* Logo - Centered on mobile */}
             <div className="flex justify-center items-center w-full">
@@ -221,13 +237,13 @@ function Hero() {
 
       {/* Tablet Layout (768px - 1023px) - UPDATED TO SCREENFORTAB2.png */}
       <div
+        id="hero-tablet-section"
         className="hidden md:block lg:hidden relative overflow-hidden bg-[#013727]"
         style={{
           backgroundImage: "url('/images/SCREENFORTAB2.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '57vh'
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <style>{`
@@ -236,48 +252,78 @@ function Hero() {
             50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
-          /* iPad Mini & Air (768px - 1023px) */
+          /* iPad Mini & Air (768px - 1023px) - Scoped to tablet section only */
           @media (min-width: 768px) and (max-width: 1023px) {
+            #hero-tablet-section .hero-logo {
+              height: 70px !important;
+              min-height: 50px;
+            }
+            
+            #hero-tablet-section .hero-heading {
+              font-size: 2rem !important;
+              line-height: 1.1 !important;
+              margin-bottom: 0.75rem !important;
+              margin-top: 1rem !important;
+            }
+            
+            #hero-tablet-section .hero-description {
+              font-size: 0.875rem !important;
+              line-height: 1.4 !important;
+              margin-bottom: 0.75rem !important;
+            }
+
+            #hero-tablet-section .hero-newsletter {
+              font-size: 0.8rem !important;
+              line-height: 1.4 !important;
+              margin-bottom: 0.75rem !important;
+            }
+            
+            #hero-tablet-section .hero-button {
+              font-size: 0.9rem !important;
+              padding: 0.75rem 1.5rem !important;
+            }
+
+            /* Additional global styles for tablet */
             .hero-logo {
-              height: 130px !important;
-              min-height:67px;
+              height: 70px !important;
+              min-height: 50px;
             }
             
             .hero-heading {
-              font-size: 2.8rem !important;
-              line-height: 1.15 !important;
-              margin-bottom: 1.3rem !important;
-              margin-top: 2.25rem !important;
+              font-size: 2rem !important;
+              line-height: 1.1 !important;
+              margin-bottom: 0.75rem !important;
+              margin-top: 1rem !important;
             }
             
             .hero-description {
-              font-size: 1.1rem !important;
-              line-height: 1.6 !important;
-              margin-bottom: 1.75rem !important;
+              font-size: 0.875rem !important;
+              line-height: 1.4 !important;
+              margin-bottom: 0.75rem !important;
             }
 
             .hero-newsletter {
-              font-size: 0.9375rem !important;
-              line-height: 1.6 !important;
-              margin-bottom: 1.25rem !important;
+              font-size: 0.8rem !important;
+              line-height: 1.4 !important;
+              margin-bottom: 0.75rem !important;
             }
             
             .hero-button {
-              font-size: 1.1rem !important;
-              padding: 0.95rem 1.9rem !important;
+              font-size: 0.9rem !important;
+              padding: 0.75rem 1.5rem !important;
             }
           }
         `}</style>
 
         {/* Main Content - Tablet */}
-        <div className="relative min-h-screen flex items-center justify-start z-20">
-          <div className="w-full px-16">
+        <div className="relative flex items-start justify-start z-20 pt-6" style={{ minHeight: '100vh' }}>
+          <div className="w-full px-12">
             <div className="flex flex-col items-start justify-start">
 
               {/* Left Content */}
-              <div className="flex-1 max-w-2xl w-full">
+              <div className="flex-1 max-w-xl w-full">
                 {/* Logo */}
-                <div className="flex justify-start items-center mb-10">
+                <div className="flex justify-start items-center mb-4">
                   <img
                     src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
                     alt="Bestby Bites Logo"
@@ -319,6 +365,7 @@ function Hero() {
 
       {/* Desktop Layout (1024px+) - Original Desktop Image */}
       <div
+        id="hero-desktop-section"
         className="hidden lg:block min-h-screen relative overflow-hidden bg-[#013727]"
         style={{
           backgroundImage: "url('/images/NEW-BANNER-BB.png')",
@@ -333,91 +380,91 @@ function Hero() {
             50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
-          /* Desktop (1024px - 1279px) */
+          /* Desktop (1024px - 1279px) - Scoped to desktop section only */
           @media (min-width: 1024px) and (max-width: 1279px) {
-            .hero-logo {
+            #hero-desktop-section .hero-logo {
               height: 100px !important;
             }
             
-            .hero-heading {
+            #hero-desktop-section .hero-heading {
               font-size: 3.5rem !important;
               line-height: 1.15 !important;
               margin-bottom: 1.5rem !important;
             }
             
-            .hero-description {
+            #hero-desktop-section .hero-description {
               font-size: 1.2rem !important;
               line-height: 1.65 !important;
               margin-bottom: 2rem !important;
             }
 
-            .hero-newsletter {
+            #hero-desktop-section .hero-newsletter {
               font-size: 1rem !important;
               line-height: 1.65 !important;
               margin-bottom: 1.5rem !important;
             }
             
-            .hero-button {
+            #hero-desktop-section .hero-button {
               font-size: 1.2rem !important;
               padding: 1.1rem 2.2rem !important;
             }
           }
 
-          /* Large Desktop (1280px - 1535px) */
+          /* Large Desktop (1280px - 1535px) - Scoped to desktop section only */
           @media (min-width: 1280px) and (max-width: 1535px) {
-            .hero-logo {
+            #hero-desktop-section .hero-logo {
               height: 110px !important;
             }
             
-            .hero-heading {
+            #hero-desktop-section .hero-heading {
               font-size: 4rem !important;
               line-height: 1.15 !important;
               margin-bottom: 1.75rem !important;
             }
             
-            .hero-description {
+            #hero-desktop-section .hero-description {
               font-size: 1.3rem !important;
               line-height: 1.65 !important;
               margin-bottom: 2.25rem !important;
             }
 
-            .hero-newsletter {
+            #hero-desktop-section .hero-newsletter {
               font-size: 1.125rem !important;
               line-height: 1.7 !important;
               margin-bottom: 1.75rem !important;
             }
             
-            .hero-button {
+            #hero-desktop-section .hero-button {
               font-size: 1.3rem !important;
               padding: 1.2rem 2.4rem !important;
             }
           }
 
-          /* XL Desktop (1536px+) */
+          /* XL Desktop (1536px+) - Scoped to desktop section only */
           @media (min-width: 1536px) {
-            .hero-logo {
+            #hero-desktop-section .hero-logo {
               height: 120px !important;
             }
             
-            .hero-heading {
+            #hero-desktop-section .hero-heading {
               font-size: 4.35rem !important;
               line-height: 1.15 !important;
               margin-bottom: 1.85rem !important;
             }
             
-            .hero-description {
+            #hero-desktop-section .hero-description {
               font-size: 1.4rem !important;
               line-height: 1.7 !important;
               margin-bottom: 2.35rem !important;
             }
 
-            .hero-newsletter {
+            #hero-desktop-section .hero-newsletter {
               font-size: 1.2rem !important;
               line-height: 1.75 !important;
               margin-bottom: 2rem !important;
             }
             
-            .hero-button {
+            #hero-desktop-section .hero-button {
               font-size: 1.35rem !important;
               padding: 1.25rem 2.5rem !important;
             }

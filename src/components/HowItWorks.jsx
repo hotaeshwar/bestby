@@ -25,38 +25,34 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 px-4 sm:px-6 lg:px-8 xl:px-12">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-center mb-12 sm:mb-14 md:mb-16 lg:mb-20 xl:mb-24">
-          <span style={{ color: '#013727' }}>How It Works</span>
+        <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20 text-[#013727] px-4">
+          How It Works
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-8 lg:gap-10 xl:gap-12 perspective-1000">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-6 lg:gap-8 xl:gap-10">
           {cards.map((card) => (
             <div
               key={card.id}
               onMouseEnter={() => setHoveredCard(card.id)}
               onMouseLeave={() => setHoveredCard(null)}
-              className={`bg-white rounded-3xl overflow-hidden h-full flex flex-col transform transition-all duration-500 ease-out ${
+              className={`bg-white rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col transition-all duration-500 ease-out ${
                 hoveredCard === null
                   ? 'scale-100 opacity-100 shadow-lg'
                   : hoveredCard === card.id
                   ? 'scale-105 opacity-100 shadow-2xl z-10'
                   : 'scale-95 opacity-70 shadow-lg'
               }`}
-              style={{
-                minHeight: '480px',
-                maxWidth: '100%'
-              }}
             >
-              {/* Image Container */}
-              <div className="relative w-full pt-[75%] overflow-hidden bg-gray-200">
+              {/* Image Container with aspect ratio */}
+              <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-200">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className={`absolute top-0 left-0 w-full h-full object-cover transform transition-transform duration-700 ease-out ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out ${
                     hoveredCard === card.id ? 'scale-110' : 'scale-100'
                   }`}
                   onError={(e) => {
@@ -72,9 +68,9 @@ const HowItWorks = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 sm:p-7 md:p-6 lg:p-7 xl:p-8 flex flex-col flex-grow">
+              <div className="p-5 sm:p-6 md:p-5 lg:p-6 xl:p-7 flex flex-col flex-grow">
                 <h3 
-                  className={`text-xl sm:text-2xl md:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight transition-colors duration-300 ${
+                  className={`text-lg sm:text-xl md:text-lg lg:text-xl xl:text-2xl font-bold mb-2.5 sm:mb-3 md:mb-3 lg:mb-3.5 leading-tight transition-colors duration-300 ${
                     hoveredCard === card.id ? 'text-[#013727]' : 'text-gray-900'
                   }`}
                 >
@@ -88,26 +84,6 @@ const HowItWorks = () => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-
-        /* Ensure proper spacing on MacBook screens (1280px - 1440px) */
-        @media (min-width: 1280px) and (max-width: 1440px) {
-          .grid {
-            gap: 2.5rem;
-          }
-        }
-
-        /* Larger MacBook Pro screens (1440px+) */
-        @media (min-width: 1440px) {
-          .grid {
-            gap: 3rem;
-          }
-        }
-      `}</style>
     </section>
   );
 };

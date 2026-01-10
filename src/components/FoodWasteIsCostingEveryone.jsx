@@ -61,13 +61,14 @@ const BusinessModelSection = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div style={fadeInStyle(0)} className="text-center mb-8 md:mb-12">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 md:mb-6">
+          <div style={fadeInStyle(0)} className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 px-4">
               The Business Model
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4 sm:px-6">
               A smarter system that benefits customers, businesses, and the planet
               all at the same time.
             </p>
@@ -75,32 +76,23 @@ const BusinessModelSection = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8" style={{ backgroundColor: '#013727' }}>
+      {/* For Customers Section */}
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#013727]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
+            {/* Image - Mobile first, then desktop left */}
             <div style={fadeInStyle(0.2)} className="order-2 lg:order-1">
-              <div className="relative max-w-xl mx-auto lg:mx-0">
-                <div
-                  className="absolute inset-0 rounded-2xl md:rounded-3xl"
-                  style={{
-                    backgroundColor: '#04c55c',
-                    top: '-8px',
-                    left: '-8px',
-                    right: '8px',
-                    bottom: '8px',
-                    zIndex: 0
-                  }}
-                ></div>
-                <div
-                  className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                  style={{ zIndex: 1 }}
-                >
-                  <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[500px]">
+              <div className="relative max-w-xl mx-auto lg:mx-0 lg:ml-auto">
+                {/* Green border effect */}
+                <div className="absolute inset-0 bg-[#04c55c] rounded-xl sm:rounded-2xl md:rounded-3xl -top-2 -left-2 right-2 bottom-2 sm:-top-2 sm:-left-2 sm:right-2 sm:bottom-2 md:-top-3 md:-left-3 md:right-3 md:bottom-3 z-0"></div>
+                
+                {/* Main image container */}
+                <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 z-10">
+                  <div className="aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] w-full">
                     <img
                       src={customerImage}
                       alt="Customer shopping for fresh produce"
-                      className="w-full h-full object-cover object-center"
-                      style={{ display: 'block' }}
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect fill="%23f0f0f0" width="400" height="300"/><text x="50%" y="50%" text-anchor="middle" fill="%23999" font-size="18" font-family="Arial">Customer Experience</text></svg>';
                       }}
@@ -110,32 +102,30 @@ const BusinessModelSection = () => {
               </div>
             </div>
 
-            <div style={fadeInStyle(0.4)} className="order-1 lg:order-2 text-white">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8 lg:mb-10">
+            {/* Content */}
+            <div style={fadeInStyle(0.4)} className="order-1 lg:order-2 text-white px-2 sm:px-4 lg:px-0">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 text-center lg:text-left">
                 For Customers
               </h2>
-              <div className="space-y-4 md:space-y-5 lg:space-y-6 mb-8 md:mb-10">
-                <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl">High-quality food at unbeatable prices</p>
+              <div className="space-y-4 sm:space-y-5 md:space-y-6 mb-8 sm:mb-10">
+                <div className="flex items-start gap-3 sm:gap-4 hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-[#04c55c] text-xl sm:text-2xl flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">High-quality food at unbeatable prices</p>
                 </div>
-                <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl">Easy access to local restaurants and stores</p>
+                <div className="flex items-start gap-3 sm:gap-4 hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-[#04c55c] text-xl sm:text-2xl flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">Easy access to local restaurants and stores</p>
                 </div>
-                <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl">Real impact with zero lifestyle change</p>
+                <div className="flex items-start gap-3 sm:gap-4 hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-[#04c55c] text-xl sm:text-2xl flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">Real impact with zero lifestyle change</p>
                 </div>
               </div>
 
               <div className="flex justify-center lg:justify-start">
                 <button
                   onClick={scrollToNewsletter}
-                  className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-3.5 md:py-4 rounded-full text-base sm:text-lg md:text-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg"
-                  style={{ backgroundColor: '#04c55c' }}
-                  onMouseEnter={(e) => e.target.style.backgroundColor = '#03a84d'}
-                  onMouseLeave={(e) => e.target.style.backgroundColor = '#04c55c'}
+                  className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-3.5 md:py-4 bg-[#04c55c] hover:bg-[#03a84d] rounded-full text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg"
                 >
                   Sign up
                 </button>
@@ -145,77 +135,66 @@ const BusinessModelSection = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8" style={{ backgroundColor: '#013727' }}>
+      {/* For Businesses Section */}
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#013727]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
-            <div style={fadeInStyle(0.2)} className="text-white">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8 lg:mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
+            {/* Content */}
+            <div style={fadeInStyle(0.2)} className="text-white px-2 sm:px-4 lg:px-0">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-10 text-center lg:text-left">
                 For Businesses
               </h2>
-              <div className="space-y-4 md:space-y-5 lg:space-y-6">
-                <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl">Monetize surplus inventory</p>
+              <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4 hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-[#04c55c] text-xl sm:text-2xl flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">Monetize surplus inventory</p>
                 </div>
-                <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl">Reduce waste and disposal costs</p>
+                <div className="flex items-start gap-3 sm:gap-4 hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-[#04c55c] text-xl sm:text-2xl flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">Reduce waste and disposal costs</p>
                 </div>
-                <div className="flex items-start gap-3 md:gap-4 transform hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl">Improve sustainability and public image</p>
+                <div className="flex items-start gap-3 sm:gap-4 hover:translate-x-2 transition-transform duration-300">
+                  <span className="text-[#04c55c] text-xl sm:text-2xl flex-shrink-0 mt-0.5">✓</span>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">Improve sustainability and public image</p>
                 </div>
               </div>
             </div>
 
+            {/* Image with overlay */}
             <div style={fadeInStyle(0.4)} className="relative">
-              <div className="relative max-w-xl mx-auto lg:mx-0">
-                {/* Merchant screen image - positioned at top-right corner */}
-                <div className="absolute -top-8 sm:-top-12 md:-top-16 lg:-top-20 -right-8 sm:-right-12 md:-right-16 lg:-right-20 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 z-20">
+              <div className="relative max-w-xl mx-auto lg:mx-0 lg:mr-auto">
+                {/* Merchant screen overlay with "Join as a Suppliers" tag - Fixed for mobile */}
+                <div className="absolute top-0 right-0 sm:top-2 sm:right-2 md:top-4 md:right-4 lg:-top-8 lg:-right-8 xl:-top-12 xl:-right-12 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 z-20">
                   <div className="relative">
-                    <div
-                      className="absolute inset-0 rounded-xl md:rounded-2xl"
-                      style={{
-                        backgroundColor: '#04c55c',
-                        top: '-3px',
-                        left: '-3px',
-                        right: '3px',
-                        bottom: '3px'
-                      }}
-                    ></div>
-                    <img
-                      src="/images/screen-1-merchant.jpg"
-                      alt="Merchant interface"
-                      className="relative rounded-xl md:rounded-2xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"><rect fill="%23f0f0f0" width="400" height="600"/><text x="50%" y="50%" text-anchor="middle" fill="%23999" font-size="18" font-family="Arial">Merchant Screen</text></svg>';
-                      }}
-                    />
+                    {/* Green border for merchant screen */}
+                    <div className="absolute inset-0 bg-[#04c55c] rounded-lg sm:rounded-xl md:rounded-2xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 sm:-top-1 sm:-left-1 sm:right-1 sm:bottom-1"></div>
+                    <div className="relative">
+                      <img
+                        src="/images/screen-1-merchant.jpg"
+                        alt="Merchant interface"
+                        className="relative rounded-lg sm:rounded-xl md:rounded-2xl shadow-2xl w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600"><rect fill="%23f0f0f0" width="400" height="600"/><text x="50%" y="50%" text-anchor="middle" fill="%23999" font-size="18" font-family="Arial">Merchant Screen</text></svg>';
+                        }}
+                      />
+                      {/* "Join as a Suppliers" tag - Better positioned for mobile */}
+                      <div className="absolute -bottom-2 -right-1 sm:-bottom-3 sm:-right-2 md:-bottom-5 md:-right-3 bg-[#9ACD32] text-[#013727] px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2.5 rounded-full shadow-lg font-bold text-[10px] sm:text-xs md:text-base whitespace-nowrap hover:scale-105 transition-transform duration-300">
+                        Join as a Suppliers
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Main chef image with green border */}
-                <div
-                  className="absolute inset-0 rounded-2xl md:rounded-3xl"
-                  style={{
-                    backgroundColor: '#04c55c',
-                    top: '-8px',
-                    right: '-8px',
-                    left: '8px',
-                    bottom: '8px',
-                    zIndex: 0
-                  }}
-                ></div>
-                <div
-                  className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500"
-                  style={{ zIndex: 1 }}
-                >
-                  <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[500px]">
+                {/* Green border effect for main image */}
+                <div className="absolute inset-0 bg-[#04c55c] rounded-xl sm:rounded-2xl md:rounded-3xl -top-2 -right-2 left-2 bottom-2 sm:-top-2 sm:-right-2 sm:left-2 sm:bottom-2 md:-top-3 md:-right-3 md:left-3 md:bottom-3 z-0"></div>
+                
+                {/* Main chef image container */}
+                <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500 z-10">
+                  <div className="aspect-[4/3] sm:aspect-[16/10] md:aspect-[4/3] w-full">
                     <img
                       src={businessImage}
                       alt="Chef with Best by Bites bread delivery"
-                      className="w-full h-full object-cover object-center"
-                      style={{ display: 'block' }}
+                      className="w-full h-full object-cover"
                       onError={(e) => {
                         e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect fill="%23f0f0f0" width="400" height="300"/><text x="50%" y="50%" text-anchor="middle" fill="%23999" font-size="18" font-family="Arial">Business Partner</text></svg>';
                       }}

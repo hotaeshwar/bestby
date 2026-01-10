@@ -35,51 +35,10 @@ const WhoCanJoin = () => {
   return (
     <section 
       ref={sectionRef}
-      className="w-full overflow-hidden"
-      style={{ backgroundColor: '#013727' }}
+      className="w-full overflow-hidden bg-[#013727]"
     >
-      <style>{`
-        .who-image-container {
-          position: relative;
-          width: 100%;
-          height: auto;
-          overflow: hidden;
-        }
-
-        .who-image {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-
-        @media (min-width: 768px) {
-          .who-image-container {
-            height: 500px;
-          }
-          
-          .who-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .who-image-container {
-            height: 600px;
-          }
-        }
-
-        @media (min-width: 1280px) {
-          .who-image-container {
-            height: 100vh;
-          }
-        }
-      `}</style>
-
       <div className="w-full">
-        {/* Full Screen Image */}
+        {/* Full Screen Image - Responsive for all devices */}
         <div
           className={`transition-all duration-1000 transform ${
             isVisible 
@@ -87,11 +46,14 @@ const WhoCanJoin = () => {
               : 'opacity-0 scale-95'
           }`}
         >
-          <div className="who-image-container">
+          {/* Image Container - Full image on mobile and tablets (no cropping), object-cover only on large desktops */}
+          <div className="relative w-full">
             <img
               src="/images/NEW-BLOCK.jpg"
               alt="Who can join Bestby Bites - Grocery stores, restaurants, vendors, farmers, producers, bakers, food trucks and more"
-              className="who-image"
+              className="w-full h-auto 
+                         xl:h-[700px] xl:object-cover xl:object-center
+                         2xl:h-[800px]"
               onError={(e) => {
                 e.target.src = 'https://placehold.co/1920x1080/013727/04c55c?text=Who+Can+Join+Bestby+Bites';
               }}

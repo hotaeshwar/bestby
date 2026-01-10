@@ -42,7 +42,7 @@ const WhyBestbyBites = () => {
   }, []);
 
   const handleVideoInteraction = () => {
-    if (!isPlaying) return; // Keep controls visible when paused
+    if (!isPlaying) return;
     
     setShowControls(true);
     
@@ -120,21 +120,24 @@ const WhyBestbyBites = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="w-full bg-gradient-to-b from-white to-gray-50 py-6 sm:py-8 md:py-12 lg:py-16">
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+    <div className="w-full bg-gradient-to-b from-white to-gray-50 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+        {/* Title */}
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4">
           <span className="bg-gradient-to-r from-[#04c55c] to-[#013727] bg-clip-text text-transparent">
             WHY BESTBY BITES?
           </span>
         </h2>
 
+        {/* Video Container */}
         <div 
-          className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl cursor-pointer bg-black"
+          className="relative rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl md:shadow-2xl cursor-pointer bg-black mx-auto"
           onMouseMove={handleMouseMove}
           onTouchStart={handleVideoInteraction}
           onClick={handleContainerClick}
         >
-          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+          {/* 16:9 Aspect Ratio Container */}
+          <div className="relative w-full aspect-video">
             <video
               ref={videoRef}
               className="absolute inset-0 w-full h-full object-cover"
@@ -171,14 +174,14 @@ const WhyBestbyBites = () => {
               >
                 <div className="relative">
                   {/* Glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#04c55c] to-[#013727] rounded-full blur-xl md:blur-2xl opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#04c55c] to-[#013727] rounded-full blur-lg sm:blur-xl md:blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-200"></div>
                   
                   {/* Button */}
-                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-gradient-to-r from-[#04c55c] to-[#013727] flex items-center justify-center shadow-xl md:shadow-2xl transform group-hover:scale-110 group-active:scale-95 transition-all duration-200">
+                  <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-gradient-to-r from-[#04c55c] to-[#013727] flex items-center justify-center shadow-lg sm:shadow-xl md:shadow-2xl group-hover:scale-110 group-active:scale-95 transition-all duration-200">
                     {isPlaying ? (
-                      <Pause className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white" strokeWidth={2.5} />
+                      <Pause className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" strokeWidth={2.5} />
                     ) : (
-                      <Play className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white ml-0.5 sm:ml-1" strokeWidth={2.5} fill="white" />
+                      <Play className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white ml-0.5 sm:ml-1" strokeWidth={2.5} fill="white" />
                     )}
                   </div>
                 </div>
@@ -187,11 +190,11 @@ const WhyBestbyBites = () => {
 
             {/* Bottom Controls */}
             <div 
-              className={`absolute bottom-0 left-0 right-0 z-30 p-2 sm:p-3 md:p-4 bg-gradient-to-t from-black/90 via-black/70 to-transparent transition-all duration-300 ${
+              className={`absolute bottom-0 left-0 right-0 z-30 p-2 sm:p-2.5 md:p-3 lg:p-4 bg-gradient-to-t from-black/90 via-black/70 to-transparent transition-all duration-300 ${
                 showControls || !isPlaying ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
             >
-              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
+              <div className="flex items-center gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3">
                 {/* Volume Button */}
                 <button
                   onClick={toggleMute}
@@ -201,9 +204,9 @@ const WhyBestbyBites = () => {
                   aria-label={isMuted ? 'Unmute video' : 'Mute video'}
                 >
                   {isMuted ? (
-                    <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                    <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 lg:w-5 lg:h-5" />
                   ) : (
-                    <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                    <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-4.5 md:h-4.5 lg:w-5 lg:h-5" />
                   )}
                 </button>
 
@@ -222,7 +225,7 @@ const WhyBestbyBites = () => {
                       step="0.1"
                       value={volume}
                       onChange={handleVolumeChange}
-                      className="w-16 md:w-20"
+                      className="w-16 md:w-20 lg:w-24"
                       aria-label="Volume control"
                     />
                   </div>
@@ -230,7 +233,7 @@ const WhyBestbyBites = () => {
 
                 {/* Progress Bar */}
                 <div 
-                  className="flex-1 h-0.5 sm:h-1 md:h-1.5 bg-white/20 rounded-full cursor-pointer group mx-1 sm:mx-2 backdrop-blur-sm"
+                  className="flex-1 h-1 sm:h-1 md:h-1.5 bg-white/20 rounded-full cursor-pointer group mx-1 sm:mx-1.5 md:mx-2 backdrop-blur-sm"
                   onClick={handleProgressBarClick}
                 >
                   <div 
@@ -242,8 +245,8 @@ const WhyBestbyBites = () => {
                 </div>
 
                 {/* Time Display */}
-                <div className="bg-black/60 px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded flex-shrink-0 backdrop-blur-sm">
-                  <span className="text-white text-[10px] sm:text-xs md:text-sm font-medium whitespace-nowrap">
+                <div className="bg-black/60 px-1.5 sm:px-2 md:px-2.5 lg:px-3 py-0.5 sm:py-1 md:py-1 lg:py-1.5 rounded flex-shrink-0 backdrop-blur-sm">
+                  <span className="text-white text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-medium whitespace-nowrap">
                     {formatTime(currentTime)} / {formatTime(duration)}
                   </span>
                 </div>
@@ -311,6 +314,11 @@ const WhyBestbyBites = () => {
           -ms-user-select: none;
           user-select: none;
           -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Ensure proper aspect ratio */
+        .aspect-video {
+          aspect-ratio: 16 / 9;
         }
       `}</style>
     </div>
