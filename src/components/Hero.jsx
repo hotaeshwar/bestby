@@ -44,21 +44,21 @@ function Hero() {
           /* iPhone SE and small mobile (< 376px) - Scoped to mobile section only */
           @media (max-width: 375px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 28px !important;
-              padding-bottom: 112px !important;
+              padding-top: 1.5rem !important;
+              padding-bottom: 0 !important;
             }
 
             #hero-mobile-section .mobile-hero-container .flex-col {
-              padding-bottom: 8px !important;
+              padding-bottom: 99px !important;
             }
 
             #hero-mobile-section .hero-logo {
-              height: 80px !important;
-              margin-bottom: 1rem !important;
+              height: 70px !important;
+              margin-bottom: 0.75rem !important;
             }
             
             #hero-mobile-section .hero-heading {
-              font-size: 1.6rem !important;
+              font-size: 2.4rem !important;
               line-height: 1.15 !important;
               margin-bottom: 0.6rem !important;
               margin-top: 0.8rem !important;
@@ -67,48 +67,48 @@ function Hero() {
             }
             
             #hero-mobile-section .hero-description {
-              font-size: 0.85rem !important;
-              line-height: 1.35 !important;
-              margin: 16px !important;
-              margin-bottom: 0.8rem !important;
+              font-size: 1rem !important;
+              line-height: 1.5 !important;
+              margin: 20px !important;
+              margin-bottom: 0.75rem !important;
               text-align: center !important;
-              width: calc(100% - 32px) !important;
+              width: calc(100% - 40px) !important;
             }
 
             #hero-mobile-section .hero-newsletter {
-              font-size: 0.8rem !important;
-              line-height: 1.35 !important;
-              margin: 16px !important;
-              margin-bottom: 0.7rem !important;
+              font-size: 0.9rem !important;
+              line-height: 1.5 !important;
+              margin: 20px !important;
+              margin-bottom: 0.75rem !important;
               text-align: center !important;
-              width: calc(100% - 32px) !important;
+              width: calc(100% - 40px) !important;
             }
             
             #hero-mobile-section .hero-button {
-              font-size: 0.95rem !important;
-              padding: 0.7rem 1.5rem !important;
-              margin: 16px !important;
+              font-size: 1.05rem !important;
+              padding: 0.85rem 1.75rem !important;
+              margin: 20px !important;
             }
           }
 
-          /* Mobile (376px - 639px) - Scoped to mobile section only */
-          @media (min-width: 376px) and (max-width: 639px) {
+          /* iPhone XR and similar (376px - 389px) - Scoped to mobile section only */
+          @media (min-width: 376px) and (max-width: 389px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 0 !important;
+              padding-top: 2rem !important;
               padding-bottom: 0 !important;
             }
 
             #hero-mobile-section .mobile-hero-container .flex-col {
-              padding-bottom: 114px !important;
+              padding-bottom: 177px !important;
             }
 
             #hero-mobile-section .hero-logo {
-              height: 90px !important;
-              margin-bottom: 1.25rem !important;
+              height: 80px !important;
+              margin-bottom: 1rem !important;
             }
             
             #hero-mobile-section .hero-heading {
-              font-size: 1.85rem !important;
+              font-size: 2.75rem !important;
               line-height: 1.15 !important;
               margin-bottom: 0.8rem !important;
               margin-top: 1rem !important;
@@ -117,50 +117,100 @@ function Hero() {
             }
             
             #hero-mobile-section .hero-description {
-              font-size: 0.95rem !important;
-              line-height: 1.4 !important;
-              margin: 18px !important;
-              margin-bottom: 0.9rem !important;
+              font-size: 1.1rem !important;
+              line-height: 1.55 !important;
+              margin: 20px !important;
+              margin-bottom: 0.85rem !important;
               text-align: center !important;
-              width: calc(100% - 36px) !important;
+              width: calc(100% - 40px) !important;
             }
 
             #hero-mobile-section .hero-newsletter {
-              font-size: 0.875rem !important;
-              line-height: 1.4 !important;
-              margin: 18px !important;
-              margin-bottom: 0.8rem !important;
+              font-size: 1rem !important;
+              line-height: 1.55 !important;
+              margin: 20px !important;
+              margin-bottom: 0.85rem !important;
               text-align: center !important;
-              width: calc(100% - 36px) !important;
+              width: calc(100% - 40px) !important;
             }
             
             #hero-mobile-section .hero-button {
+              font-size: 1.125rem !important;
+              padding: 0.9rem 1.8rem !important;
+              margin: 20px !important;
+            }
+          }
+
+          /* iPhone 12 Pro and similar (390px - 639px) - Scoped to mobile section only */
+          @media (min-width: 390px) and (max-width: 639px) {
+            #hero-mobile-section .mobile-hero-container {
+              padding-top: 2rem !important;
+              padding-bottom: 0 !important;
+            }
+
+            #hero-mobile-section .mobile-hero-container .flex-col {
+              padding-bottom: 129px !important;
+            }
+
+            #hero-mobile-section .hero-logo {
+              height: 80px !important;
+              margin-bottom: 1rem !important;
+            }
+            
+            #hero-mobile-section .hero-heading {
+              font-size: 2.75rem !important;
+              line-height: 1.15 !important;
+              margin-bottom: 0.8rem !important;
+              margin-top: 1rem !important;
+              text-align: center !important;
+              width: 100%;
+            }
+            
+            #hero-mobile-section .hero-description {
+              font-size: 1.1rem !important;
+              line-height: 1.55 !important;
+              margin: 20px !important;
+              margin-bottom: 0.85rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
+            }
+
+            #hero-mobile-section .hero-newsletter {
               font-size: 1rem !important;
-              padding: 0.75rem 1.6rem !important;
-              margin: 18px !important;
+              line-height: 1.55 !important;
+              margin: 20px !important;
+              margin-bottom: 0.85rem !important;
+              text-align: center !important;
+              width: calc(100% - 40px) !important;
+            }
+            
+            #hero-mobile-section .hero-button {
+              font-size: 1.125rem !important;
+              padding: 0.9rem 1.8rem !important;
+              margin: 20px !important;
             }
           }
 
           /* Small Tablet (640px - 767px) - Scoped to mobile section only */
           @media (min-width: 640px) and (max-width: 767px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 0 !important;
+              padding-top: 2.5rem !important;
               padding-bottom: 0 !important;
             }
 
             #hero-mobile-section .mobile-hero-container .flex-col {
-              padding-bottom: 14px !important;
+              padding-bottom: 220px !important;
             }
 
             #hero-mobile-section .hero-logo {
-              height: 130px !important;
-              margin-bottom: 2.5rem !important;
+              height: 90px !important;
+              margin-bottom: 1.5rem !important;
             }
             
             #hero-mobile-section .hero-heading {
-              font-size: 2.75rem !important;
+              font-size: 3rem !important;
               line-height: 1.2 !important;
-              margin-bottom: 1.4rem !important;
+              margin-bottom: 1rem !important;
               margin-top: 2rem !important;
               text-align: center !important;
               width: 100%;
@@ -170,7 +220,7 @@ function Hero() {
               font-size: 1.2rem !important;
               line-height: 1.6 !important;
               margin: 20px !important;
-              margin-bottom: 1.6rem !important;
+              margin-bottom: 1rem !important;
               text-align: center !important;
               width: calc(100% - 40px) !important;
             }
@@ -179,7 +229,7 @@ function Hero() {
               font-size: 1.05rem !important;
               line-height: 1.6 !important;
               margin: 20px !important;
-              margin-bottom: 1.3rem !important;
+              margin-bottom: 1rem !important;
               text-align: center !important;
               width: calc(100% - 40px) !important;
             }
@@ -255,75 +305,45 @@ function Hero() {
           /* iPad Mini & Air (768px - 1023px) - Scoped to tablet section only */
           @media (min-width: 768px) and (max-width: 1023px) {
             #hero-tablet-section .hero-logo {
-              height: 70px !important;
-              min-height: 50px;
+              height: 130px !important;
+              min-height: 67px;
             }
             
             #hero-tablet-section .hero-heading {
-              font-size: 2rem !important;
-              line-height: 1.1 !important;
-              margin-bottom: 0.75rem !important;
-              margin-top: 1rem !important;
+              font-size: 2.8rem !important;
+              line-height: 1.15 !important;
+              margin-bottom: 1.3rem !important;
+              margin-top: 2.25rem !important;
             }
             
             #hero-tablet-section .hero-description {
-              font-size: 0.875rem !important;
-              line-height: 1.4 !important;
-              margin-bottom: 0.75rem !important;
+              font-size: 1.1rem !important;
+              line-height: 1.6 !important;
+              margin-bottom: 1.75rem !important;
             }
 
             #hero-tablet-section .hero-newsletter {
-              font-size: 0.8rem !important;
-              line-height: 1.4 !important;
-              margin-bottom: 0.75rem !important;
+              font-size: 0.9375rem !important;
+              line-height: 1.6 !important;
+              margin-bottom: 1.25rem !important;
             }
             
             #hero-tablet-section .hero-button {
-              font-size: 0.9rem !important;
-              padding: 0.75rem 1.5rem !important;
-            }
-
-            /* Additional global styles for tablet */
-            .hero-logo {
-              height: 70px !important;
-              min-height: 50px;
-            }
-            
-            .hero-heading {
-              font-size: 2rem !important;
-              line-height: 1.1 !important;
-              margin-bottom: 0.75rem !important;
-              margin-top: 1rem !important;
-            }
-            
-            .hero-description {
-              font-size: 0.875rem !important;
-              line-height: 1.4 !important;
-              margin-bottom: 0.75rem !important;
-            }
-
-            .hero-newsletter {
-              font-size: 0.8rem !important;
-              line-height: 1.4 !important;
-              margin-bottom: 0.75rem !important;
-            }
-            
-            .hero-button {
-              font-size: 0.9rem !important;
-              padding: 0.75rem 1.5rem !important;
+              font-size: 1.1rem !important;
+              padding: 0.95rem 1.9rem !important;
             }
           }
         `}</style>
 
         {/* Main Content - Tablet */}
-        <div className="relative flex items-start justify-start z-20 pt-6" style={{ minHeight: '100vh' }}>
-          <div className="w-full px-12">
+        <div className="relative flex items-center justify-start z-20" style={{ minHeight: '57vh' }}>
+          <div className="w-full px-16">
             <div className="flex flex-col items-start justify-start">
 
               {/* Left Content */}
-              <div className="flex-1 max-w-xl w-full">
+              <div className="flex-1 max-w-2xl w-full">
                 {/* Logo */}
-                <div className="flex justify-start items-center mb-4">
+                <div className="flex justify-start items-center mb-10">
                   <img
                     src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
                     alt="Bestby Bites Logo"
