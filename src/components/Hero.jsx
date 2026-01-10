@@ -378,7 +378,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* iPad Pro Layout (1024px - 1366px) - NEW PRO.PNG IMAGE */}
+      {/* iPad Pro Layout (1024px - 1366px) - CENTERED CONTENT AT TOP */}
       <div
         id="hero-ipad-pro-section"
         className="hidden lg:block xl:hidden relative overflow-hidden bg-[#013727]"
@@ -390,47 +390,56 @@ function Hero() {
         }}
       >
         <style>{`
-          /* iPad Pro (1024px - 1366px) - Optimized for pro.png */
+          /* iPad Pro (1024px - 1366px) - Centered Layout at Top with Padding */
           @media (min-width: 1024px) and (max-width: 1366px) {
             #hero-ipad-pro-section .hero-logo {
-              height: 163px !important;
+              height: 189px !important;
             }
             
             #hero-ipad-pro-section .hero-heading {
-              font-size: 53px !important;
+              font-size: 67px !important;
               line-height: 1.15 !important;
               margin-bottom: 1.5rem !important;
               margin-top: 2.5rem !important;
+              text-align: center !important;
+              padding-left: 2rem !important;
+              padding-right: 2rem !important;
             }
             
             #hero-ipad-pro-section .hero-description {
-              font-size: 1.35rem !important;
+              font-size: 33px !important;
               line-height: 1.65 !important;
               margin-bottom: 1.85rem !important;
+              text-align: center !important;
+              padding-left: 3rem !important;
+              padding-right: 3rem !important;
             }
 
             #hero-ipad-pro-section .hero-newsletter {
               font-size: 29px !important;
               line-height: 1.65 !important;
               margin-bottom: 1.65rem !important;
+              text-align: center !important;
+              padding-left: 3rem !important;
+              padding-right: 3rem !important;
             }
             
             #hero-ipad-pro-section .hero-button {
-              font-size: 1.25rem !important;
+              font-size: 39px !important;
               padding: 1.15rem 2.3rem !important;
             }
           }
         `}</style>
 
-        {/* Main Content - iPad Pro */}
-        <div className="relative flex items-center justify-start z-20" style={{ minHeight: '101vh' }}>
+        {/* Main Content - iPad Pro - CENTERED AT TOP */}
+        <div className="relative flex items-start justify-center z-20 pt-12" style={{ minHeight: '101vh' }}>
           <div className="w-full px-20">
-            <div className="flex flex-col items-start justify-start">
+            <div className="flex flex-col items-center justify-start">
 
-              {/* Left Content */}
-              <div className="flex-1 max-w-2xl w-full">
-                {/* Logo */}
-                <div className="flex justify-start items-center mb-10">
+              {/* Centered Content */}
+              <div className="flex-1 max-w-3xl w-full">
+                {/* Logo - CENTERED */}
+                <div className="flex justify-center items-center mb-10">
                   <img
                     src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
                     alt="Bestby Bites Logo"
@@ -438,24 +447,25 @@ function Hero() {
                   />
                 </div>
 
-                {/* Heading */}
-                <h1 className="hero-heading text-white font-extrabold text-left">
+                {/* Heading - CENTERED with PADDING */}
+                <h1 className="hero-heading text-white font-extrabold text-center">
                   <span className="block">Save Food.</span>
                   <span className="block">Save Money.</span>
                   <span className="block">Eat Smarter.</span>
                 </h1>
 
-                {/* Description */}
-                <p className="hero-description text-white/95 text-left">
+                {/* Description - CENTERED with PADDING */}
+                <p className="hero-description text-white/95 text-center">
                   Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
                 </p>
 
-                {/* Newsletter Text */}
-                <p className="hero-newsletter text-white/90 text-left">
+                {/* Newsletter Text - CENTERED with PADDING */}
+                <p className="hero-newsletter text-white/90 text-center">
                   Get special offers, meals, and news when you subscribe to our newsletter.
                 </p>
 
-                <div className="flex justify-start">
+                {/* Button - CENTERED */}
+                <div className="flex justify-center">
                   <button
                     onClick={scrollToNewsletter}
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
