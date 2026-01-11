@@ -9,6 +9,7 @@ import JoinMovement from './JoinMovement';
 import WhoCanJoin from './WhoCanJoin';
 import AppScreenshots from './AppScreenshots';
 import ForCustomersAndMerchants from './ForCustomersAndMerchants'
+
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -279,7 +280,7 @@ function Hero() {
                 className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer mx-5"
                 style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
               >
-                Sign up
+                Subscribe
               </button>
             </div>
           </div>
@@ -370,7 +371,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Sign up
+                    Subscribe
                   </button>
                 </div>
               </div>
@@ -472,7 +473,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Sign up
+                    Subscribe
                   </button>
                 </div>
               </div>
