@@ -124,8 +124,7 @@ const WhyBestbyBites = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Title */}
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4 text-gray-900">
-          Bestby Bites unlocks access to surplus food from top local restaurants,<br />
-          bringing top local flavors to your table at unbeatable prices
+          Why Bestby Bites
         </h2>
 
         {/* Video Container */}

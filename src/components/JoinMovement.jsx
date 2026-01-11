@@ -46,7 +46,7 @@ const JoinMovement = () => {
           Join the Movement Against Food Waste
         </h2>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed font-light">
-          Whether you're a restaurant, grocery store, bakery, or food producer, partner with us to turn surplus into success
+          "Whether you're a restaurant, grocery store, bakery, or food producer, partner with us to turn surplus into success"
         </p>
       </div>
     </section>

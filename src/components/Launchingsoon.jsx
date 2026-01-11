@@ -184,7 +184,7 @@ const LaunchingSoon = () => {
                   Get special offers, meals, and news when you subscribe to our newsletter.
                 </h3>
                 <p className="text-sm sm:text-base md:text-base lg:text-lg font-medium text-white/90">
-                  If you are a business owner join the platform at 0% joining fees
+                  "If you are a business owner join the platform at 0% joining fees"
                 </p>
               </div>
 

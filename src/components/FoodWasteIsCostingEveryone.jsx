@@ -108,7 +108,7 @@ const BusinessModelSection = () => {
                   onClick={scrollToNewsletter}
                   className="px-8 md:px-10 lg:px-12 py-3 md:py-3.5 lg:py-4 bg-[#04c55c] hover:bg-[#03a84d] rounded-full text-base md:text-lg lg:text-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg"
                 >
-                  Sign up
+                  Subscribe
                 </button>
               </div>
             </div>

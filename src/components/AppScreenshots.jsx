@@ -101,7 +101,7 @@ const AppScreenshots = () => {
             App Interface
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            A simple way to turn surplus food into value
+            "A simple way to turn surplus food into value"
           </p>
         </div>
 

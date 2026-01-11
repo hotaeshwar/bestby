@@ -195,7 +195,7 @@ const ForCustomersAndMerchants = () => {
                         className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 text-sm sm:text-base md:text-lg font-bold bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                         style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                       >
-                        Sign up
+                        Subscribe
                       </button>
                     </div>
                   </div>

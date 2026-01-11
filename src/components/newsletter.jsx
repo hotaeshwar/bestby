@@ -149,7 +149,7 @@ const NewsletterSignup = () => {
                 type="submit"
                 className="w-full sm:w-auto px-6 sm:px-8 md:px-10 lg:px-12 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg text-white font-semibold rounded-lg bg-[#04c55c] hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
               >
-                Sign up
+                Get in touch
               </button>
             </div>
 
