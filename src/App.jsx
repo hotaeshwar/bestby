@@ -18,7 +18,7 @@ function App() {
               <LaunchPage />
               <NewsletterSignup />
               <Footer />
-              <LaunchPage />
+              
             </>
           } />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

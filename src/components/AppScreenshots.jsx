@@ -35,7 +35,7 @@ const AppScreenshots = () => {
     }
   ];
 
-  // Scroll animation for mobile
+  // Scroll animation for desktop
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current || hasAnimated.current) return;
@@ -92,13 +92,13 @@ const AppScreenshots = () => {
   return (
     <section 
       ref={sectionRef}
-      className="w-full bg-gray-50 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
+      className="w-full bg-white py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-            App Screenshots
+            App Interface
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             A simple way to turn surplus food into value
@@ -109,7 +109,7 @@ const AppScreenshots = () => {
         <div className="lg:hidden">
           <div className="relative max-w-[280px] mx-auto">
             {/* Carousel Wrapper */}
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-visible">
               <div className="relative h-[500px] sm:h-[550px]">
                 {screenshots.map((screenshot, index) => (
                   <div
@@ -137,7 +137,7 @@ const AppScreenshots = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={goToPrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 z-10"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 z-10"
                 aria-label="Previous screenshot"
               >
                 <svg 
@@ -146,13 +146,13 @@ const AppScreenshots = () => {
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
 
               <button
                 onClick={goToNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 z-10"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 z-10"
                 aria-label="Next screenshot"
               >
                 <svg 
@@ -161,43 +161,12 @@ const AppScreenshots = () => {
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
 
-            {/* Dots Navigation */}
-            <div className="flex justify-center items-center gap-2 mt-6">
-              {screenshots.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`transition-all duration-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 ${
-                    index === currentIndex
-                      ? 'bg-green-600 w-8 h-2.5'
-                      : 'bg-gray-300 hover:bg-gray-400 w-2.5 h-2.5'
-                  }`}
-                  aria-label={`Go to screenshot ${index + 1}`}
-                />
-              ))}
-            </div>
 
-            {/* Auto-play Toggle */}
-            <div className="text-center mt-4">
-              <button
-                onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="text-sm text-gray-500 hover:text-gray-700 transition-colors duration-300 focus:outline-none px-3 py-1"
-              >
-                {isAutoPlaying ? '⏸ Pause' : '▶ Play'} Auto-scroll
-              </button>
-            </div>
-
-            {/* Screen Counter */}
-            <div className="text-center mt-3">
-              <span className="text-sm text-gray-600 font-medium">
-                {currentIndex + 1} / {screenshots.length}
-              </span>
-            </div>
           </div>
         </div>
 

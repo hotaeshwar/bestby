@@ -3,12 +3,12 @@ import HowItWorks from './HowItWorks';
 import LaunchPage from './LaunchPage';
 import Launchingsoon from './Launchingsoon';
 import WhyBestbyBites from './WhyBestbyBites';
-import ForCustomersAndMerchants from './ForCustomersAndMerchants';
+import BusinessModelSection from './BusinessModelSection';
 import FoodWasteIsCostingEveryone from './FoodWasteIsCostingEveryone';
 import JoinMovement from './JoinMovement';
 import WhoCanJoin from './WhoCanJoin';
 import AppScreenshots from './AppScreenshots';
-
+import ForCustomersAndMerchants from './ForCustomersAndMerchants'
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -593,7 +593,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Sign up
+                    Subscribe
                   </button>
                 </div>
               </div>
@@ -610,6 +610,7 @@ function Hero() {
       </div>
       <WhyBestbyBites />
       <ForCustomersAndMerchants />
+      <BusinessModelSection />
       <FoodWasteIsCostingEveryone />
       <JoinMovement />
       <WhoCanJoin />

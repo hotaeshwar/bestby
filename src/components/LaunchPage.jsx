@@ -12,20 +12,20 @@ export default function LaunchPage() {
           LAUNCHING SOON
         </h2>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-          <a href="#" className="hover:opacity-80 transition-opacity">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
+          <a href="#" className="hover:opacity-80 transition-opacity w-full max-w-[160px] sm:max-w-[180px] md:max-w-[200px]">
             <img 
               src="/images/GOOGLE.png" 
               alt="Get it on Google Play"
-              className="h-10 sm:h-11 md:h-12 w-auto"
+              className="w-full h-auto object-contain"
             />
           </a>
 
-          <a href="#" className="hover:opacity-80 transition-opacity">
+          <a href="#" className="hover:opacity-80 transition-opacity w-full max-w-[160px] sm:max-w-[180px] md:max-w-[200px]">
             <img 
               src="/images/appstore.png" 
               alt="Download on the App Store"
-              className="h-10 sm:h-11 md:h-12 w-auto"
+              className="w-full h-auto object-contain"
             />
           </a>
         </div>

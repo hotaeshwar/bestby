@@ -123,11 +123,9 @@ const WhyBestbyBites = () => {
     <div className="w-full bg-gradient-to-b from-white to-gray-50 py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Title */}
-        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4">
-          <span className="bg-gradient-to-r from-[#04c55c] to-[#013727] bg-clip-text text-transparent">
-            Bestby Bites unlocks access to surplus food from top local restaurants,<br />
-            bringing top local flavors to your table at unbeatable prices
-          </span>
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-6 sm:mb-8 md:mb-10 lg:mb-12 px-4 text-gray-900">
+          Bestby Bites unlocks access to surplus food from top local restaurants,<br />
+          bringing top local flavors to your table at unbeatable prices
         </h2>
 
         {/* Video Container */}
@@ -147,7 +145,7 @@ const WhyBestbyBites = () => {
               poster="/images/THUMBNAIL-VIDEO-2.jpg"
               loop
             >
-              <source src="/images/BESTBYBITESVIDEO21.mp4" type="video/mp4" />
+              <source src="/images/BESTBYBITESVIDEO24.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
