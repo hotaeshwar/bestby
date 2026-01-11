@@ -138,58 +138,58 @@ const ForCustomersAndMerchants = () => {
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                <div className="text-center lg:text-left px-2 sm:px-4 lg:px-0">
-                  <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-[#04c55c]">
+                <div className="text-left px-2 sm:px-4 lg:px-0">
+                  <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-[#04c55c] text-left">
                     For Customers
                   </h2>
                   
-                  <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                  <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
                     Eat Well for Less—Without Compromise
                   </h3>
                   
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed text-left">
                     Get restaurant-quality food and groceries from trusted local businesses at up to 80% off, all while making a real environmental impact.
                   </p>
 
                   {/* Benefits List */}
                   <div className="space-y-3 sm:space-y-3.5 md:space-y-4 mb-5 sm:mb-6 md:mb-7 lg:mb-8">
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Spend less on everyday meals</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Spend less on everyday meals</p>
                     </div>
                     
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Discover new local favorites</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Discover new local favorites</p>
                     </div>
                     
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Reduce food waste effortlessly</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Reduce food waste effortlessly</p>
                     </div>
                     
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Feel good about every pickup</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Feel good about every pickup</p>
                     </div>
                   </div>
 
                   {/* Newsletter Signup Section */}
                   <div className="mb-5 sm:mb-6 md:mb-7 lg:mb-8">
-                    <p className="text-xs sm:text-sm md:text-sm lg:text-base text-white mb-3 sm:mb-4 leading-relaxed">
+                    <p className="text-xs sm:text-sm md:text-sm lg:text-base text-white mb-3 sm:mb-4 leading-relaxed text-left">
                       Get special offers, meals, and news when you subscribe to our newsletter.
                     </p>
                     
                     {/* Button */}
-                    <div className="flex justify-center lg:justify-start">
+                    <div className="flex justify-start">
                       <button
                         onClick={scrollToNewsletter}
                         className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 text-sm sm:text-base md:text-lg font-bold bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
@@ -222,52 +222,52 @@ const ForCustomersAndMerchants = () => {
                     : 'opacity-0 -translate-x-20'
                 }`}
               >
-                <div className="text-center lg:text-left px-2 sm:px-4 lg:px-0">
-                  <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-[#04c55c]">
+                <div className="text-left px-2 sm:px-4 lg:px-0">
+                  <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-[#04c55c] text-left">
                     For Merchants
                   </h2>
                   
-                  <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                  <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
                     Turn Unsold Food Into Easy Revenue
                   </h3>
                   
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed text-left">
                     Stop throwing money away. Bestby Bites helps you sell surplus inventory, reduce waste costs, and reach new customers without hurting your brand.
                   </p>
 
                   {/* Benefits List */}
                   <div className="space-y-3 sm:space-y-3.5 md:space-y-4 mb-5 sm:mb-6 md:mb-7 lg:mb-8">
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Recover revenue from surplus food</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Recover revenue from surplus food</p>
                     </div>
                     
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Cut disposal and waste expenses</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Cut disposal and waste expenses</p>
                     </div>
                     
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Attract new, value-driven customers</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Attract new, value-driven customers</p>
                     </div>
                     
-                    <div className="flex items-start gap-2 sm:gap-3 justify-center lg:justify-start">
+                    <div className="flex items-start gap-2 sm:gap-3 justify-start">
                       <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white">Strengthen sustainability and brand trust</p>
+                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Strengthen sustainability and brand trust</p>
                     </div>
                   </div>
 
                   {/* Button */}
-                  <div className="flex justify-center lg:justify-start">
+                  <div className="flex justify-start">
                     <button 
                       className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 text-sm sm:text-base md:text-lg font-bold bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     >

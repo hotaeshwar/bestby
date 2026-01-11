@@ -1,17 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
   const [showThankYou, setShowThankYou] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const fullText = "Get special offers, meals, and news when you subscribe to our newsletter.";
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animations on mount
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && typedText.length < fullText.length) {
+      const timeout = setTimeout(() => {
+        setTypedText(fullText.slice(0, typedText.length + 1));
+      }, 30);
+      return () => clearTimeout(timeout);
+    } else if (typedText.length === fullText.length) {
+      setIsTypingComplete(true);
+    }
+  }, [typedText, fullText, isVisible]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email) {
-      // Here you would typically send the email to your backend
       console.log('Email submitted:', email);
       setShowThankYou(true);
       
-      // Reset after 3 seconds
       setTimeout(() => {
         setShowThankYou(false);
         setEmail('');
@@ -20,268 +41,126 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section id="newsletter-signup" className="w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="newsletter-signup" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <style>{`
-        /* iPhone SE and small mobile (< 376px) */
-        @media (max-width: 375px) {
-          .newsletter-heading {
-            font-size: 1.75rem !important;
-            line-height: 1.3 !important;
-            margin-bottom: 0.75rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 0.875rem !important;
-            line-height: 1.5 !important;
-            margin-bottom: 1.25rem !important;
-          }
+        @keyframes blink {
+          0%, 49% { opacity: 1; }
+          50%, 100% { opacity: 0; }
+        }
+        
+        .cursor {
+          animation: blink 1s infinite;
+        }
 
-          .newsletter-input {
-            font-size: 0.875rem !important;
-            padding: 0.75rem 1rem !important;
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
           }
-
-          .newsletter-button {
-            font-size: 0.875rem !important;
-            padding: 0.75rem 1.5rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 0.875rem !important;
-            margin-top: 0.75rem !important;
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
 
-        /* Mobile (376px - 639px) */
-        @media (min-width: 376px) and (max-width: 639px) {
-          .newsletter-heading {
-            font-size: 2rem !important;
-            line-height: 1.3 !important;
-            margin-bottom: 0.875rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 0.9375rem !important;
-            line-height: 1.55 !important;
-            margin-bottom: 1.5rem !important;
-          }
+        .fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
 
-          .newsletter-input {
-            font-size: 0.9375rem !important;
-            padding: 0.875rem 1.125rem !important;
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
           }
-
-          .newsletter-button {
-            font-size: 0.9375rem !important;
-            padding: 0.875rem 1.75rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 0.9375rem !important;
-            margin-top: 0.875rem !important;
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
         }
 
-        /* Small Tablet (640px - 767px) */
-        @media (min-width: 640px) and (max-width: 767px) {
-          .newsletter-heading {
-            font-size: 2.25rem !important;
-            line-height: 1.3 !important;
-            margin-bottom: 1rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 1rem !important;
-            line-height: 1.6 !important;
-            margin-bottom: 1.75rem !important;
-          }
-
-          .newsletter-input {
-            font-size: 1rem !important;
-            padding: 1rem 1.25rem !important;
-          }
-
-          .newsletter-button {
-            font-size: 1rem !important;
-            padding: 1rem 2rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 1rem !important;
-            margin-top: 1rem !important;
-          }
+        .slide-up {
+          animation: slideUp 0.5s ease-out forwards;
         }
 
-        /* iPad Mini & Air (768px - 1023px) */
-        @media (min-width: 768px) and (max-width: 1023px) {
-          .newsletter-heading {
-            font-size: 2.5rem !important;
-            line-height: 1.25 !important;
-            margin-bottom: 1.125rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 1.0625rem !important;
-            line-height: 1.65 !important;
-            margin-bottom: 2rem !important;
-          }
-
-          .newsletter-input {
-            font-size: 1.0625rem !important;
-            padding: 1.125rem 1.375rem !important;
-          }
-
-          .newsletter-button {
-            font-size: 1.0625rem !important;
-            padding: 1.125rem 2.25rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 1.0625rem !important;
-            margin-top: 1.125rem !important;
-          }
+        /* Input focus animation - moves label up */
+        .email-input-wrapper input:focus ~ .email-label,
+        .email-input-wrapper input:not(:placeholder-shown) ~ .email-label {
+          transform: translateY(-32px) scale(0.9);
+          color: #0f766e;
         }
 
-        /* Desktop (1024px - 1279px) */
-        @media (min-width: 1024px) and (max-width: 1279px) {
-          .newsletter-heading {
-            font-size: 2.75rem !important;
-            line-height: 1.2 !important;
-            margin-bottom: 1.25rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 1.125rem !important;
-            line-height: 1.7 !important;
-            margin-bottom: 2.25rem !important;
-          }
-
-          .newsletter-input {
-            font-size: 1.125rem !important;
-            padding: 1.25rem 1.5rem !important;
-          }
-
-          .newsletter-button {
-            font-size: 1.125rem !important;
-            padding: 1.25rem 2.5rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 1.125rem !important;
-            margin-top: 1.25rem !important;
-          }
+        .email-label {
+          transition: all 0.3s ease;
+          transform-origin: left;
         }
 
-        /* Large Desktop (1280px - 1535px) */
-        @media (min-width: 1280px) and (max-width: 1535px) {
-          .newsletter-heading {
-            font-size: 3rem !important;
-            line-height: 1.2 !important;
-            margin-bottom: 1.375rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 1.1875rem !important;
-            line-height: 1.7 !important;
-            margin-bottom: 2.5rem !important;
-          }
-
-          .newsletter-input {
-            font-size: 1.1875rem !important;
-            padding: 1.375rem 1.625rem !important;
-          }
-
-          .newsletter-button {
-            font-size: 1.1875rem !important;
-            padding: 1.375rem 2.75rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 1.1875rem !important;
-            margin-top: 1.375rem !important;
-          }
-        }
-
-        /* XL Desktop (1536px+) */
-        @media (min-width: 1536px) {
-          .newsletter-heading {
-            font-size: 3.25rem !important;
-            line-height: 1.15 !important;
-            margin-bottom: 1.5rem !important;
-          }
-          
-          .newsletter-description {
-            font-size: 1.25rem !important;
-            line-height: 1.75 !important;
-            margin-bottom: 2.75rem !important;
-          }
-
-          .newsletter-input {
-            font-size: 1.25rem !important;
-            padding: 1.5rem 1.75rem !important;
-          }
-
-          .newsletter-button {
-            font-size: 1.25rem !important;
-            padding: 1.5rem 3rem !important;
-          }
-
-          .newsletter-thank-you {
-            font-size: 1.25rem !important;
-            margin-top: 1.5rem !important;
-          }
+        .email-input-wrapper input:focus {
+          border-color: #0f766e;
         }
       `}</style>
 
-      <div className="max-w-4xl mx-auto text-center">
+      <div className={`max-w-4xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Heading */}
-        <h2 className="newsletter-heading font-bold text-gray-900">
+        <h2 
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4"
+          style={{
+            transitionDelay: '100ms'
+          }}
+        >
           Not hungry yet?
         </h2>
 
-        {/* Description */}
-        <p className="newsletter-description text-gray-700">
-          Get special offers, meals, and news when you subscribe to our newsletter.
+        {/* Description with Typing Animation */}
+        <p 
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-4 sm:mb-5 md:mb-6 lg:mb-8 min-h-[2em]"
+          style={{
+            transitionDelay: '200ms'
+          }}
+        >
+          {typedText}
+          {!isTypingComplete && <span className="cursor">|</span>}
         </p>
 
-        {/* Email Form */}
-        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-0 items-stretch sm:items-center justify-center">
-            {/* Email Input */}
-            <div className="flex-1 relative">
-              <label htmlFor="email" className="absolute -top-2 left-3 text-xs text-teal-700 bg-gray-50 px-1 font-medium">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="bestbybites@gmail.com"
-                required
-                className="newsletter-input w-full border-2 border-teal-700 rounded-l-lg sm:rounded-r-none rounded-r-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all bg-blue-50/30"
-              />
+        {/* Email Form - Fades in after typing completes */}
+        {isTypingComplete && (
+          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto fade-in-up">
+            <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center">
+              {/* Email Input with Float Label Animation */}
+              <div className="w-full email-input-wrapper relative">
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder=" "
+                  required
+                  className="w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg border-2 border-teal-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all bg-blue-50/30 peer"
+                />
+                <label 
+                  htmlFor="email" 
+                  className="email-label absolute left-3 sm:left-4 md:left-5 lg:left-6 top-2.5 sm:top-3 md:top-3.5 lg:top-4 text-sm sm:text-base md:text-lg text-gray-500 bg-gray-50 px-2 pointer-events-none"
+                >
+                  bestbybites@gmail.com
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-6 sm:px-8 md:px-10 lg:px-12 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg text-white font-semibold rounded-lg bg-[#04c55c] hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
+              >
+                Sign up
+              </button>
             </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="newsletter-button text-white font-semibold rounded-r-lg sm:rounded-l-none rounded-l-lg transition-all duration-300 hover:scale-105 active:scale-95 whitespace-nowrap"
-              style={{ backgroundColor: '#04c55c' }}
-              onMouseEnter={(e) => e.target.style.backgroundColor = '#03a84d'}
-              onMouseLeave={(e) => e.target.style.backgroundColor = '#04c55c'}
-            >
-              Sign up
-            </button>
-          </div>
-
-          {/* Thank You Message */}
-          {showThankYou && (
-            <p className="newsletter-thank-you font-medium" style={{ color: '#04c55c' }}>
-              Thank you!
-            </p>
-          )}
-        </form>
+            {/* Thank You Message */}
+            {showThankYou && (
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-medium text-[#04c55c] slide-up">
+                Thank you!
+              </p>
+            )}
+          </form>
+        )}
       </div>
     </section>
   );

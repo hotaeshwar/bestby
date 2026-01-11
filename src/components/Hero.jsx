@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HowItWorks from './HowItWorks';
+import LaunchPage from './LaunchPage';
 import Launchingsoon from './Launchingsoon';
 import WhyBestbyBites from './WhyBestbyBites';
 import ForCustomersAndMerchants from './ForCustomersAndMerchants';
@@ -602,6 +603,7 @@ function Hero() {
       </div>
 
       {/* All other sections */}
+      <LaunchPage />
       <HowItWorks />
       <div id="launching-soon">
         <Launchingsoon />
