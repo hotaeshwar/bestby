@@ -100,7 +100,7 @@ const AppScreenshots = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
             App Interface
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-bold max-w-3xl mx-auto">
             "A simple way to turn surplus food into value"
           </p>
         </div>

@@ -16,7 +16,7 @@ function App() {
             <>
               <Hero />
               <LaunchPage />
-              <NewsletterSignup />
+              
               <Footer />
               
             </>

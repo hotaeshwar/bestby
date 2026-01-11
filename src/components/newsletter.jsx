@@ -4,9 +4,11 @@ const NewsletterSignup = () => {
   const [email, setEmail] = useState('');
   const [showThankYou, setShowThankYou] = useState(false);
   const [typedText, setTypedText] = useState('');
-  const fullText = "Get special offers, meals, and news when you subscribe to our newsletter.";
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+
+  const fullText = "Get special offers, meals, and news when you subscribe to our newsletter.";
 
   useEffect(() => {
     // Trigger animations on mount
@@ -25,7 +27,7 @@ const NewsletterSignup = () => {
     } else if (typedText.length === fullText.length) {
       setIsTypingComplete(true);
     }
-  }, [typedText, fullText, isVisible]);
+  }, [typedText, isVisible]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +43,7 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section id="newsletter-signup" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="newsletter-signup" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       <style>{`
         @keyframes blink {
           0%, 49% { opacity: 1; }
@@ -82,11 +84,47 @@ const NewsletterSignup = () => {
           animation: slideUp 0.5s ease-out forwards;
         }
 
+        @keyframes slideInFromLeft {
+          0% {
+            opacity: 0;
+            transform: translateX(-100px) scale(0.95);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+          }
+        }
+
+        @keyframes borderPulse {
+          0%, 100% {
+            border-color: #86efac;
+            box-shadow: 0 0 0 0 rgba(134, 239, 172, 0.7);
+          }
+          50% {
+            border-color: #4ade80;
+            box-shadow: 0 0 20px 4px rgba(134, 239, 172, 0.4);
+          }
+        }
+
+        @keyframes glowPulse {
+          0%, 100% {
+            box-shadow: 0 0 10px rgba(134, 239, 172, 0.5), 0 0 20px rgba(134, 239, 172, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(134, 239, 172, 0.8), 0 0 30px rgba(134, 239, 172, 0.5);
+          }
+        }
+
+        .email-input-wrapper input:not(:focus) {
+          animation: borderPulse 3s ease-in-out infinite, glowPulse 3s ease-in-out infinite;
+        }
+
         /* Input focus animation - moves label up */
         .email-input-wrapper input:focus ~ .email-label,
         .email-input-wrapper input:not(:placeholder-shown) ~ .email-label {
           transform: translateY(-32px) scale(0.9);
-          color: #0f766e;
+          color: #10b981;
+          background: transparent;
         }
 
         .email-label {
@@ -95,14 +133,30 @@ const NewsletterSignup = () => {
         }
 
         .email-input-wrapper input:focus {
-          border-color: #0f766e;
+          border-color: #10b981 !important;
+          box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3) !important;
+          animation: none !important;
+        }
+
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-5px);
+          }
+        }
+
+        .input-slide-in {
+          animation: slideInFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                     float 3s ease-in-out infinite 1s;
         }
       `}</style>
 
       <div className={`max-w-4xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Heading */}
         <h2 
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4"
           style={{
             transitionDelay: '100ms'
           }}
@@ -112,7 +166,7 @@ const NewsletterSignup = () => {
 
         {/* Description with Typing Animation */}
         <p 
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 mb-4 sm:mb-5 md:mb-6 lg:mb-8 min-h-[2em]"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-4 sm:mb-5 md:mb-6 lg:mb-8 min-h-[2em]"
           style={{
             transitionDelay: '200ms'
           }}
@@ -126,19 +180,21 @@ const NewsletterSignup = () => {
           <form onSubmit={handleSubmit} className="max-w-2xl mx-auto fade-in-up">
             <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center">
               {/* Email Input with Float Label Animation */}
-              <div className="w-full email-input-wrapper relative">
+              <div className="w-full email-input-wrapper relative input-slide-in">
                 <input
                   type="email"
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
                   placeholder=" "
                   required
-                  className="w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg border-2 border-teal-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all bg-blue-50/30 peer"
+                  className="w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg border-2 border-green-300 rounded-lg focus:outline-none transition-all bg-white/95 peer text-gray-800 placeholder-gray-400"
                 />
                 <label 
                   htmlFor="email" 
-                  className="email-label absolute left-3 sm:left-4 md:left-5 lg:left-6 top-2.5 sm:top-3 md:top-3.5 lg:top-4 text-sm sm:text-base md:text-lg text-gray-500 bg-gray-50 px-2 pointer-events-none"
+                  className="email-label absolute left-3 sm:left-4 md:left-5 lg:left-6 top-2.5 sm:top-3 md:top-3.5 lg:top-4 text-sm sm:text-base md:text-lg text-gray-500 bg-white/95 px-2 pointer-events-none"
                 >
                   bestbybites@gmail.com
                 </label>

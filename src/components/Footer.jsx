@@ -49,6 +49,34 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 w-full h-full min-h-screen flex flex-col justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-12 sm:py-16 md:py-20 lg:py-24">
+        
+        {/* Newsletter Section at Top */}
+        <div 
+          id="newsletter-signup"
+          className={`mb-12 sm:mb-16 md:mb-20 lg:mb-24 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+        >
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8">
+              Stay Updated
+            </h2>
+            <p className="text-white/90 text-base sm:text-lg md:text-xl mb-6 sm:mb-8">
+              Get special offers, meals, and news when you subscribe to our newsletter.
+            </p>
+            
+            {/* Newsletter Form */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 sm:px-6 py-3 sm:py-4 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#04c55c] text-sm sm:text-base"
+              />
+              <button className="px-6 sm:px-8 py-3 sm:py-4 bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 text-sm sm:text-base whitespace-nowrap">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="flex-1 flex items-center justify-center">
           <div 
             className={`text-center max-w-6xl transition-all duration-1000 delay-200 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -79,7 +107,7 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4">
             <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 order-2 sm:order-1">
               <p className="text-white/90 text-sm sm:text-base md:text-lg">
-                © 2025 Bestby Bites. All rights reserved.
+                © 2026 Bestby Bites. All rights reserved.
               </p>
               <div className="hidden sm:block w-px h-4 bg-white/30" />
               <Link to="/privacy-policy" className="text-white/90 text-sm sm:text-base md:text-lg hover:text-[#04c55c] transition-colors duration-300 underline underline-offset-4 decoration-white/30 hover:decoration-[#04c55c]">

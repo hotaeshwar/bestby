@@ -59,6 +59,77 @@ const BusinessModelSection = () => {
 
   return (
     <div className="w-full bg-white">
+      <style>{`
+        /* Mobile font sizes - Enhanced readability */
+        @media (max-width: 640px) {
+          .section-heading {
+            font-size: 2rem !important; /* 32px */
+            line-height: 1.2 !important;
+          }
+          
+          .benefit-text {
+            font-size: 1.0625rem !important; /* 17px */
+            line-height: 1.6 !important;
+            font-weight: 600 !important;
+          }
+          
+          .checkmark {
+            font-size: 1.5rem !important; /* 24px */
+          }
+          
+          .cta-button {
+            font-size: 1.125rem !important; /* 18px */
+            padding: 0.875rem 2rem !important;
+          }
+        }
+
+        /* Tablet font sizes */
+        @media (min-width: 641px) and (max-width: 1023px) {
+          .section-heading {
+            font-size: 2.5rem !important; /* 40px */
+            line-height: 1.2 !important;
+          }
+          
+          .benefit-text {
+            font-size: 1.1875rem !important; /* 19px */
+            line-height: 1.65 !important;
+            font-weight: 600 !important;
+          }
+          
+          .checkmark {
+            font-size: 1.75rem !important; /* 28px */
+          }
+          
+          .cta-button {
+            font-size: 1.25rem !important; /* 20px */
+            padding: 1rem 2.5rem !important;
+          }
+        }
+
+        /* Desktop font sizes */
+        @media (min-width: 1024px) {
+          .section-heading {
+            font-size: 3rem !important; /* 48px */
+            line-height: 1.15 !important;
+          }
+          
+          .benefit-text {
+            font-size: 1.3125rem !important; /* 21px */
+            line-height: 1.7 !important;
+            font-weight: 600 !important;
+          }
+          
+          .checkmark {
+            font-size: 2rem !important; /* 32px */
+          }
+          
+          .cta-button {
+            font-size: 1.375rem !important; /* 22px */
+            padding: 1.125rem 3rem !important;
+          }
+        }
+      `}</style>
+
       {/* For Customers Section */}
       <section className="w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-12 bg-[#013727]">
         <div className="max-w-7xl mx-auto">
@@ -66,8 +137,8 @@ const BusinessModelSection = () => {
             {/* Image - Mobile first, then desktop left */}
             <div style={fadeInStyle(0.2)} className="order-2 lg:order-1 flex items-center justify-center lg:justify-end">
               <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
-                {/* Green border effect */}
-                <div className="absolute inset-0 bg-[#04c55c] rounded-2xl md:rounded-3xl -top-2 -left-2 right-2 bottom-2 md:-top-3 md:-left-3 md:right-3 md:bottom-3"></div>
+                {/* White border effect */}
+                <div className="absolute inset-0 bg-white rounded-2xl md:rounded-3xl -top-2 -left-2 right-2 bottom-2 md:-top-3 md:-left-3 md:right-3 md:bottom-3"></div>
                 
                 {/* Main image container */}
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500">
@@ -85,28 +156,28 @@ const BusinessModelSection = () => {
 
             {/* Content */}
             <div style={fadeInStyle(0.4)} className="order-1 lg:order-2 text-white flex flex-col justify-center">
-              <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-center lg:text-left">
-                For Customers
+              <h2 className="section-heading font-extrabold mb-6 md:mb-8 text-center lg:text-left">
+                Customer Benefits
               </h2>
               <div className="space-y-4 md:space-y-5 lg:space-y-6 mb-8 md:mb-10">
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0 mt-1">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl leading-relaxed">High-quality food at unbeatable prices</p>
+                  <span className="text-[#04c55c] checkmark flex-shrink-0 mt-1 font-bold">✓</span>
+                  <p className="benefit-text leading-relaxed">High-quality food at unbeatable prices</p>
                 </div>
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0 mt-1">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl leading-relaxed">Easy access to local restaurants and stores</p>
+                  <span className="text-[#04c55c] checkmark flex-shrink-0 mt-1 font-bold">✓</span>
+                  <p className="benefit-text leading-relaxed">Easy access to local restaurants and stores</p>
                 </div>
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0 mt-1">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl leading-relaxed">Real impact with zero lifestyle change</p>
+                  <span className="text-[#04c55c] checkmark flex-shrink-0 mt-1 font-bold">✓</span>
+                  <p className="benefit-text leading-relaxed">Real impact with zero lifestyle change</p>
                 </div>
               </div>
 
               <div className="flex justify-center lg:justify-start">
                 <button
                   onClick={scrollToNewsletter}
-                  className="px-8 md:px-10 lg:px-12 py-3 md:py-3.5 lg:py-4 bg-[#04c55c] hover:bg-[#03a84d] rounded-full text-base md:text-lg lg:text-xl font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg"
+                  className="cta-button bg-[#04c55c] hover:bg-[#03a84d] rounded-full font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-95 shadow-lg"
                 >
                   Subscribe
                 </button>
@@ -122,21 +193,21 @@ const BusinessModelSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-14 xl:gap-16 items-center">
             {/* Content */}
             <div style={fadeInStyle(0.2)} className="text-white flex flex-col justify-center order-1">
-              <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-center lg:text-left">
-                For Businesses
+              <h2 className="section-heading font-extrabold mb-6 md:mb-8 text-center lg:text-left">
+                Become a Partner
               </h2>
               <div className="space-y-4 md:space-y-5 lg:space-y-6">
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0 mt-1">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl leading-relaxed">Monetize surplus inventory</p>
+                  <span className="text-[#04c55c] checkmark flex-shrink-0 mt-1 font-bold">✓</span>
+                  <p className="benefit-text leading-relaxed">Monetize surplus inventory</p>
                 </div>
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0 mt-1">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl leading-relaxed">Reduce waste and disposal costs</p>
+                  <span className="text-[#04c55c] checkmark flex-shrink-0 mt-1 font-bold">✓</span>
+                  <p className="benefit-text leading-relaxed">Reduce waste and disposal costs</p>
                 </div>
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
-                  <span className="text-[#04c55c] text-xl md:text-2xl flex-shrink-0 mt-1">✓</span>
-                  <p className="text-base md:text-lg lg:text-xl leading-relaxed">Improve sustainability and public image</p>
+                  <span className="text-[#04c55c] checkmark flex-shrink-0 mt-1 font-bold">✓</span>
+                  <p className="benefit-text leading-relaxed">Improve sustainability and public image</p>
                 </div>
               </div>
             </div>
@@ -147,8 +218,8 @@ const BusinessModelSection = () => {
                 {/* Merchant screen overlay with "Join as a Suppliers" tag */}
                 <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 lg:-top-8 lg:-right-8 w-24 sm:w-28 md:w-32 lg:w-36 z-20">
                   <div className="relative">
-                    {/* Green border for merchant screen */}
-                    <div className="absolute inset-0 bg-[#04c55c] rounded-lg md:rounded-xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 md:-top-1 md:-left-1 md:right-1 md:bottom-1"></div>
+                    {/* White border for merchant screen */}
+                    <div className="absolute inset-0 bg-white rounded-lg md:rounded-xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 md:-top-1 md:-left-1 md:right-1 md:bottom-1"></div>
                     <div className="relative">
                       <img
                         src="/images/screen-1-merchant.jpg"
@@ -166,8 +237,8 @@ const BusinessModelSection = () => {
                   </div>
                 </div>
 
-                {/* Green border effect for main image */}
-                <div className="absolute inset-0 bg-[#04c55c] rounded-2xl md:rounded-3xl -top-2 -right-2 left-2 bottom-2 md:-top-3 md:-right-3 md:left-3 md:bottom-3"></div>
+                {/* White border effect for main image */}
+                <div className="absolute inset-0 bg-white rounded-2xl md:rounded-3xl -top-2 -right-2 left-2 bottom-2 md:-top-3 md:-right-3 md:left-3 md:bottom-3"></div>
                 
                 {/* Main chef image container */}
                 <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-500">

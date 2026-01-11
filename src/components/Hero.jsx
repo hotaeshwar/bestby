@@ -9,7 +9,6 @@ import JoinMovement from './JoinMovement';
 import WhoCanJoin from './WhoCanJoin';
 import AppScreenshots from './AppScreenshots';
 import ForCustomersAndMerchants from './ForCustomersAndMerchants'
-
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -26,7 +25,7 @@ function Hero() {
 
   return (
     <>
-      {/* Mobile Layout (< 768px) */}
+      {/* Mobile Layout (< 768px) - ENHANCED LOGO */}
       <div
         id="hero-mobile-section"
         className="block md:hidden relative overflow-hidden bg-[#013727]"
@@ -43,10 +42,21 @@ function Hero() {
             50% { box-shadow: 0 0 30px rgba(4, 197, 92, 0.8); }
           }
 
-          /* iPhone SE and small mobile (< 376px) */
+          @keyframes logo-entrance {
+            0% { 
+              opacity: 0;
+              transform: scale(0.85);
+            }
+            100% { 
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          /* iPhone SE and small mobile (< 376px) - LARGER LOGO */
           @media (max-width: 375px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 1.5rem !important;
+              padding-top: 2rem !important;
               padding-bottom: 0 !important;
             }
 
@@ -55,15 +65,17 @@ function Hero() {
             }
 
             #hero-mobile-section .hero-logo {
-              height: 70px !important;
-              margin-bottom: 0.75rem !important;
+              height: 95px !important;
+              width: auto !important;
+              margin-bottom: 1.25rem !important;
+              animation: logo-entrance 0.6s ease-out;
             }
             
             #hero-mobile-section .hero-heading {
               font-size: 2.4rem !important;
               line-height: 1.15 !important;
               margin-bottom: 0.6rem !important;
-              margin-top: 0.8rem !important;
+              margin-top: 0.5rem !important;
               text-align: center !important;
               width: 100%;
             }
@@ -87,16 +99,18 @@ function Hero() {
             }
             
             #hero-mobile-section .hero-button {
-              font-size: 1.05rem !important;
-              padding: 0.85rem 1.75rem !important;
+              font-size: 1.125rem !important;
+              font-weight: 700 !important;
+              padding: 0.75rem 2rem !important;
               margin: 20px !important;
+              letter-spacing: 0.5px !important;
             }
           }
 
-          /* iPhone XR and similar (376px - 389px) */
+          /* iPhone XR and similar (376px - 389px) - LARGER LOGO */
           @media (min-width: 376px) and (max-width: 389px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 2rem !important;
+              padding-top: 2.25rem !important;
               padding-bottom: 0 !important;
             }
 
@@ -105,15 +119,17 @@ function Hero() {
             }
 
             #hero-mobile-section .hero-logo {
-              height: 80px !important;
-              margin-bottom: 1rem !important;
+              height: 110px !important;
+              width: auto !important;
+              margin-bottom: 1.5rem !important;
+              animation: logo-entrance 0.6s ease-out;
             }
             
             #hero-mobile-section .hero-heading {
               font-size: 2.75rem !important;
               line-height: 1.15 !important;
               margin-bottom: 0.8rem !important;
-              margin-top: 1rem !important;
+              margin-top: 0.5rem !important;
               text-align: center !important;
               width: 100%;
             }
@@ -137,16 +153,18 @@ function Hero() {
             }
             
             #hero-mobile-section .hero-button {
-              font-size: 1.125rem !important;
-              padding: 0.9rem 1.8rem !important;
+              font-size: 1.25rem !important;
+              font-weight: 700 !important;
+              padding: 0.8rem 2.2rem !important;
               margin: 20px !important;
+              letter-spacing: 0.5px !important;
             }
           }
 
-          /* iPhone 12 Pro and similar (390px - 639px) */
+          /* iPhone 12 Pro and similar (390px - 639px) - LARGER LOGO */
           @media (min-width: 390px) and (max-width: 639px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 2rem !important;
+              padding-top: 2.5rem !important;
               padding-bottom: 0 !important;
             }
 
@@ -155,15 +173,17 @@ function Hero() {
             }
 
             #hero-mobile-section .hero-logo {
-              height: 80px !important;
-              margin-bottom: 1rem !important;
+              height: 115px !important;
+              width: auto !important;
+              margin-bottom: 1.75rem !important;
+              animation: logo-entrance 0.6s ease-out;
             }
             
             #hero-mobile-section .hero-heading {
               font-size: 2.75rem !important;
               line-height: 1.15 !important;
               margin-bottom: 0.8rem !important;
-              margin-top: 1rem !important;
+              margin-top: 0.5rem !important;
               text-align: center !important;
               width: 100%;
             }
@@ -187,16 +207,18 @@ function Hero() {
             }
             
             #hero-mobile-section .hero-button {
-              font-size: 1.125rem !important;
-              padding: 0.9rem 1.8rem !important;
+              font-size: 1.25rem !important;
+              font-weight: 700 !important;
+              padding: 0.8rem 2.2rem !important;
               margin: 20px !important;
+              letter-spacing: 0.5px !important;
             }
           }
 
-          /* Small Tablet (640px - 767px) */
+          /* Small Tablet (640px - 767px) - LARGER LOGO */
           @media (min-width: 640px) and (max-width: 767px) {
             #hero-mobile-section .mobile-hero-container {
-              padding-top: 2.5rem !important;
+              padding-top: 3rem !important;
               padding-bottom: 0 !important;
             }
 
@@ -205,15 +227,17 @@ function Hero() {
             }
 
             #hero-mobile-section .hero-logo {
-              height: 90px !important;
-              margin-bottom: 1.5rem !important;
+              height: 130px !important;
+              width: auto !important;
+              margin-bottom: 2rem !important;
+              animation: logo-entrance 0.6s ease-out;
             }
             
             #hero-mobile-section .hero-heading {
               font-size: 3rem !important;
               line-height: 1.2 !important;
               margin-bottom: 1rem !important;
-              margin-top: 2rem !important;
+              margin-top: 0.5rem !important;
               text-align: center !important;
               width: 100%;
             }
@@ -237,22 +261,30 @@ function Hero() {
             }
             
             #hero-mobile-section .hero-button {
-              font-size: 1.2rem !important;
-              padding: 0.95rem 2rem !important;
+              font-size: 1.35rem !important;
+              font-weight: 700 !important;
+              padding: 0.85rem 2.4rem !important;
               margin: 20px !important;
+              letter-spacing: 0.5px !important;
             }
+          }
+
+          /* Enhanced logo hover effect */
+          #hero-mobile-section .hero-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
           }
         `}</style>
 
         {/* Content Section */}
         <div className="mobile-hero-container relative flex items-center justify-center z-20 px-5 py-0 sm:px-8">
           <div className="flex flex-col items-center max-w-2xl">
-            {/* Logo - Centered on mobile */}
+            {/* Logo - Centered and LARGER on mobile */}
             <div className="flex justify-center items-center w-full">
               <img
                 src="/images/BEST-BY-BITES-FINAL-LOGO-WHITE.png"
                 alt="Bestby Bites Logo"
-                className="hero-logo w-auto transition-transform duration-300 hover:scale-105"
+                className="hero-logo w-auto transition-transform duration-300"
               />
             </div>
 
@@ -280,7 +312,7 @@ function Hero() {
                 className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer mx-5"
                 style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
               >
-                Subscribe
+                Sign up
               </button>
             </div>
           </div>
@@ -302,8 +334,8 @@ function Hero() {
           /* iPad Mini & Air (768px - 1023px) */
           @media (min-width: 768px) and (max-width: 1023px) {
             #hero-tablet-section .hero-logo {
-              height: 95px !important;
-              min-height: 67px;
+              height: 135px !important;
+              min-height: 100px;
             }
             
             #hero-tablet-section .hero-heading {
@@ -326,8 +358,10 @@ function Hero() {
             }
             
             #hero-tablet-section .hero-button {
-              font-size: 1.1rem !important;
-              padding: 0.95rem 1.9rem !important;
+              font-size: 1.25rem !important;
+              font-weight: 700 !important;
+              padding: 0.85rem 2.2rem !important;
+              letter-spacing: 0.5px !important;
             }
           }
         `}</style>
@@ -371,7 +405,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Subscribe
+                    Sign up
                   </button>
                 </div>
               </div>
@@ -395,7 +429,7 @@ function Hero() {
           /* iPad Pro (1024px - 1366px) - Centered Layout at Top with Padding */
           @media (min-width: 1024px) and (max-width: 1366px) {
             #hero-ipad-pro-section .hero-logo {
-              height: 189px !important;
+              height: 225px !important;
             }
             
             #hero-ipad-pro-section .hero-heading {
@@ -427,8 +461,10 @@ function Hero() {
             }
             
             #hero-ipad-pro-section .hero-button {
-              font-size: 39px !important;
-              padding: 1.15rem 2.3rem !important;
+              font-size: 1.75rem !important;
+              font-weight: 700 !important;
+              padding: 0.9rem 2.5rem !important;
+              letter-spacing: 0.5px !important;
             }
           }
         `}</style>
@@ -473,7 +509,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Subscribe
+                    Sign up
                   </button>
                 </div>
               </div>
@@ -519,8 +555,10 @@ function Hero() {
             }
             
             #hero-desktop-section .hero-button {
-              font-size: 1.3rem !important;
-              padding: 1.2rem 2.4rem !important;
+              font-size: 1.4rem !important;
+              font-weight: 700 !important;
+              padding: 0.9rem 2.5rem !important;
+              letter-spacing: 0.5px !important;
             }
           }
 
@@ -549,8 +587,10 @@ function Hero() {
             }
             
             #hero-desktop-section .hero-button {
-              font-size: 1.35rem !important;
-              padding: 1.25rem 2.5rem !important;
+              font-size: 1.5rem !important;
+              font-weight: 700 !important;
+              padding: 0.95rem 2.6rem !important;
+              letter-spacing: 0.5px !important;
             }
           }
         `}</style>
@@ -594,7 +634,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Subscribe
+                    Sign up
                   </button>
                 </div>
               </div>

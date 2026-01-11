@@ -109,6 +109,78 @@ const LaunchingSoon = () => {
       id="newsletter-signup"
       className="w-full min-h-screen flex items-center justify-center relative bg-[#013727]"
     >
+      <style>{`
+        @keyframes zoom-in-out {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.08);
+          }
+        }
+
+        .special-offers-text {
+          color: #000000;
+          font-weight: 900;
+          position: relative;
+          display: inline-block;
+          animation: zoom-in-out 3s ease-in-out infinite;
+          filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+          transform-origin: center;
+        }
+
+        .highlight-text {
+          color: #000000;
+          font-weight: 900;
+          position: relative;
+          display: inline;
+        }
+        
+        .normal-text {
+          color: #000000;
+          font-weight: 700;
+        }
+
+        /* Mobile optimized font sizes - INCREASED */
+        @media (max-width: 640px) {
+          .form-heading {
+            font-size: 1.5rem !important; /* 24px - was 22px */
+            line-height: 1.4 !important;
+          }
+          
+          .form-subheading {
+            font-size: 1.125rem !important; /* 18px - was 17px */
+            line-height: 1.6 !important;
+          }
+        }
+
+        /* Tablet - INCREASED */
+        @media (min-width: 641px) and (max-width: 1023px) {
+          .form-heading {
+            font-size: 1.625rem !important; /* 26px - was 24px */
+            line-height: 1.4 !important;
+          }
+          
+          .form-subheading {
+            font-size: 1.25rem !important; /* 20px - was 18px */
+            line-height: 1.6 !important;
+          }
+        }
+
+        /* Desktop - INCREASED */
+        @media (min-width: 1024px) {
+          .form-heading {
+            font-size: 2rem !important; /* 32px - was 30px */
+            line-height: 1.3 !important;
+          }
+          
+          .form-subheading {
+            font-size: 1.375rem !important; /* 22px - was 20px */
+            line-height: 1.6 !important;
+          }
+        }
+      `}</style>
+
       <div className="w-full h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           
@@ -141,7 +213,7 @@ const LaunchingSoon = () => {
               </h1>
 
               <p 
-                className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8 md:mb-10 font-light transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
+                className={`text-base sm:text-lg md:text-xl lg:text-[1.375rem] text-gray-300 mb-6 sm:mb-8 md:mb-10 font-medium leading-relaxed transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
                 style={{ transitionDelay: '400ms' }}
               >
                 Join our exclusive community and get early access to the future of food sustainability.
@@ -163,7 +235,7 @@ const LaunchingSoon = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <p className="text-sm sm:text-base md:text-lg text-white font-light">{benefit.text}</p>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-[1.1875rem] text-white font-medium leading-relaxed">{benefit.text}</p>
                   </div>
                 ))}
               </div>
@@ -180,11 +252,11 @@ const LaunchingSoon = () => {
             >
               
               <div className="mb-6 sm:mb-7 md:mb-8">
-                <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-white leading-tight">
-                  Get special offers, meals, and news when you subscribe to our newsletter.
+                <h3 className="form-heading font-black mb-3 sm:mb-4 tracking-tight">
+                  <span className="special-offers-text">Get special offers</span><span className="normal-text">, </span><span className="highlight-text">meals</span><span className="normal-text">, and </span><span className="highlight-text">news</span><span className="normal-text"> when you subscribe to our </span><span className="highlight-text">newsletter</span><span className="normal-text">.</span>
                 </h3>
-                <p className="text-sm sm:text-base md:text-base lg:text-lg font-medium text-white/90">
-                  "If you are a business owner join the platform at 0% joining fees"
+                <p className="form-subheading font-bold leading-relaxed">
+                  <span className="normal-text">"If you are a </span><span className="highlight-text">business owner</span><span className="normal-text"> join the platform at </span><span className="highlight-text">0% joining fees</span><span className="normal-text">"</span>
                 </p>
               </div>
 
@@ -193,7 +265,7 @@ const LaunchingSoon = () => {
                 <div 
                   className={`mb-4 p-3 sm:p-4 rounded-xl ${submitStatus.type === 'success' ? 'bg-white/30' : 'bg-red-500/20'}`}
                 >
-                  <p className={`text-sm md:text-base font-medium ${submitStatus.type === 'success' ? 'text-white' : 'text-red-900'}`}>
+                  <p className={`text-sm md:text-base font-medium ${submitStatus.type === 'success' ? 'text-[#013727]' : 'text-red-900'}`}>
                     {submitStatus.message}
                   </p>
                 </div>
@@ -210,7 +282,7 @@ const LaunchingSoon = () => {
                     placeholder="Full Name *"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
                     required
                   />
                   <input
@@ -219,7 +291,7 @@ const LaunchingSoon = () => {
                     placeholder="Email Address *"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
                     required
                   />
                 </div>
@@ -234,7 +306,7 @@ const LaunchingSoon = () => {
                     placeholder="City *"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
                     required
                   />
                   <div className="relative">
@@ -242,7 +314,7 @@ const LaunchingSoon = () => {
                       name="userType"
                       value={formData.userType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all appearance-none cursor-pointer shadow-sm"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all appearance-none cursor-pointer shadow-sm"
                       required
                     >
                       <option value="" disabled>I am a... *</option>
@@ -263,7 +335,7 @@ const LaunchingSoon = () => {
                   placeholder="Phone Number (Optional)"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                  className={`w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                   style={{ transitionDelay: '1100ms', transitionDuration: '700ms' }}
                 />
 

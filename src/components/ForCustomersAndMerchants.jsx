@@ -59,6 +59,131 @@ const ForCustomersAndMerchants = () => {
           }
         }
 
+        /* Enhanced font sizes for all devices */
+        
+        /* Mobile (< 640px) - Enhanced readability */
+        @media (max-width: 640px) {
+          .section-main-heading {
+            font-size: 2rem !important; /* 32px */
+            line-height: 1.2 !important;
+          }
+          
+          .section-sub-heading {
+            font-size: 1.375rem !important; /* 22px */
+            line-height: 1.3 !important;
+          }
+          
+          .section-description {
+            font-size: 1.0625rem !important; /* 17px */
+            line-height: 1.65 !important;
+            font-weight: 600 !important;
+          }
+          
+          .benefit-item {
+            font-size: 1.0625rem !important; /* 17px */
+            line-height: 1.6 !important;
+            font-weight: 600 !important;
+          }
+          
+          .newsletter-text {
+            font-size: 0.9375rem !important; /* 15px */
+            line-height: 1.6 !important;
+            font-weight: 600 !important;
+          }
+          
+          .cta-button-text {
+            font-size: 1.0625rem !important; /* 17px */
+            font-weight: 700 !important;
+          }
+          
+          .checkmark-icon {
+            width: 1.375rem !important; /* 22px */
+            height: 1.375rem !important;
+          }
+        }
+
+        /* Tablet (641px - 1023px) */
+        @media (min-width: 641px) and (max-width: 1023px) {
+          .section-main-heading {
+            font-size: 2.5rem !important; /* 40px */
+            line-height: 1.2 !important;
+          }
+          
+          .section-sub-heading {
+            font-size: 1.625rem !important; /* 26px */
+            line-height: 1.3 !important;
+          }
+          
+          .section-description {
+            font-size: 1.1875rem !important; /* 19px */
+            line-height: 1.65 !important;
+            font-weight: 600 !important;
+          }
+          
+          .benefit-item {
+            font-size: 1.1875rem !important; /* 19px */
+            line-height: 1.6 !important;
+            font-weight: 600 !important;
+          }
+          
+          .newsletter-text {
+            font-size: 1.0625rem !important; /* 17px */
+            line-height: 1.6 !important;
+            font-weight: 600 !important;
+          }
+          
+          .cta-button-text {
+            font-size: 1.1875rem !important; /* 19px */
+            font-weight: 700 !important;
+          }
+          
+          .checkmark-icon {
+            width: 1.5rem !important; /* 24px */
+            height: 1.5rem !important;
+          }
+        }
+
+        /* Desktop (1024px+) */
+        @media (min-width: 1024px) {
+          .section-main-heading {
+            font-size: 3rem !important; /* 48px */
+            line-height: 1.15 !important;
+          }
+          
+          .section-sub-heading {
+            font-size: 1.875rem !important; /* 30px */
+            line-height: 1.3 !important;
+          }
+          
+          .section-description {
+            font-size: 1.3125rem !important; /* 21px */
+            line-height: 1.7 !important;
+            font-weight: 600 !important;
+          }
+          
+          .benefit-item {
+            font-size: 1.3125rem !important; /* 21px */
+            line-height: 1.65 !important;
+            font-weight: 600 !important;
+          }
+          
+          .newsletter-text {
+            font-size: 1.125rem !important; /* 18px */
+            line-height: 1.65 !important;
+            font-weight: 600 !important;
+          }
+          
+          .cta-button-text {
+            font-size: 1.25rem !important; /* 20px */
+            font-weight: 700 !important;
+          }
+          
+          .checkmark-icon {
+            width: 1.625rem !important; /* 26px */
+            height: 1.625rem !important;
+          }
+        }
+
         /* iPad Mini specific styles (768px - 819px) */
         @media (min-width: 768px) and (max-width: 819px) {
           .merchant-overlay-screen {
@@ -110,8 +235,8 @@ const ForCustomersAndMerchants = () => {
                 }`}
               >
                 <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
-                  {/* Green border background */}
-                  <div className="absolute inset-0 bg-[#04c55c] rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -left-1.5 right-1.5 bottom-1.5 sm:-top-2 sm:-left-2 sm:right-2 sm:bottom-2 z-0"></div>
+                  {/* White border background */}
+                  <div className="absolute inset-0 bg-white rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -left-1.5 right-1.5 bottom-1.5 sm:-top-2 sm:-left-2 sm:right-2 sm:bottom-2 z-0"></div>
                   
                   {/* Image container - SQUARE ASPECT RATIO */}
                   <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-xl md:shadow-2xl hover:scale-105 transition-transform duration-500 z-10">
@@ -139,52 +264,52 @@ const ForCustomersAndMerchants = () => {
                 style={{ transitionDelay: '200ms' }}
               >
                 <div className="text-left px-2 sm:px-4 lg:px-0">
-                  <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-[#04c55c] text-left">
+                  <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-white text-left">
                     For Customers
                   </h2>
                   
-                  <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
+                  <h3 className="section-sub-heading font-extrabold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
                     Eat Well for Less—Without Compromise
                   </h3>
                   
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed text-left">
+                  <p className="section-description text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed text-left">
                     Get restaurant-quality food and groceries from trusted local businesses at up to 80% off, all while making a real environmental impact.
                   </p>
 
                   {/* Benefits List */}
                   <div className="space-y-3 sm:space-y-3.5 md:space-y-4 mb-5 sm:mb-6 md:mb-7 lg:mb-8">
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Spend less on everyday meals</p>
+                      <p className="benefit-item text-white text-left">Spend less on everyday meals</p>
                     </div>
                     
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Discover new local favorites</p>
+                      <p className="benefit-item text-white text-left">Discover new local favorites</p>
                     </div>
                     
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Reduce food waste effortlessly</p>
+                      <p className="benefit-item text-white text-left">Reduce food waste effortlessly</p>
                     </div>
                     
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Feel good about every pickup</p>
+                      <p className="benefit-item text-white text-left">Feel good about every pickup</p>
                     </div>
                   </div>
 
                   {/* Newsletter Signup Section */}
                   <div className="mb-5 sm:mb-6 md:mb-7 lg:mb-8">
-                    <p className="text-xs sm:text-sm md:text-sm lg:text-base text-white mb-3 sm:mb-4 leading-relaxed text-left">
+                    <p className="newsletter-text text-white mb-3 sm:mb-4 leading-relaxed text-left">
                       Get special offers, meals, and news when you subscribe to our newsletter.
                     </p>
                     
@@ -192,7 +317,7 @@ const ForCustomersAndMerchants = () => {
                     <div className="flex justify-start">
                       <button
                         onClick={scrollToNewsletter}
-                        className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 text-sm sm:text-base md:text-lg font-bold bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
+                        className="cta-button-text px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                         style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                       >
                         Subscribe
@@ -223,53 +348,53 @@ const ForCustomersAndMerchants = () => {
                 }`}
               >
                 <div className="text-left px-2 sm:px-4 lg:px-0">
-                  <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-[#04c55c] text-left">
-                    For Merchants
+                  <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-white text-left">
+                    Become a Partner
                   </h2>
                   
-                  <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
+                  <h3 className="section-sub-heading font-extrabold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
                     Turn Unsold Food Into Easy Revenue
                   </h3>
                   
-                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed text-left">
+                  <p className="section-description text-white mb-5 sm:mb-6 md:mb-7 lg:mb-8 leading-relaxed text-left">
                     Stop throwing money away. Bestby Bites helps you sell surplus inventory, reduce waste costs, and reach new customers without hurting your brand.
                   </p>
 
                   {/* Benefits List */}
                   <div className="space-y-3 sm:space-y-3.5 md:space-y-4 mb-5 sm:mb-6 md:mb-7 lg:mb-8">
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Recover revenue from surplus food</p>
+                      <p className="benefit-item text-white text-left">Recover revenue from surplus food</p>
                     </div>
                     
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Cut disposal and waste expenses</p>
+                      <p className="benefit-item text-white text-left">Cut disposal and waste expenses</p>
                     </div>
                     
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Attract new, value-driven customers</p>
+                      <p className="benefit-item text-white text-left">Attract new, value-driven customers</p>
                     </div>
                     
                     <div className="flex items-start gap-2 sm:gap-3 justify-start">
-                      <svg className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="checkmark-icon flex-shrink-0 mt-0.5 text-[#04c55c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
-                      <p className="text-sm sm:text-base md:text-base lg:text-lg text-white text-left">Strengthen sustainability and brand trust</p>
+                      <p className="benefit-item text-white text-left">Strengthen sustainability and brand trust</p>
                     </div>
                   </div>
 
                   {/* Button */}
                   <div className="flex justify-start">
                     <button 
-                      className="px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 text-sm sm:text-base md:text-lg font-bold bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
+                      className="cta-button-text px-6 py-2.5 sm:px-8 sm:py-3 md:px-10 md:py-3 lg:px-12 lg:py-3.5 bg-[#04c55c] text-white rounded-full hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     >
                       Become a Partner
                     </button>
@@ -291,8 +416,8 @@ const ForCustomersAndMerchants = () => {
                   {/* Merchant screen overlay with "Join as a Supplier" tag */}
                   <div className="merchant-overlay-screen absolute top-0 right-0 sm:top-2 sm:right-2 md:top-4 md:right-4 lg:-top-8 lg:-right-8 xl:-top-12 xl:-right-12 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 z-20">
                     <div className="relative">
-                      {/* Green border for merchant screen */}
-                      <div className="absolute inset-0 bg-[#04c55c] rounded-lg sm:rounded-xl md:rounded-2xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 sm:-top-1 sm:-left-1 sm:right-1 sm:bottom-1"></div>
+                      {/* White border for merchant screen */}
+                      <div className="absolute inset-0 bg-white rounded-lg sm:rounded-xl md:rounded-2xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 sm:-top-1 sm:-left-1 sm:right-1 sm:bottom-1"></div>
                       <div className="relative">
                         <img
                           src="/images/screen-1-merchant.jpg"
@@ -310,8 +435,8 @@ const ForCustomersAndMerchants = () => {
                     </div>
                   </div>
 
-                  {/* Green border background for main image */}
-                  <div className="absolute inset-0 bg-[#04c55c] rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -right-1.5 left-1.5 bottom-1.5 sm:-top-2 sm:-right-2 sm:left-2 sm:bottom-2 z-0"></div>
+                  {/* White border background for main image */}
+                  <div className="absolute inset-0 bg-white rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -right-1.5 left-1.5 bottom-1.5 sm:-top-2 sm:-right-2 sm:left-2 sm:bottom-2 z-0"></div>
                   
                   {/* Main merchant image container - SQUARE ASPECT RATIO */}
                   <div className="relative rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] overflow-hidden shadow-xl md:shadow-2xl hover:scale-105 transition-transform duration-500 z-10">
