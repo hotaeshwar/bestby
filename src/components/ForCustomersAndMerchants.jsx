@@ -265,7 +265,7 @@ const ForCustomersAndMerchants = () => {
               >
                 <div className="text-left px-2 sm:px-4 lg:px-0">
                   <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-white text-left">
-                    For Customers
+                    Customer Benefits
                   </h2>
                   
                   <h3 className="section-sub-heading font-extrabold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">

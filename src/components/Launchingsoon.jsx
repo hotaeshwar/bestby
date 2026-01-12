@@ -46,13 +46,11 @@ const LaunchingSoon = () => {
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     
-    // Validation
     if (!formData.fullName || !formData.email || !formData.city || !formData.userType) {
       setSubmitStatus({ type: 'error', message: 'Please fill in all required fields' });
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setSubmitStatus({ type: 'error', message: 'Please enter a valid email address' });
@@ -107,7 +105,7 @@ const LaunchingSoon = () => {
     <div 
       ref={sectionRef}
       id="newsletter-signup"
-      className="w-full min-h-screen flex items-center justify-center relative bg-[#013727]"
+      className="w-full max-w-full overflow-x-hidden min-h-screen flex items-center justify-center relative bg-[#013727]"
     >
       <style>{`
         @keyframes zoom-in-out {
@@ -141,58 +139,53 @@ const LaunchingSoon = () => {
           font-weight: 700;
         }
 
-        /* Mobile optimized font sizes - INCREASED */
         @media (max-width: 640px) {
           .form-heading {
-            font-size: 1.5rem !important; /* 24px - was 22px */
+            font-size: 1.5rem !important;
             line-height: 1.4 !important;
           }
           
           .form-subheading {
-            font-size: 1.125rem !important; /* 18px - was 17px */
+            font-size: 1.125rem !important;
             line-height: 1.6 !important;
           }
         }
 
-        /* Tablet - INCREASED */
         @media (min-width: 641px) and (max-width: 1023px) {
           .form-heading {
-            font-size: 1.625rem !important; /* 26px - was 24px */
+            font-size: 1.625rem !important;
             line-height: 1.4 !important;
           }
           
           .form-subheading {
-            font-size: 1.25rem !important; /* 20px - was 18px */
+            font-size: 1.25rem !important;
             line-height: 1.6 !important;
           }
         }
 
-        /* Desktop - INCREASED */
         @media (min-width: 1024px) {
           .form-heading {
-            font-size: 2rem !important; /* 32px - was 30px */
+            font-size: 2rem !important;
             line-height: 1.3 !important;
           }
           
           .form-subheading {
-            font-size: 1.375rem !important; /* 22px - was 20px */
+            font-size: 1.375rem !important;
             line-height: 1.6 !important;
           }
         }
       `}</style>
 
-      <div className="w-full h-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <div className="w-full max-w-full h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen w-full max-w-full">
           
           {/* Left Side - Content Card */}
           <div 
-            className="flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-16 relative bg-cover bg-center bg-[#013727]"
+            className="flex flex-col justify-center px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-16 relative bg-cover bg-center bg-[#013727] w-full max-w-full"
             style={{ 
               backgroundImage: 'url(/images/FOOTER.jpg)'
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
-
             <div className={`relative z-10 max-w-xl transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div 
                 className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 sm:mb-5 md:mb-6 transition-all duration-700 border-2 border-[#04c55c] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
@@ -244,7 +237,7 @@ const LaunchingSoon = () => {
 
           {/* Right Side - Form Card */}
           <div 
-            className="flex items-center justify-center px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-16 bg-[#04c55c]"
+            className="flex items-center justify-center px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-16 bg-[#04c55c] w-full max-w-full"
           >
             <div 
               className={`w-full max-w-lg transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} 
@@ -253,14 +246,13 @@ const LaunchingSoon = () => {
               
               <div className="mb-6 sm:mb-7 md:mb-8">
                 <h3 className="form-heading font-black mb-3 sm:mb-4 tracking-tight">
-                  <span className="special-offers-text">Get special offers</span><span className="normal-text">, </span><span className="highlight-text">meals</span><span className="normal-text">, and </span><span className="highlight-text">news</span><span className="normal-text"> when you subscribe to our </span><span className="highlight-text">newsletter</span><span className="normal-text">.</span>
+                  <span className="special-offers-text">Get special offers,</span> <span className="highlight-text">meals</span><span className="normal-text">, and </span><span className="highlight-text">news</span><span className="normal-text"> when you subscribe to our </span><span className="highlight-text">newsletter</span><span className="normal-text">.</span>
                 </h3>
                 <p className="form-subheading font-bold leading-relaxed">
                   <span className="normal-text">"If you are a </span><span className="highlight-text">business owner</span><span className="normal-text"> join the platform at </span><span className="highlight-text">0% joining fees</span><span className="normal-text">"</span>
                 </p>
               </div>
 
-              {/* Status Message */}
               {submitStatus && (
                 <div 
                   className={`mb-4 p-3 sm:p-4 rounded-xl ${submitStatus.type === 'success' ? 'bg-white/30' : 'bg-red-500/20'}`}

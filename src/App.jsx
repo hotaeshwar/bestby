@@ -9,23 +9,22 @@ import NewsletterSignup from './components/newsletter';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <LaunchPage />
-              
-              <Footer />
-              
-            </>
-          } />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<Terms />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden">
+      <Router>
+        <div className="flex flex-col min-h-screen w-full max-w-full">
+          <main className="grow w-full max-w-full overflow-x-hidden">
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/launch" element={<LaunchPage />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/newsletter" element={<NewsletterSignup />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </div>
   );
 }
 
