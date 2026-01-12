@@ -9,6 +9,7 @@ import JoinMovement from './JoinMovement';
 import WhoCanJoin from './WhoCanJoin';
 import AppScreenshots from './AppScreenshots';
 import ForCustomersAndMerchants from './ForCustomersAndMerchants'
+
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -82,6 +83,7 @@ function Hero() {
             
             #hero-mobile-section .hero-description {
               font-size: 1rem !important;
+              font-weight: 600 !important;
               line-height: 1.5 !important;
               margin: 20px !important;
               margin-bottom: 0.75rem !important;
@@ -91,6 +93,7 @@ function Hero() {
 
             #hero-mobile-section .hero-newsletter {
               font-size: 0.9rem !important;
+              font-weight: 700 !important;
               line-height: 1.5 !important;
               margin: 20px !important;
               margin-bottom: 0.75rem !important;
@@ -136,6 +139,7 @@ function Hero() {
             
             #hero-mobile-section .hero-description {
               font-size: 1.1rem !important;
+              font-weight: 600 !important;
               line-height: 1.55 !important;
               margin: 20px !important;
               margin-bottom: 0.85rem !important;
@@ -145,6 +149,7 @@ function Hero() {
 
             #hero-mobile-section .hero-newsletter {
               font-size: 1rem !important;
+              font-weight: 700 !important;
               line-height: 1.55 !important;
               margin: 20px !important;
               margin-bottom: 0.85rem !important;
@@ -190,6 +195,7 @@ function Hero() {
             
             #hero-mobile-section .hero-description {
               font-size: 1.1rem !important;
+              font-weight: 600 !important;
               line-height: 1.55 !important;
               margin: 20px !important;
               margin-bottom: 0.85rem !important;
@@ -199,6 +205,7 @@ function Hero() {
 
             #hero-mobile-section .hero-newsletter {
               font-size: 1rem !important;
+              font-weight: 700 !important;
               line-height: 1.55 !important;
               margin: 20px !important;
               margin-bottom: 0.85rem !important;
@@ -244,6 +251,7 @@ function Hero() {
             
             #hero-mobile-section .hero-description {
               font-size: 1.2rem !important;
+              font-weight: 600 !important;
               line-height: 1.6 !important;
               margin: 20px !important;
               margin-bottom: 1rem !important;
@@ -253,6 +261,7 @@ function Hero() {
 
             #hero-mobile-section .hero-newsletter {
               font-size: 1.05rem !important;
+              font-weight: 700 !important;
               line-height: 1.6 !important;
               margin: 20px !important;
               margin-bottom: 1rem !important;
@@ -295,13 +304,13 @@ function Hero() {
               <span className="block">Eat Smarter.</span>
             </h1>
 
-            {/* Description - Centered with margins */}
-            <p className="hero-description text-white/95 text-center mx-5">
+            {/* Description - Centered with margins and BOLD */}
+            <p className="hero-description text-white/95 text-center mx-5 font-semibold">
               Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
             </p>
 
-            {/* Newsletter Text - Centered with margins */}
-            <p className="hero-newsletter text-white/90 text-center mx-5">
+            {/* Newsletter Text - Centered with margins and BOLD */}
+            <p className="hero-newsletter text-white/90 text-center mx-5 font-bold">
               Get special offers, meals, and news when you subscribe to our newsletter.
             </p>
 
@@ -312,7 +321,7 @@ function Hero() {
                 className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer mx-5"
                 style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
               >
-                Sign up
+                Subscribe
               </button>
             </div>
           </div>
@@ -347,12 +356,14 @@ function Hero() {
             
             #hero-tablet-section .hero-description {
               font-size: 21px !important;
+              font-weight: 600 !important;
               line-height: 1.6 !important;
               margin-bottom: 1.75rem !important;
             }
 
             #hero-tablet-section .hero-newsletter {
               font-size: 14px !important;
+              font-weight: 700 !important;
               line-height: 1.6 !important;
               margin-bottom: 1.25rem !important;
             }
@@ -389,13 +400,13 @@ function Hero() {
                   <span className="block">Eat Smarter.</span>
                 </h1>
 
-                {/* Description */}
-                <p className="hero-description text-white/95 text-left">
+                {/* Description - BOLD */}
+                <p className="hero-description text-white/95 text-left font-semibold">
                   Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
                 </p>
 
-                {/* Newsletter Text */}
-                <p className="hero-newsletter text-white/90 text-left">
+                {/* Newsletter Text - BOLD */}
+                <p className="hero-newsletter text-white/90 text-left font-bold">
                   Get special offers, meals, and news when you subscribe to our newsletter.
                 </p>
 
@@ -405,7 +416,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Sign up
+                    Subscribe
                   </button>
                 </div>
               </div>
@@ -444,6 +455,7 @@ function Hero() {
             
             #hero-ipad-pro-section .hero-description {
               font-size: 33px !important;
+              font-weight: 600 !important;
               line-height: 1.65 !important;
               margin-bottom: 1.85rem !important;
               text-align: center !important;
@@ -453,6 +465,7 @@ function Hero() {
 
             #hero-ipad-pro-section .hero-newsletter {
               font-size: 29px !important;
+              font-weight: 700 !important;
               line-height: 1.65 !important;
               margin-bottom: 1.65rem !important;
               text-align: center !important;
@@ -492,13 +505,13 @@ function Hero() {
                   <span className="block">Eat Smarter.</span>
                 </h1>
 
-                {/* Description - CENTERED with PADDING */}
-                <p className="hero-description text-white/95 text-center">
+                {/* Description - CENTERED with PADDING and BOLD */}
+                <p className="hero-description text-white/95 text-center font-semibold">
                   Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
                 </p>
 
-                {/* Newsletter Text - CENTERED with PADDING */}
-                <p className="hero-newsletter text-white/90 text-center">
+                {/* Newsletter Text - CENTERED with PADDING and BOLD */}
+                <p className="hero-newsletter text-white/90 text-center font-bold">
                   Get special offers, meals, and news when you subscribe to our newsletter.
                 </p>
 
@@ -509,7 +522,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Sign up
+                    Subscribe
                   </button>
                 </div>
               </div>
@@ -544,12 +557,14 @@ function Hero() {
             
             #hero-desktop-section .hero-description {
               font-size: 1.3rem !important;
+              font-weight: 600 !important;
               line-height: 1.65 !important;
               margin-bottom: 2.25rem !important;
             }
 
             #hero-desktop-section .hero-newsletter {
               font-size: 1.125rem !important;
+              font-weight: 700 !important;
               line-height: 1.7 !important;
               margin-bottom: 1.75rem !important;
             }
@@ -576,12 +591,14 @@ function Hero() {
             
             #hero-desktop-section .hero-description {
               font-size: 1.4rem !important;
+              font-weight: 600 !important;
               line-height: 1.7 !important;
               margin-bottom: 2.35rem !important;
             }
 
             #hero-desktop-section .hero-newsletter {
               font-size: 1.2rem !important;
+              font-weight: 700 !important;
               line-height: 1.75 !important;
               margin-bottom: 2rem !important;
             }
@@ -618,13 +635,13 @@ function Hero() {
                   <span className="block">Eat Smarter.</span>
                 </h1>
 
-                {/* Description */}
-                <p className="hero-description text-white/95 text-left">
+                {/* Description - BOLD */}
+                <p className="hero-description text-white/95 text-left font-semibold">
                   Bestby Bites unlocks access to surplus food from top local restaurants, bakeries, cafés, and grocery stores—at up to 80% off.
                 </p>
 
-                {/* Newsletter Text */}
-                <p className="hero-newsletter text-white/90 text-left">
+                {/* Newsletter Text - BOLD */}
+                <p className="hero-newsletter text-white/90 text-left font-bold">
                   Get special offers, meals, and news when you subscribe to our newsletter.
                 </p>
 
@@ -634,7 +651,7 @@ function Hero() {
                     className="hero-button inline-block bg-[#04c55c] text-white rounded-full font-bold hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 shadow-xl active:scale-95 cursor-pointer"
                     style={{ animation: 'pulse-glow 2s ease-in-out infinite' }}
                   >
-                    Sign up
+                    Subscribe
                   </button>
                 </div>
               </div>
