@@ -63,8 +63,8 @@ const BusinessModelSection = () => {
         /* Mobile font sizes - Enhanced readability */
         @media (max-width: 640px) {
           .section-heading {
-            font-size: 2rem !important; /* 32px */
-            line-height: 1.2 !important;
+            font-size: 1.875rem !important; /* 30px */
+            line-height: 1.25 !important;
           }
           
           .benefit-text {
@@ -86,12 +86,12 @@ const BusinessModelSection = () => {
         /* Tablet font sizes */
         @media (min-width: 641px) and (max-width: 1023px) {
           .section-heading {
-            font-size: 2.5rem !important; /* 40px */
-            line-height: 1.2 !important;
+            font-size: 2.25rem !important; /* 36px */
+            line-height: 1.25 !important;
           }
           
           .benefit-text {
-            font-size: 1.1875rem !important; /* 19px */
+            font-size: 1.125rem !important; /* 18px */
             line-height: 1.65 !important;
             font-weight: 600 !important;
           }
@@ -109,12 +109,12 @@ const BusinessModelSection = () => {
         /* Desktop font sizes */
         @media (min-width: 1024px) {
           .section-heading {
-            font-size: 3rem !important; /* 48px */
-            line-height: 1.15 !important;
+            font-size: 2.75rem !important; /* 44px */
+            line-height: 1.2 !important;
           }
           
           .benefit-text {
-            font-size: 1.3125rem !important; /* 21px */
+            font-size: 1.25rem !important; /* 20px */
             line-height: 1.7 !important;
             font-weight: 600 !important;
           }
@@ -126,6 +126,20 @@ const BusinessModelSection = () => {
           .cta-button {
             font-size: 1.375rem !important; /* 22px */
             padding: 1.125rem 3rem !important;
+          }
+        }
+
+        /* Extra large screens */
+        @media (min-width: 1280px) {
+          .section-heading {
+            font-size: 3rem !important; /* 48px */
+            line-height: 1.2 !important;
+          }
+          
+          .benefit-text {
+            font-size: 1.3125rem !important; /* 21px */
+            line-height: 1.7 !important;
+            font-weight: 600 !important;
           }
         }
       `}</style>
@@ -156,8 +170,8 @@ const BusinessModelSection = () => {
 
             {/* Content */}
             <div style={fadeInStyle(0.4)} className="order-1 lg:order-2 text-white flex flex-col justify-center">
-              <h2 className="section-heading font-extrabold mb-6 md:mb-8 text-center lg:text-left">
-                Customer Benefits
+              <h2 className="section-heading font-extrabold mb-6 md:mb-8 lg:mb-10 text-center lg:text-left">
+                Connecting consumers with better prices
               </h2>
               <div className="space-y-4 md:space-y-5 lg:space-y-6 mb-8 md:mb-10">
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">
@@ -193,8 +207,8 @@ const BusinessModelSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-14 xl:gap-16 items-center">
             {/* Content */}
             <div style={fadeInStyle(0.2)} className="text-white flex flex-col justify-center order-1">
-              <h2 className="section-heading font-extrabold mb-6 md:mb-8 text-center lg:text-left">
-                Become a Partner
+              <h2 className="section-heading font-extrabold mb-6 md:mb-8 lg:mb-10 text-center lg:text-left">
+                Grow Your Business With Us
               </h2>
               <div className="space-y-4 md:space-y-5 lg:space-y-6">
                 <div className="flex items-start gap-3 md:gap-4 hover:translate-x-2 transition-transform duration-300">

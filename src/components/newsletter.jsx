@@ -11,7 +11,6 @@ const NewsletterSignup = () => {
   const fullText = "Get special offers, meals, and news when you subscribe to our newsletter.";
 
   useEffect(() => {
-    // Trigger animations on mount
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 100);
@@ -43,7 +42,7 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section id="newsletter-signup" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <section id="newsletter-signup" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative">
       <style>{`
         @keyframes blink {
           0%, 49% { opacity: 1; }
@@ -119,12 +118,11 @@ const NewsletterSignup = () => {
           animation: borderPulse 3s ease-in-out infinite, glowPulse 3s ease-in-out infinite;
         }
 
-        /* Input focus animation - moves label up */
         .email-input-wrapper input:focus ~ .email-label,
         .email-input-wrapper input:not(:placeholder-shown) ~ .email-label {
           transform: translateY(-32px) scale(0.9);
           color: #10b981;
-          background: transparent;
+          background: #ffffff;
         }
 
         .email-label {
@@ -154,7 +152,6 @@ const NewsletterSignup = () => {
       `}</style>
 
       <div className={`max-w-4xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        {/* Heading */}
         <h2 
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4"
           style={{
@@ -164,7 +161,6 @@ const NewsletterSignup = () => {
           Not hungry yet?
         </h2>
 
-        {/* Description with Typing Animation */}
         <p 
           className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-4 sm:mb-5 md:mb-6 lg:mb-8 min-h-[2em]"
           style={{
@@ -175,11 +171,9 @@ const NewsletterSignup = () => {
           {!isTypingComplete && <span className="cursor">|</span>}
         </p>
 
-        {/* Email Form - Fades in after typing completes */}
         {isTypingComplete && (
-          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto fade-in-up">
+          <div className="max-w-2xl mx-auto fade-in-up">
             <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center">
-              {/* Email Input with Float Label Animation */}
               <div className="w-full email-input-wrapper relative input-slide-in">
                 <input
                   type="email"
@@ -190,32 +184,32 @@ const NewsletterSignup = () => {
                   onBlur={() => setIsFocused(false)}
                   placeholder=" "
                   required
-                  className="w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg border-2 border-green-300 rounded-lg focus:outline-none transition-all bg-white/95 peer text-gray-800 placeholder-gray-400"
+                  style={{ backgroundColor: '#ffffff', color: '#013727' }}
+                  className="w-full px-3 sm:px-4 md:px-5 lg:px-6 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg border-2 border-green-300 rounded-lg focus:outline-none transition-all peer placeholder-gray-400"
                 />
                 <label 
                   htmlFor="email" 
-                  className="email-label absolute left-3 sm:left-4 md:left-5 lg:left-6 top-2.5 sm:top-3 md:top-3.5 lg:top-4 text-sm sm:text-base md:text-lg text-gray-500 bg-white/95 px-2 pointer-events-none"
+                  className="email-label absolute left-3 sm:left-4 md:left-5 lg:left-6 top-2.5 sm:top-3 md:top-3.5 lg:top-4 text-sm sm:text-base md:text-lg bg-white px-2 pointer-events-none"
+                  style={{ color: '#013727' }}
                 >
                   bestbybites@gmail.com
                 </label>
               </div>
 
-              {/* Submit Button */}
               <button
-                type="submit"
+                onClick={handleSubmit}
                 className="w-full sm:w-auto px-6 sm:px-8 md:px-10 lg:px-12 py-2.5 sm:py-3 md:py-3.5 lg:py-4 text-sm sm:text-base md:text-lg text-white font-semibold rounded-lg bg-[#04c55c] hover:bg-[#03a84d] transition-all duration-300 hover:scale-105 active:scale-95 shadow-md"
               >
                 Get in touch
               </button>
             </div>
 
-            {/* Thank You Message */}
             {showThankYou && (
               <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-medium text-[#04c55c] slide-up">
                 Thank you!
               </p>
             )}
-          </form>
+          </div>
         )}
       </div>
     </section>

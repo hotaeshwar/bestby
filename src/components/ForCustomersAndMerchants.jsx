@@ -64,40 +64,40 @@ const ForCustomersAndMerchants = () => {
         /* Mobile (< 640px) - Enhanced readability */
         @media (max-width: 640px) {
           .section-main-heading {
-            font-size: 2rem !important; /* 32px */
-            line-height: 1.2 !important;
+            font-size: 1.75rem !important;
+            line-height: 1.25 !important;
           }
           
           .section-sub-heading {
-            font-size: 1.375rem !important; /* 22px */
+            font-size: 1.375rem !important;
             line-height: 1.3 !important;
           }
           
           .section-description {
-            font-size: 1.0625rem !important; /* 17px */
+            font-size: 1.0625rem !important;
             line-height: 1.65 !important;
             font-weight: 600 !important;
           }
           
           .benefit-item {
-            font-size: 1.0625rem !important; /* 17px */
+            font-size: 1.0625rem !important;
             line-height: 1.6 !important;
             font-weight: 600 !important;
           }
           
           .newsletter-text {
-            font-size: 0.9375rem !important; /* 15px */
+            font-size: 0.9375rem !important;
             line-height: 1.6 !important;
             font-weight: 600 !important;
           }
           
           .cta-button-text {
-            font-size: 1.0625rem !important; /* 17px */
+            font-size: 1.0625rem !important;
             font-weight: 700 !important;
           }
           
           .checkmark-icon {
-            width: 1.375rem !important; /* 22px */
+            width: 1.375rem !important;
             height: 1.375rem !important;
           }
         }
@@ -105,40 +105,40 @@ const ForCustomersAndMerchants = () => {
         /* Tablet (641px - 1023px) */
         @media (min-width: 641px) and (max-width: 1023px) {
           .section-main-heading {
-            font-size: 2.5rem !important; /* 40px */
-            line-height: 1.2 !important;
+            font-size: 2.125rem !important;
+            line-height: 1.25 !important;
           }
           
           .section-sub-heading {
-            font-size: 1.625rem !important; /* 26px */
+            font-size: 1.625rem !important;
             line-height: 1.3 !important;
           }
           
           .section-description {
-            font-size: 1.1875rem !important; /* 19px */
+            font-size: 1.1875rem !important;
             line-height: 1.65 !important;
             font-weight: 600 !important;
           }
           
           .benefit-item {
-            font-size: 1.1875rem !important; /* 19px */
+            font-size: 1.1875rem !important;
             line-height: 1.6 !important;
             font-weight: 600 !important;
           }
           
           .newsletter-text {
-            font-size: 1.0625rem !important; /* 17px */
+            font-size: 1.0625rem !important;
             line-height: 1.6 !important;
             font-weight: 600 !important;
           }
           
           .cta-button-text {
-            font-size: 1.1875rem !important; /* 19px */
+            font-size: 1.1875rem !important;
             font-weight: 700 !important;
           }
           
           .checkmark-icon {
-            width: 1.5rem !important; /* 24px */
+            width: 1.5rem !important;
             height: 1.5rem !important;
           }
         }
@@ -146,41 +146,49 @@ const ForCustomersAndMerchants = () => {
         /* Desktop (1024px+) */
         @media (min-width: 1024px) {
           .section-main-heading {
-            font-size: 3rem !important; /* 48px */
-            line-height: 1.15 !important;
+            font-size: 2.5rem !important;
+            line-height: 1.2 !important;
           }
           
           .section-sub-heading {
-            font-size: 1.875rem !important; /* 30px */
+            font-size: 1.875rem !important;
             line-height: 1.3 !important;
           }
           
           .section-description {
-            font-size: 1.3125rem !important; /* 21px */
+            font-size: 1.3125rem !important;
             line-height: 1.7 !important;
             font-weight: 600 !important;
           }
           
           .benefit-item {
-            font-size: 1.3125rem !important; /* 21px */
+            font-size: 1.3125rem !important;
             line-height: 1.65 !important;
             font-weight: 600 !important;
           }
           
           .newsletter-text {
-            font-size: 1.125rem !important; /* 18px */
+            font-size: 1.125rem !important;
             line-height: 1.65 !important;
             font-weight: 600 !important;
           }
           
           .cta-button-text {
-            font-size: 1.25rem !important; /* 20px */
+            font-size: 1.25rem !important;
             font-weight: 700 !important;
           }
           
           .checkmark-icon {
-            width: 1.625rem !important; /* 26px */
+            width: 1.625rem !important;
             height: 1.625rem !important;
+          }
+        }
+
+        /* Extra Large (1280px+) */
+        @media (min-width: 1280px) {
+          .section-main-heading {
+            font-size: 2.75rem !important;
+            line-height: 1.2 !important;
           }
         }
 
@@ -234,7 +242,7 @@ const ForCustomersAndMerchants = () => {
                     : 'opacity-0 -translate-x-20'
                 }`}
               >
-                <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                <div className="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto lg:mx-0 lg:ml-auto">
                   {/* White border background */}
                   <div className="absolute inset-0 bg-white rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[2.5rem] -top-1.5 -left-1.5 right-1.5 bottom-1.5 sm:-top-2 sm:-left-2 sm:right-2 sm:bottom-2 z-0"></div>
                   
@@ -264,8 +272,8 @@ const ForCustomersAndMerchants = () => {
                 style={{ transitionDelay: '200ms' }}
               >
                 <div className="text-left px-2 sm:px-4 lg:px-0">
-                  <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-white text-left">
-                    Customer Benefits
+                  <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-8 text-white text-left">
+                    Connecting consumers with better prices
                   </h2>
                   
                   <h3 className="section-sub-heading font-extrabold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
@@ -348,8 +356,8 @@ const ForCustomersAndMerchants = () => {
                 }`}
               >
                 <div className="text-left px-2 sm:px-4 lg:px-0">
-                  <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-white text-left">
-                    Become a Partner
+                  <h2 className="section-main-heading font-extrabold mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-8 text-white text-left">
+                    Grow Your Business With Us
                   </h2>
                   
                   <h3 className="section-sub-heading font-extrabold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 text-left">
@@ -411,10 +419,10 @@ const ForCustomersAndMerchants = () => {
                 }`}
                 style={{ transitionDelay: '200ms' }}
               >
-                <div className="relative w-full max-w-md mx-auto lg:mx-0 lg:mr-auto">
+                <div className="relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto lg:mx-0 lg:mr-auto">
                   
                   {/* Merchant screen overlay with "Join as a Supplier" tag */}
-                  <div className="merchant-overlay-screen absolute top-0 right-0 sm:top-2 sm:right-2 md:top-4 md:right-4 lg:-top-8 lg:-right-8 xl:-top-12 xl:-right-12 w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 z-20">
+                  <div className="merchant-overlay-screen absolute top-0 right-0 sm:top-2 sm:right-2 md:top-4 md:right-4 lg:-top-8 lg:-right-8 xl:-top-12 xl:-right-12 w-24 sm:w-32 md:w-40 lg:w-56 xl:w-64 z-20">
                     <div className="relative">
                       {/* White border for merchant screen */}
                       <div className="absolute inset-0 bg-white rounded-lg sm:rounded-xl md:rounded-2xl -top-0.5 -left-0.5 right-0.5 bottom-0.5 sm:-top-1 sm:-left-1 sm:right-1 sm:bottom-1"></div>
@@ -428,7 +436,7 @@ const ForCustomersAndMerchants = () => {
                           }}
                         />
                         {/* "Join as a Supplier" tag */}
-                        <div className="merchant-tag absolute -bottom-2 -right-1 sm:-bottom-3 sm:-right-2 md:-bottom-5 md:-right-3 bg-[#9ACD32] text-[#013727] px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2.5 rounded-full shadow-lg font-bold text-[10px] sm:text-xs md:text-base whitespace-nowrap hover:scale-105 transition-transform duration-300">
+                        <div className="merchant-tag absolute -bottom-1 -right-1 sm:-bottom-2 sm:-right-2 md:-bottom-3 md:-right-3 bg-[#9ACD32] text-[#013727] px-1.5 py-0.5 sm:px-2 sm:py-1 md:px-4 md:py-2 rounded-full shadow-lg font-bold text-[8px] sm:text-[10px] md:text-xs lg:text-base whitespace-nowrap hover:scale-105 transition-transform duration-300">
                           Join as a Supplier
                         </div>
                       </div>

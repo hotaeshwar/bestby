@@ -2,84 +2,70 @@ import React from 'react';
 
 export default function LaunchPage() {
   return (
-    <div className="bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-16">
-      <style>{`
-        .launch-highlight {
-          background: linear-gradient(135deg, #013727 0%, #025940 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          position: relative;
-          display: inline-block;
-        }
+    <div className="relative min-h-[44vh] sm:min-h-[47vh] lg:min-h-[45vh] xl:min-h-[45vh] bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-emerald-50 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-green-50 rounded-full blur-3xl opacity-30"></div>
+      </div>
 
-        .launch-shadow-container {
-          position: relative;
-          display: inline-block;
-          padding: 1rem 2rem;
-          border-radius: 20px;
-          background: linear-gradient(135deg, rgba(4, 197, 92, 0.08) 0%, rgba(1, 55, 39, 0.05) 100%);
-          box-shadow: 
-            0 10px 40px rgba(1, 55, 39, 0.15),
-            0 0 60px rgba(4, 197, 92, 0.1),
-            inset 0 0 30px rgba(4, 197, 92, 0.05);
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 640px) {
-          .launch-shadow-container {
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            box-shadow: 
-              0 8px 30px rgba(1, 55, 39, 0.12),
-              0 0 40px rgba(4, 197, 92, 0.08);
-          }
-        }
-
-        @media (min-width: 768px) {
-          .launch-shadow-container {
-            padding: 1.5rem 3rem;
-            border-radius: 24px;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .launch-shadow-container {
-            padding: 2rem 4rem;
-            border-radius: 30px;
-          }
-        }
-      `}</style>
-
-      <div className="max-w-7xl w-full text-center">
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black mb-4 sm:mb-5 md:mb-6">
+      <div className="relative max-w-7xl w-full text-center z-10">
+        {/* Top heading */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 tracking-tight leading-tight">
           Good Food. One Click Away.
         </h1>
         
-        {/* Bold LAUNCHING SOON with background shadow */}
-        <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-          <div className="launch-shadow-container">
-            <h2 className="launch-highlight text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black tracking-tight">
-              LAUNCHING SOON
-            </h2>
+        {/* LAUNCHING SOON - Center of Attraction */}
+        <div className="mb-10 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
+          <div className="relative inline-block">
+            {/* Background glow */}
+            <div className="absolute inset-0 scale-105">
+              <div className="w-full h-full rounded-3xl bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-teal-500/10 blur-2xl"></div>
+            </div>
+            
+            {/* Main text container */}
+            <div className="relative bg-white rounded-xl sm:rounded-2xl lg:rounded-3xl px-6 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-14 lg:py-8 xl:px-20 xl:py-10">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none" style={{color: '#013727'}}>
+                LAUNCHING SOON
+              </h2>
+            </div>
           </div>
+          
+          {/* Subtitle */}
+          <p className="mt-4 sm:mt-6 md:mt-7 lg:mt-8 xl:mt-10 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-800 font-bold tracking-wide">
+            Get ready to save food and money
+          </p>
         </div>
         
         {/* App Store Badges */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 md:gap-6">
-          <a href="#" className="hover:opacity-80 hover:scale-105 transition-all duration-300 w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[240px]">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+          <a 
+            href="#" 
+            className="group relative w-full max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px] xl:max-w-[240px] transition-transform duration-300 hover:scale-105"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <img 
               src="/images/PLAYSTORE1.png" 
               alt="Get it on Google Play"
-              className="w-full h-auto object-contain"
+              className="relative w-full h-auto object-contain drop-shadow-lg"
+              onError={(e) => {
+                e.target.src = "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
+              }}
             />
           </a>
 
-          <a href="#" className="hover:opacity-80 hover:scale-105 transition-all duration-300 w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px] lg:max-w-[240px]">
+          <a 
+            href="#" 
+            className="group relative w-full max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px] xl:max-w-[240px] transition-transform duration-300 hover:scale-105"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <img 
               src="/images/APPSTORE1.png" 
               alt="Download on the App Store"
-              className="w-full h-auto object-contain"
+              className="relative w-full h-auto object-contain drop-shadow-lg"
+              onError={(e) => {
+                e.target.src = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg";
+              }}
             />
           </a>
         </div>

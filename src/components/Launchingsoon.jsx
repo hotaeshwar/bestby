@@ -107,75 +107,6 @@ const LaunchingSoon = () => {
       id="newsletter-signup"
       className="w-full max-w-full overflow-x-hidden min-h-screen flex items-center justify-center relative bg-[#013727]"
     >
-      <style>{`
-        @keyframes zoom-in-out {
-          0%, 100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.08);
-          }
-        }
-
-        .special-offers-text {
-          color: #000000;
-          font-weight: 900;
-          position: relative;
-          display: inline-block;
-          animation: zoom-in-out 3s ease-in-out infinite;
-          filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
-          transform-origin: center;
-        }
-
-        .highlight-text {
-          color: #000000;
-          font-weight: 900;
-          position: relative;
-          display: inline;
-        }
-        
-        .normal-text {
-          color: #000000;
-          font-weight: 700;
-        }
-
-        @media (max-width: 640px) {
-          .form-heading {
-            font-size: 1.5rem !important;
-            line-height: 1.4 !important;
-          }
-          
-          .form-subheading {
-            font-size: 1.125rem !important;
-            line-height: 1.6 !important;
-          }
-        }
-
-        @media (min-width: 641px) and (max-width: 1023px) {
-          .form-heading {
-            font-size: 1.625rem !important;
-            line-height: 1.4 !important;
-          }
-          
-          .form-subheading {
-            font-size: 1.25rem !important;
-            line-height: 1.6 !important;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .form-heading {
-            font-size: 2rem !important;
-            line-height: 1.3 !important;
-          }
-          
-          .form-subheading {
-            font-size: 1.375rem !important;
-            line-height: 1.6 !important;
-          }
-        }
-      `}</style>
-
       <div className="w-full max-w-full h-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen w-full max-w-full">
           
@@ -237,7 +168,8 @@ const LaunchingSoon = () => {
 
           {/* Right Side - Form Card */}
           <div 
-            className="flex items-center justify-center px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-16 bg-[#04c55c] w-full max-w-full"
+            className="flex items-center justify-center px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 lg:py-16 w-full max-w-full"
+            style={{backgroundColor: '#013727'}}
           >
             <div 
               className={`w-full max-w-lg transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} 
@@ -245,11 +177,11 @@ const LaunchingSoon = () => {
             >
               
               <div className="mb-6 sm:mb-7 md:mb-8">
-                <h3 className="form-heading font-black mb-3 sm:mb-4 tracking-tight">
-                  <span className="special-offers-text">Get special offers,</span> <span className="highlight-text">meals</span><span className="normal-text">, and </span><span className="highlight-text">news</span><span className="normal-text"> when you subscribe to our </span><span className="highlight-text">newsletter</span><span className="normal-text">.</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-white mb-3 sm:mb-4 leading-tight">
+                  Get special offers, meals, and news when you subscribe to our newsletter.
                 </h3>
-                <p className="form-subheading font-bold leading-relaxed">
-                  <span className="normal-text">"If you are a </span><span className="highlight-text">business owner</span><span className="normal-text"> join the platform at </span><span className="highlight-text">0% joining fees</span><span className="normal-text">"</span>
+                <p className="text-base sm:text-lg md:text-xl lg:text-xl font-semibold text-white leading-relaxed">
+                  "If you are a business owner join the platform at 0% joining fees"
                 </p>
               </div>
 
@@ -257,7 +189,7 @@ const LaunchingSoon = () => {
                 <div 
                   className={`mb-4 p-3 sm:p-4 rounded-xl ${submitStatus.type === 'success' ? 'bg-white/30' : 'bg-red-500/20'}`}
                 >
-                  <p className={`text-sm md:text-base font-medium ${submitStatus.type === 'success' ? 'text-[#013727]' : 'text-red-900'}`}>
+                  <p className={`text-sm md:text-base font-medium ${submitStatus.type === 'success' ? 'text-white' : 'text-red-200'}`}>
                     {submitStatus.message}
                   </p>
                 </div>
@@ -274,7 +206,7 @@ const LaunchingSoon = () => {
                     placeholder="Full Name *"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#04c55c] transition-all shadow-sm"
                     required
                   />
                   <input
@@ -283,7 +215,7 @@ const LaunchingSoon = () => {
                     placeholder="Email Address *"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#04c55c] transition-all shadow-sm"
                     required
                   />
                 </div>
@@ -298,7 +230,7 @@ const LaunchingSoon = () => {
                     placeholder="City *"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#04c55c] transition-all shadow-sm"
                     required
                   />
                   <div className="relative">
@@ -306,7 +238,7 @@ const LaunchingSoon = () => {
                       name="userType"
                       value={formData.userType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all appearance-none cursor-pointer shadow-sm"
+                      className="w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#04c55c] transition-all appearance-none cursor-pointer shadow-sm"
                       required
                     >
                       <option value="" disabled>I am a... *</option>
@@ -327,14 +259,14 @@ const LaunchingSoon = () => {
                   placeholder="Phone Number (Optional)"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#013727] transition-all shadow-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                  className={`w-full px-4 py-3 sm:py-3.5 rounded-2xl bg-white text-gray-800 placeholder-gray-400 text-sm sm:text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#04c55c] transition-all shadow-sm ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                   style={{ transitionDelay: '1100ms', transitionDuration: '700ms' }}
                 />
 
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className={`w-full py-3.5 sm:py-4 rounded-2xl bg-[#013727] text-white font-bold text-base sm:text-lg transition-all duration-700 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#013727] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                  className={`w-full py-3.5 sm:py-4 rounded-2xl bg-[#04c55c] text-white font-bold text-base sm:text-lg transition-all duration-700 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#04c55c] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
                   style={{ 
                     transitionDelay: '1200ms'
                   }}
@@ -346,10 +278,10 @@ const LaunchingSoon = () => {
                   className={`flex items-center justify-center gap-2 mt-3 sm:mt-4 opacity-80 transition-all duration-700 ${isVisible ? 'opacity-80 translate-y-0' : 'opacity-0 translate-y-5'}`}
                   style={{ transitionDelay: '1300ms' }}
                 >
-                  <svg className="w-4 h-4 text-[#013727]" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                   </svg>
-                  <p className="text-xs sm:text-sm font-medium text-[#013727]">Your information is secure</p>
+                  <p className="text-xs sm:text-sm font-medium text-white">Your information is secure</p>
                 </div>
               </div>
 

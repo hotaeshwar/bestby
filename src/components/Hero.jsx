@@ -8,7 +8,8 @@ import FoodWasteIsCostingEveryone from './FoodWasteIsCostingEveryone';
 import JoinMovement from './JoinMovement';
 import WhoCanJoin from './WhoCanJoin';
 import AppScreenshots from './AppScreenshots';
-import ForCustomersAndMerchants from './ForCustomersAndMerchants'
+import ForCustomersAndMerchants from './ForCustomersAndMerchants';
+
 
 function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -18,7 +19,7 @@ function Hero() {
   }, []);
 
   const scrollToNewsletter = () => {
-    const newsletter = document.getElementById('newsletter-signup');
+    const newsletter = document.getElementById('newsletter-section');
     if (newsletter) {
       newsletter.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -673,7 +674,7 @@ function Hero() {
       <JoinMovement />
       <WhoCanJoin />
       <AppScreenshots />
-    </>
+       </>
   );
 }
 
